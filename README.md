@@ -4,7 +4,7 @@
 
 An open-source, comprehensive online course for learning GIS fundamentals. Built with MkDocs Material.
 
-🌐 **Live Site**: [https://yourusername.github.io/gis-course](https://yourusername.github.io/gis-course)
+🌐 **Live Site**: [https://yourusername.github.io/gis-course](https://kashingtondc.github.io/CPGIS)
 
 ## About
 
