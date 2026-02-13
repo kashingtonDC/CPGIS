@@ -1,0 +1,45 @@
+/* Custom styles for GIS Course */
+
+/* Improve card layout spacing */
+.md-typeset .grid.cards > * {
+  margin-bottom: 1rem;
+}
+
+/* Style for definition boxes */
+.admonition.definition {
+  border-left-color: #2196F3;
+}
+
+.admonition.definition > .admonition-title {
+  background-color: rgba(33, 150, 243, 0.1);
+}
+
+/* Style for lab boxes */
+.admonition.lab {
+  border-left-color: #4CAF50;
+}
+
+.admonition.lab > .admonition-title {
+  background-color: rgba(76, 175, 80, 0.1);
+}
+
+/* Map container styling */
+#map {
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Responsive tables */
+.md-typeset table:not([class]) {
+  display: block;
+  overflow-x: auto;
+  font-size: 0.9em;
+}
+
+/* Improve image styling */
+.md-typeset img {
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 1rem 0;
+}

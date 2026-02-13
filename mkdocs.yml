@@ -1,0 +1,114 @@
+site_name: Introduction to Geographic Information Systems
+site_description: An open-source course for learning GIS fundamentals
+site_author: Dr. Aakash Ahamed
+repo_url: https://github.com/yourusername/gis-course
+repo_name: gis-course
+
+theme:
+  name: material
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: green
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: green
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+  - awesome-pages
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://unpkg.com/leaflet@1.9.4/dist/leaflet.js
+  
+extra_css:
+  - https://unpkg.com/leaflet@1.9.4/dist/leaflet.css
+  - assets/extra.css
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Course Overview: getting-started/overview.md
+    - Software Setup: getting-started/software-setup.md
+    - Resources: getting-started/resources.md
+  - Topics:
+    - 1. What is GIS?: topics/01-what-is-gis.md
+    - 2. Spatial Data Models: topics/02-spatial-data-models.md
+    - 3. Coordinate Systems & Projections: topics/03-coordinate-systems.md
+    - 4. Data Creation & Editing: topics/04-data-creation.md
+    - 5. Table Management & Joins: topics/05-table-management.md
+    - 6. Vector Geoprocessing: topics/06-vector-geoprocessing.md
+    - 7. Field Data & GPS: topics/07-field-data-gps.md
+    - 8. Raster Data & DEMs: topics/08-raster-data-dems.md
+    - 9. Raster Analysis: topics/09-raster-analysis.md
+    - 10. Remote Sensing Fundamentals: topics/10-remote-sensing.md
+    - 11. Interpolation & Zonal Statistics: topics/11-interpolation.md
+    - 12. Workflow Design: topics/12-workflow-design.md
+    - 13. Advanced Topics: topics/13-advanced-topics.md
+    - 14. Modern Mapmaking: topics/14-modern-mapmaking.md
+    - 15. Synthesis: topics/15-synthesis.md
+  - Projects:
+    - Overview: projects/overview.md
+    - Project 0 - Thinking Spatially: projects/project0.md
+    - Project 1 - Mapping: projects/project1.md
+    - Project 2 - Vector Analysis: projects/project2.md
+    - Project 3 - Raster Analysis: projects/project3.md
+    - Project 4 - Remote Sensing & Modeling: projects/project4.md
+    - Final Project: projects/final-project.md
+  - Labs:
+    - Lab Overview: labs/overview.md
+    - Lab 1 - First Map: labs/lab01.md
+    - Lab 2 - Vector Data: labs/lab02.md
+    - Lab 3 - Projections: labs/lab03.md
+    - Lab 4 - Data Creation: labs/lab04.md
+    - Lab 5 - Joins & Queries: labs/lab05.md
+    - Lab 6 - Vector Geoprocessing: labs/lab06.md
+    - Lab 7 - GPS Data: labs/lab07.md
+    - Lab 8 - Terrain Analysis: labs/lab08.md
+    - Lab 9 - Raster Analysis: labs/lab09.md
+    - Lab 10 - Remote Sensing: labs/lab10.md
+    - Lab 11 - Interpolation: labs/lab11.md
+    - Lab 12 - Workflows: labs/lab12.md
