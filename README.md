@@ -4,7 +4,7 @@
 
 An open-source, comprehensive online course for learning GIS fundamentals. Built with MkDocs Material.
 
-🌐 **Live Site**: [https://yourusername.github.io/gis-course](https://kashingtondc.github.io/CPGIS)
+🌐 **Live Site**: [https://kashingtondc.github.io/CPGIS](https://kashingtondc.github.io/CPGIS)
 
 ## About
 
@@ -15,7 +15,7 @@ This course provides a complete introduction to Geographic Information Systems, 
 - Coordinate systems and projections
 - Spatial analysis techniques
 - Remote sensing fundamentals
-- Hands-on labs with QGIS and ArcGIS Pro
+- Hands-on labs with QGIS and/or ArcGIS Pro
 - Real-world applications and projects
 
 Perfect for undergraduate students, self-learners, and professionals wanting to add GIS skills.
@@ -33,15 +33,15 @@ Perfect for undergraduate students, self-learners, and professionals wanting to 
 
 ### For Students/Learners
 
-Visit the [live course website](https://yourusername.github.io/gis-course) and start learning!
+Visit the [live course website](https://kashingtondc.github.io/CPGIS) and start learning!
 
 ### For Instructors (Forking/Customizing)
 
 1. **Fork this repository**
    ```bash
    # Click "Fork" on GitHub, then clone your fork
-   git clone https://github.com/YOUR-USERNAME/gis-course.git
-   cd gis-course
+   git clone https://github.com/YOUR-USERNAME/CPGIS.git
+   cd CPGIS
    ```
 
 2. **Install dependencies**
@@ -69,7 +69,7 @@ Visit the [live course website](https://yourusername.github.io/gis-course) and s
 ## Repository Structure
 
 ```
-gis-course/
+CPGIS/
 ├── docs/                          # Course content
 │   ├── index.md                   # Homepage
 │   ├── getting-started/           # Software setup, resources
@@ -112,7 +112,7 @@ This repository includes a GitHub Actions workflow for automatic deployment:
 1. Any push to `main` branch triggers build
 2. MkDocs builds the static site
 3. Site deploys to GitHub Pages
-4. Available at `https://YOUR-USERNAME.github.io/gis-course`
+4. Available at `https://YOUR-USERNAME.github.io/CPGIS`
 
 **To enable:**
 1. Go to repository **Settings → Pages**
@@ -142,8 +142,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/gis-course.git
-cd gis-course
+git clone https://github.com/kashingtondc/CPGIS.git
+cd CPGIS
 
 # Create virtual environment (optional but recommended)
 python -m venv venv
@@ -167,7 +167,7 @@ Edit `mkdocs.yml`:
 ```yaml
 site_name: Your Course Name
 site_author: Your Name
-repo_url: https://github.com/yourusername/your-repo
+repo_url: https://github.com/kashingtondc/your-repo
 ```
 
 ### Colors
@@ -209,9 +209,9 @@ Built with:
 
 ## Support
 
-- 📖 [Course Documentation](https://yourusername.github.io/gis-course)
-- 💬 [Discussions](https://github.com/yourusername/gis-course/discussions)
-- 🐛 [Issue Tracker](https://github.com/yourusername/gis-course/issues)
+- 📖 [Course Documentation](https://kashingtondc.github.io/CPGIS)
+- 💬 [Discussions](https://github.com/kashingtondc/CPGIS/discussions)
+- 🐛 [Issue Tracker](https://github.com/kashingtondc/CPGIS/issues)
 - 📧 Email: aaahamed@calpoly.edu
 
 ## Citation
@@ -221,7 +221,7 @@ If you use this course in your teaching or research, please cite:
 ```
 Ahamed, A. (2026). Introduction to Geographic Information Systems: 
 An Open-Source Online Course. GitHub repository. 
-https://github.com/yourusername/gis-course
+https://github.com/kashingtondc/CPGIS
 ```
 
 ---
