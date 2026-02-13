@@ -1,0 +1,2800 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An open-source course for learning GIS fundamentals">
+      
+      
+        <meta name="author" content="Dr. Aakash Ahamed">
+      
+      
+      
+        <link rel="prev" href="../project1/">
+      
+      
+        <link rel="next" href="../project3/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Project 2 - Vector Analysis - Introduction to Geographic Information Systems</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#project-2-vector-data-analysis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Introduction to Geographic Information Systems" class="md-header__button md-logo" aria-label="Introduction to Geographic Information Systems" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Introduction to Geographic Information Systems
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Project 2 - Vector Analysis
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="green"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/kashingtondc/CPGIS" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    CPGIS
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/overview/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../topics/01-what-is-gis/" class="md-tabs__link">
+          
+  
+  
+  Topics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../labs/overview/" class="md-tabs__link">
+          
+  
+  
+  Labs
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Introduction to Geographic Information Systems" class="md-nav__button md-logo" aria-label="Introduction to Geographic Information Systems" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Introduction to Geographic Information Systems
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/kashingtondc/CPGIS" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    CPGIS
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/software-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Topics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../topics/01-what-is-gis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. What is GIS?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../topics/02-spatial-data-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Spatial Data Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../topics/03-coordinate-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Coordinate Systems & Projections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../topics/04-data-creation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Data Creation & Editing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../topics/05-table-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Table Management & Joins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../topics/06-vector-geoprocessing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Vector Geoprocessing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../topics/07-field-data-gps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Field Data & GPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../topics/08-raster-data-dems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Raster Data & DEMs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../topics/09-raster-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Raster Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../topics/10-remote-sensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Remote Sensing Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../topics/11-interpolation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Interpolation & Zonal Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../topics/12-workflow-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Workflow Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../topics/13-advanced-topics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Advanced Topics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../topics/14-modern-mapmaking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Modern Mapmaking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../topics/15-synthesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Synthesis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project 0 - Thinking Spatially
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project 1 - Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project 2 - Vector Analysis
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project 2 - Vector Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Goals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#written-questions-3-pts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Written Questions [3 pts]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Written Questions [3 pts]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-1-vector-geometry-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 1: Vector Geometry Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2-attribute-data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 2: Attribute Data Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3-boundary-vagueness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 3: Boundary Vagueness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-4-accuracy-errors-extra-credit-1-pt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 4: Accuracy Errors [EXTRA CREDIT: 1 pt]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-work-6-pts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Work [6 pts]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project Work [6 pts]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-download" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Download
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-1-unique-soil-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 1: Unique Soil Names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2-most-common-soil-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 2: Most Common Soil Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3-land-use-acreage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 3: Land Use Acreage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorials-6-pts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tutorials [6 pts]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorials [6 pts]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-1-importing-spreadsheetscsv-15-pts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tutorial 1: Importing Spreadsheets/CSV [1.5 pts]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-2-performing-table-joins-15-pts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tutorial 2: Performing Table Joins [1.5 pts]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-3-performing-spatial-joins-15-pts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tutorial 3: Performing Spatial Joins [1.5 pts]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-4-performing-spatial-queries-15-pts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tutorial 4: Performing Spatial Queries [1.5 pts]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submission-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Submission Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grading-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grading Rubric
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-for-success" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tips for Success
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tips for Success">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-written-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Written Questions:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-project-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Project Work:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-tutorials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Tutorials:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Mistakes to Avoid
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-concepts-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Concepts Review
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Concepts Review">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vector-geometry-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vector Geometry Types:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Types:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Joins:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Help
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project 3 - Raster Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project 4 - Remote Sensing & Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../final-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Final Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Labs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Labs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/lab01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 - First Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/lab02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 - Vector Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/lab03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - Projections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/lab04.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4 - Data Creation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/lab05.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5 - Joins & Queries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/lab06.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 6 - Vector Geoprocessing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/lab07.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 7 - GPS Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/lab08.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 8 - Terrain Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/lab09.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 9 - Raster Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/lab10.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 10 - Remote Sensing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/lab11.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 11 - Interpolation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/lab12.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 12 - Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Goals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#written-questions-3-pts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Written Questions [3 pts]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Written Questions [3 pts]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-1-vector-geometry-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 1: Vector Geometry Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2-attribute-data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 2: Attribute Data Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3-boundary-vagueness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 3: Boundary Vagueness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-4-accuracy-errors-extra-credit-1-pt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 4: Accuracy Errors [EXTRA CREDIT: 1 pt]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-work-6-pts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Work [6 pts]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project Work [6 pts]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-download" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Download
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-1-unique-soil-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 1: Unique Soil Names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2-most-common-soil-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 2: Most Common Soil Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3-land-use-acreage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 3: Land Use Acreage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorials-6-pts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tutorials [6 pts]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorials [6 pts]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-1-importing-spreadsheetscsv-15-pts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tutorial 1: Importing Spreadsheets/CSV [1.5 pts]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-2-performing-table-joins-15-pts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tutorial 2: Performing Table Joins [1.5 pts]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-3-performing-spatial-joins-15-pts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tutorial 3: Performing Spatial Joins [1.5 pts]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-4-performing-spatial-queries-15-pts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tutorial 4: Performing Spatial Queries [1.5 pts]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submission-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Submission Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grading-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grading Rubric
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-for-success" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tips for Success
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tips for Success">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-written-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Written Questions:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-project-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Project Work:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-tutorials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Tutorials:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Mistakes to Avoid
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-concepts-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Concepts Review
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Concepts Review">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vector-geometry-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vector Geometry Types:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Types:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Joins:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Help
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="project-2-vector-data-analysis">Project 2: Vector Data Analysis</h1>
+<h2 id="learning-goals">Learning Goals</h2>
+<p>By the end of this project, you should be able to:</p>
+<ol>
+<li>Become familiar with vector processing operations in QGIS</li>
+<li>Import and create GIS data</li>
+<li>Perform basic joins and spatial operations such as buffer, dissolve, intersect, union</li>
+<li>Style maps in a custom fashion based on columnar values</li>
+<li>Understand different data types and corresponding data representations</li>
+<li>Query and filter spatial datasets</li>
+</ol>
+<hr />
+<h2 id="written-questions-3-pts">Written Questions [3 pts]</h2>
+<h3 id="question-1-vector-geometry-types">Question 1: Vector Geometry Types</h3>
+<p>You're tasked with supporting several city projects. For each task, choose the <strong>best/most appropriate vector geometry type</strong> (Point, Line, or Polygon) and <strong>justify your choice</strong> in 1-2 sentences.</p>
+<p><strong>Tasks</strong>:</p>
+<p>a. <strong>Mapping individual street trees</strong> for a maintenance inventory</p>
+<p>b. <strong>Delineating building footprints</strong> for calculating rooftop solar potential</p>
+<p>c. <strong>Representing bus routes</strong> for network analysis and travel time estimation</p>
+<p>d. <strong>Defining school attendance zones</strong> for eligibility checks by address</p>
+<p>e. <strong>Locating reported potholes</strong> submitted by residents via a mobile app</p>
+<hr />
+<h3 id="question-2-attribute-data-types">Question 2: Attribute Data Types</h3>
+<p>You're designing an attribute table for a <strong>municipal parcels polygon layer</strong>. For each attribute (column), specify the <strong>most appropriate data type</strong> and <strong>briefly justify your choice</strong>.</p>
+<p><strong>Data type options</strong>: Integer, Float/Double, Text/String, Date/Time, Boolean</p>
+<p><strong>Attributes</strong>:</p>
+<p>a. <strong>Parcel_ID</strong> (e.g., "003421-7")</p>
+<p>b. <strong>Owner_ZIP</strong> (e.g., "02108")</p>
+<p>c. <strong>Assessed_Value</strong> (in dollars)</p>
+<p>d. <strong>Impervious_Cover_Pct</strong> (0–100 with decimals)</p>
+<p>e. <strong>Has_Easement</strong> (yes/no)</p>
+<hr />
+<h3 id="question-3-boundary-vagueness">Question 3: Boundary Vagueness</h3>
+<p>Per the description of the positional accuracy of <strong>wetland boundaries</strong> in the textbook, discuss a different map feature (besides wetlands) whose boundaries are <strong>inherently vague and difficult to map</strong>.</p>
+<p><strong>Consider</strong>:
+- Why are the boundaries vague?
+- What makes them challenging to define precisely?
+- How might this affect GIS analysis?</p>
+<hr />
+<h3 id="question-4-accuracy-errors-extra-credit-1-pt">Question 4: Accuracy Errors [EXTRA CREDIT: 1 pt]</h3>
+<p>What are the <strong>five types of accuracy/precision errors</strong> associated with geographic information? </p>
+<p>Provide an <strong>example of each type of error</strong>.</p>
+<hr />
+<h2 id="project-work-6-pts">Project Work [6 pts]</h2>
+<h3 id="data-download">Data Download</h3>
+<p>Download and unzip the <strong>SPR Data</strong> (Swanton Pacific Ranch):
+- Available in Canvas: Week 1 folder
+- <a href="link-to-data">Direct link</a></p>
+<p>You will use this data to answer the following questions.</p>
+<hr />
+<h3 id="question-1-unique-soil-names">Question 1: Unique Soil Names</h3>
+<p>Within the <strong>sprSoil</strong> layer, how many <strong>unique values</strong> are present in the <strong>"SOILNAME"</strong> field?</p>
+<p><strong>Hint</strong>: Use the <strong>"Statistics by Categories"</strong> tool</p>
+<p><strong>Steps</strong>:
+1. Open sprSoil layer
+2. Processing Toolbox → "Statistics by Categories"
+3. Select SOILNAME field
+4. Count unique values</p>
+<hr />
+<h3 id="question-2-most-common-soil-type">Question 2: Most Common Soil Type</h3>
+<p>Within the <strong>sprSoil</strong> layer, which type of soil (described in the <strong>"SOILNAME"</strong> field) occurs in the <strong>largest number of polygons</strong>?</p>
+<p><strong>Questions</strong>:
+- What is the soil name?
+- How many polygons consist of this soil type?</p>
+<p><strong>Hint</strong>: Use the <strong>"Statistics by Categories"</strong> tool</p>
+<hr />
+<h3 id="question-3-land-use-acreage">Question 3: Land Use Acreage</h3>
+<p>Within the <strong>sprLandUse</strong> layer, what is the <strong>total acreage of each land use type</strong> (given in the <strong>"LUtype"</strong> field)?</p>
+<p><strong>Hints</strong>: 
+- Use the <strong>"Add Geometry Attributes"</strong> tool
+- And/or use the <strong>"Statistics by Categories"</strong> tool</p>
+<p><strong>Steps</strong>:
+1. Add geometry attributes (area in appropriate units)
+2. Convert to acres if needed (1 acre = 4046.86 m²)
+3. Summarize by LUtype</p>
+<hr />
+<h2 id="tutorials-6-pts">Tutorials [6 pts]</h2>
+<h3 id="tutorial-1-importing-spreadsheetscsv-15-pts">Tutorial 1: Importing Spreadsheets/CSV [1.5 pts]</h3>
+<p><strong>Task</strong>: Convert Excel file of latitudes/longitudes to a point shapefile</p>
+<p><strong>Follow</strong>: <a href="https://www.qgistutorials.com/en/docs/3/importing_spreadsheets_csv.html">Importing Spreadsheets or CSV Files</a></p>
+<p><strong>Submit</strong>: Screenshots showing:
+- Final point layer displayed on map
+- Attribute table
+- Processing steps
+- <strong>Include date/time in screenshots!</strong></p>
+<hr />
+<h3 id="tutorial-2-performing-table-joins-15-pts">Tutorial 2: Performing Table Joins [1.5 pts]</h3>
+<p><strong>Task</strong>: Perform a tabular join</p>
+<p><strong>Note</strong>: Highly suggest downloading data directly from the tutorial, as opposed to navigating the census website!</p>
+<p><strong>Follow</strong>: <a href="https://www.qgistutorials.com/en/docs/3/performing_table_joins.html">Performing Table Joins</a></p>
+<p><strong>Submit</strong>: Screenshots showing:
+- Joined attribute table
+- Final map with joined data
+- Processing steps
+- <strong>Include date/time in screenshots!</strong></p>
+<hr />
+<h3 id="tutorial-3-performing-spatial-joins-15-pts">Tutorial 3: Performing Spatial Joins [1.5 pts]</h3>
+<p><strong>Task</strong>: Perform a spatial join</p>
+<p><strong>Follow</strong>: <a href="https://www.qgistutorials.com/en/docs/3/performing_spatial_joins.html">Performing Spatial Joins</a></p>
+<p><strong>Submit</strong>: Screenshots showing:
+- Spatially joined layer
+- Attribute table showing transferred attributes
+- Final map
+- <strong>Include date/time in screenshots!</strong></p>
+<hr />
+<h3 id="tutorial-4-performing-spatial-queries-15-pts">Tutorial 4: Performing Spatial Queries [1.5 pts]</h3>
+<p><strong>Task</strong>: Perform a spatial query</p>
+<p><strong>Follow</strong>: <a href="https://www.qgistutorials.com/en/docs/3/performing_spatial_queries.html">Performing Spatial Queries</a></p>
+<p><strong>Submit</strong>: Screenshots showing:
+- Query results
+- Selected features
+- Final map showing query results
+- <strong>Include date/time in screenshots!</strong></p>
+<hr />
+<h2 id="submission-requirements">Submission Requirements</h2>
+<p>Submit to Canvas <strong>one document</strong> containing:</p>
+<ol>
+<li>✅ <strong>Answers to Written Questions 1-3</strong> (and optionally Question 4 for extra credit)</li>
+<li>✅ <strong>Answers to Project Work Questions 1-3</strong> with supporting evidence</li>
+<li>✅ <strong>Screenshots from all 4 tutorials</strong> showing:</li>
+<li>Final outputs</li>
+<li>Processing steps taken</li>
+<li>Date and time stamps visible</li>
+</ol>
+<p><strong>File format</strong>: PDF preferred, or Word document</p>
+<hr />
+<h2 id="grading-rubric">Grading Rubric</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Written Questions 1-3</td>
+<td>3 pts</td>
+</tr>
+<tr>
+<td>Project Work Questions 1-3</td>
+<td>6 pts</td>
+</tr>
+<tr>
+<td>Tutorial 1: Importing CSV</td>
+<td>1.5 pts</td>
+</tr>
+<tr>
+<td>Tutorial 2: Table Joins</td>
+<td>1.5 pts</td>
+</tr>
+<tr>
+<td>Tutorial 3: Spatial Joins</td>
+<td>1.5 pts</td>
+</tr>
+<tr>
+<td>Tutorial 4: Spatial Queries</td>
+<td>1.5 pts</td>
+</tr>
+<tr>
+<td>Extra Credit: Question 4</td>
+<td>1 pt</td>
+</tr>
+<tr>
+<td><strong>TOTAL</strong></td>
+<td><strong>15 pts (16 with EC)</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="tips-for-success">Tips for Success</h2>
+<h3 id="for-written-questions">For Written Questions:</h3>
+<ul>
+<li><strong>Think practically</strong> - What data type makes sense for real-world use?</li>
+<li><strong>Justify thoroughly</strong> - Don't just state the answer, explain why</li>
+<li><strong>Use examples</strong> from class materials or textbook</li>
+</ul>
+<h3 id="for-project-work">For Project Work:</h3>
+<ul>
+<li><strong>Use the correct tools</strong> - Statistics by Categories is your friend</li>
+<li><strong>Show your work</strong> - Include screenshots of your analysis steps</li>
+<li><strong>Double-check units</strong> - Acres vs square meters matters!</li>
+<li><strong>Save intermediate results</strong> - Don't lose your work</li>
+</ul>
+<h3 id="for-tutorials">For Tutorials:</h3>
+<ul>
+<li><strong>Follow step-by-step</strong> - Don't skip ahead</li>
+<li><strong>Take screenshots progressively</strong> - Easier than backtracking</li>
+<li><strong>Verify results</strong> - Make sure outputs look correct</li>
+<li><strong>Include timestamps</strong> - Required for credit</li>
+</ul>
+<hr />
+<h2 id="common-mistakes-to-avoid">Common Mistakes to Avoid</h2>
+<p>❌ <strong>Using wrong geometry type</strong> - Polygons for point data wastes space
+❌ <strong>Wrong data type</strong> - Storing ZIP codes as integers loses leading zeros
+❌ <strong>Missing screenshots</strong> - No screenshot = no credit
+❌ <strong>No timestamps</strong> - Must prove you did the work yourself
+❌ <strong>Incomplete joins</strong> - Check that all records matched
+❌ <strong>Wrong units</strong> - Converting between acres and square meters</p>
+<hr />
+<h2 id="key-concepts-review">Key Concepts Review</h2>
+<h3 id="vector-geometry-types">Vector Geometry Types:</h3>
+<ul>
+<li><strong>Points</strong>: Discrete locations (trees, wells, survey markers)</li>
+<li><strong>Lines</strong>: Linear features (roads, rivers, pipelines)</li>
+<li><strong>Polygons</strong>: Areas (parcels, buildings, zones)</li>
+</ul>
+<h3 id="data-types">Data Types:</h3>
+<ul>
+<li><strong>Integer</strong>: Whole numbers, no decimals</li>
+<li><strong>Float/Double</strong>: Numbers with decimals</li>
+<li><strong>Text/String</strong>: Alphanumeric text</li>
+<li><strong>Date/Time</strong>: Temporal data</li>
+<li><strong>Boolean</strong>: True/False, Yes/No</li>
+</ul>
+<h3 id="joins">Joins:</h3>
+<ul>
+<li><strong>Tabular Join</strong>: Match by common field (attribute)</li>
+<li><strong>Spatial Join</strong>: Match by location (geometry)</li>
+</ul>
+<hr />
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://www.qgistutorials.com/">QGIS Tutorials</a></li>
+<li><a href="link-to-canvas">SPR Data Download</a></li>
+<li><a href="https://docs.qgis.org/latest/en/docs/user_manual/working_with_vector/">QGIS Vector Tools Documentation</a></li>
+<li><a href="https://docs.qgis.org/latest/en/docs/user_manual/working_with_vector/attribute_table.html">Attribute Table Management</a></li>
+</ul>
+<hr />
+<h2 id="getting-help">Getting Help</h2>
+<ul>
+<li><strong>Office Hours</strong>: See syllabus</li>
+<li><strong>Lab Sessions</strong>: TAs available</li>
+<li><strong>QGIS Documentation</strong>: Built-in help</li>
+<li><strong>GIS Stack Exchange</strong>: Community Q&amp;A</li>
+</ul>
+<p>Good luck with vector analysis! 🗺️</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+      
+    
+  </body>
+</html>
