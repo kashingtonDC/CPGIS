@@ -1,8 +1,8 @@
 site_name: Introduction to Geographic Information Systems
 site_description: An open-source course for learning GIS fundamentals
 site_author: Dr. Aakash Ahamed
-repo_url: https://github.com/yourusername/gis-course
-repo_name: gis-course
+repo_url: https://github.com/kashingtondc/CPGIS
+repo_name: CPGIS
 
 theme:
   name: material
