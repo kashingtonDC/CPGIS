@@ -1,6 +1,7 @@
 # Introduction to Geographic Information Systems
 
-![GIS Banner](docs/images/gis-banner.jpg)
+![GIS Banner](images/banners/gis-banner.jpg)
+*Welcome to Introduction to GIS*
 
 Welcome to the online course on **Introduction to Geographic Information Systems (GIS)**! 🌎 🛰️ 🗺️ 📍
 

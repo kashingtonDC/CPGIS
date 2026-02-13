@@ -15,7 +15,7 @@ This course provides a complete introduction to Geographic Information Systems, 
 - Coordinate systems and projections
 - Spatial analysis techniques
 - Remote sensing fundamentals
-- Hands-on labs with QGIS and/or ArcGIS Pro
+- Hands-on labs with QGIS and ArcGIS Pro
 - Real-world applications and projects
 
 Perfect for undergraduate students, self-learners, and professionals wanting to add GIS skills.

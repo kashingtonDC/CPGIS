@@ -50,6 +50,9 @@ Think of it this way:
 - **Vector** = Drawing with pens (crisp lines and points)
 - **Raster** = Painting with pixels (grid of colors)
 
+![Vector vs Raster Comparison](../images/topics/vector-vs-raster-comparison.png)
+*Figure: Comparison of vector and raster data models representing the same landscape*
+
 ---
 
 ## Vector Data Model
