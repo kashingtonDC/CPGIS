@@ -3,6 +3,8 @@ site_description: An open-source course for learning GIS fundamentals
 site_author: Dr. Aakash Ahamed
 repo_url: https://github.com/kashingtondc/CPGIS
 repo_name: CPGIS
+site_url: https://kashingtondc.github.io/CPGIS/
+use_directory_urls: false
 
 theme:
   name: material
