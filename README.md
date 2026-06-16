@@ -219,7 +219,7 @@ Built with:
 If you use this course in your teaching or research, please cite:
 
 ```
-Ahamed, A. (2026). Introduction to Geographic Information Systems: 
+Ahamed, A. and Ericson, J. (2026). Introduction to Geographic Information Systems: 
 An Open-Source Online Course. GitHub repository. 
 https://github.com/kashingtondc/CPGIS
 ```
