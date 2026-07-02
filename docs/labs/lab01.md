@@ -37,14 +37,14 @@ By completing this lab, you will:
 
 1. Open **QGIS Desktop** from your applications
 2. You should see the QGIS interface with:
-   - **Menu bar** at the top
-   - **Toolbars** below the menu
-   - **Browser panel** (left side)
-   - **Layers panel** (left side, below browser)
-   - **Map canvas** (center - the main viewing area)
-   - **Status bar** (bottom)
+    1. **Menu bar** at the top
+    2. **Toolbars** below the menu
+    3. **Browser panel** (left side)
+    4. **Layers panel** (left side, below browser)
+    5. **Map canvas** (center - the main viewing area)
+    6. **Status bar** (bottom)
 
-![QGIS Interface](../images/qgis-interface.png)
+![QGIS Interface](../images/lab_images/Lab_1/qgis-interface.png)
 
 #### Understanding the Interface
 
@@ -83,7 +83,7 @@ You should see:
 
 ### Download Sample Data
 
-Download the lab data package: [Lab01_Data.zip](link-to-data)
+Download the lab data package: [Lab01_Data.zip](..lab_data/lab-1/Lab01_Data.zip){:download}
 
 Contents:
 - `california_counties.shp` - County boundaries (polygons)
@@ -489,6 +489,12 @@ Want to explore more? Try these challenges:
 3. **Select only cities above 100,000 population** and symbolize them differently
 4. **Calculate a new field** in the attribute table
 5. **Create a second layout** with a different map extent (zoom to your region)
+
+---
+## Lab Data Credits
+| Data  | Source | Link |
+| ----- | ------------| ------|
+| County Boundaries | California Department of Technology GIS | [ArcGIS Service Link](https://services3.arcgis.com/uknczv4rpevve42E/arcgis/rest/services/California_County_Boundaries_and_Identifiers_Blue_Version_view/FeatureServer)|
 
 ---
 
