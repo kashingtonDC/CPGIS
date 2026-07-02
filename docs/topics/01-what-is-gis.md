@@ -247,6 +247,8 @@ GIS helps answer five fundamental types of questions:
 ---
 
 ## Interactive Example: GIS in Action
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <div id="map" style="height: 400px; margin: 20px 0;"></div>
 
@@ -286,6 +288,7 @@ var applications = [
 applications.forEach(function(app) {
     L.marker(app.coords)
         .bindPopup("<b>" + app.title + "</b><br>" + app.description)
+        .bindTooltip(app.title, {permanent: true, direction: 'right', offset: [10, 0] })
         .addTo(map);
 });
 </script>
