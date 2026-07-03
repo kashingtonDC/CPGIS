@@ -2,7 +2,7 @@
 
 ### OneDrive (Recommended for Cal Poly Students)
 
-Cal Poly provides 1TB of OneDrive storage to all students:
+Cal Poly provides 50GB of OneDrive storage to all students:
 
 **Benefits:**
 - Access files from any computer (lab or personal)
@@ -12,9 +12,9 @@ Cal Poly provides 1TB of OneDrive storage to all students:
 
 **Setup:**
 
-1. Download [OneDrive](https://www.microsoft.com/en-us/microsoft-365/onedrive/download)
+1. Download [OneDrive](https://www.microsoft.com/en-us/microsoft-365/onedrive/download) on your personal computer
 2. Sign in with your Cal Poly credentials
-3. Create a folder structure:
+3. Create a folder structure for this class:
    ```
    OneDrive/
    └── GIS_Course/
@@ -23,7 +23,7 @@ Cal Poly provides 1TB of OneDrive storage to all students:
        ├── Data/
        └── Maps/
    ```
-4. Set this folder to sync locally
+4. Set this folder to sync locally by right clicking and selecting *Always Keep on This Device*
 
 !!! tip "Pro Tip"
     Store all your GIS project files in your synced OneDrive folder. This way:
@@ -38,7 +38,14 @@ If not using OneDrive:
 
 1. Install [Google Drive Desktop](https://www.google.com/drive/download/)
 2. Create similar folder structure
-3. Note: Some GIS file formats may sync slowly
+3. Note: Storage may be more limited than your Cal Poly One Drive
+
+---
+## File Management
+
+Knowing how to keep track of your files when using GIS is nearly as important as understanding the tools of your chosen GIS platform
+
+
 
 ---
 
