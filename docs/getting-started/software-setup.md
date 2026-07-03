@@ -97,3 +97,27 @@ Many universities provide free ArcGIS Pro licenses:
     - Use lab computers
     - Install Windows via Boot Camp or Parallels
     - Use QGIS instead
+
+---
+
+## Verifying Your Installation
+
+### QGIS Check
+
+1. Launch QGIS Desktop
+2. Go to **Layer → Add Layer → Add Vector Layer**
+3. Can you see the file browser?
+4. Close QGIS
+
+✅ If yes, you're ready! [:octicons-arrow-right-24: Set up your file system](../getting-started/storage-and-file-management.md)
+
+### ArcGIS Pro Check
+
+1. Launch ArcGIS Pro
+2. Create a new project
+3. Can you see the ribbon and catalog pane?
+4. Close ArcGIS Pro
+
+✅ If yes, you're ready! [:octicons-arrow-right-24: Set up your file system](../getting-started/storage-and-file-management.md)
+
+
