@@ -44,7 +44,7 @@ By completing this lab, you will:
     5. **Map canvas** (center - the main viewing area)
     6. **Status bar** (bottom)
 
-![QGIS Interface](../images/lab_images/Lab_1/qgis-interface.png)
+![QGIS Interface](../images/lab_images/lab-01/qgis-interface.png)
 
 #### Understanding the Interface
 
