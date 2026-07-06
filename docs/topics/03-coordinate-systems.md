@@ -32,20 +32,36 @@ By the end of this topic, you should be able to:
 
 Think about trying to flatten an orange peel - you'll either tear it, stretch it, or compress it. The same happens when we project Earth's surface onto a flat map.
 
+<div class="grid" markdown>
+
+<figure markdown>
+  ![Globe as orange peel](https://www.esri.com/arcgis-blog/app/uploads/2020/03/OrangePeelProGlobe.jpg)
+  <figcaption>Unprojected globe</figcaption>
+</figure>
+
+<figure markdown>
+  ![Goode projection](https://www.esri.com/arcgis-blog/app/uploads/2020/03/OrangePeelProGoode.jpg)
+  <figcaption>Globe projected onto a flat surface</figcaption>
+</figure>
+
+</div>
+
+*[Earth Peel](https://www.esri.com/arcgis-blog/products/arcgis-pro/education/earth-peel) by John Nelson*
+
 !!! example "Test Your Understanding"
-    Visit [The True Size](https://www.thetruesize.com) to see how map projections distort the size of countries. Try dragging Greenland to the equator - you'll be surprised at how much smaller it actually is!
+    Check out [The True Size](https://www.thetruesize.com) to see how map projections distort the size of countries. Try dragging Greenland to the equator - you'll be surprised at how much smaller it actually is!
+    <iframe src="https://thetruesize.com/#?borders=1~!MTc4MDQ1NDQ.NjY1OTM0Ng*MzYwMDAwMDA(MA~!GL*MA.MTgwMDAwMDA)Ng" width="100%" height="600px" name="The True Size of Website" scrolling="no" style="border: none; border-radius: 10px" loading="lazy" allowfullscreen sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
 
 ---
 
-## Geographic Coordinate Systems (GCS)
+## Geographic Coordinate Systems
 
 ### What is a Geographic Coordinate System?
 
 <div class="admonition definition" markdown>
 <p class="admonition-title">Definition</p>
 
-A **Geographic Coordinate System (GCS)** uses angles (latitude and longitude) to define positions on Earth's three-dimensional curved surface.
-
+A **Geographic Coordinate System** uses angles (latitude and longitude) to define positions on Earth's three-dimensional curved surface. 
 </div>
 
 ### Key Components
@@ -77,6 +93,11 @@ A **Geographic Coordinate System (GCS)** uses angles (latitude and longitude) to
 
 The graticule is the network of latitude and longitude lines covering the Earth. Think of it as Earth's address system!
 
+<figure markdown>
+  ![Latitude and Longitude Image](https://cdn.britannica.com/63/2063-004-D677C5D9/Perspective-globe-grid-parallels-meridians-longitude-latitude.jpg){ width="300" }
+  <figcaption>Geographic Coordinate Systems measure location by degrees (°) of Latitude and Longitude</figcaption>
+</figure>
+
 ---
 
 ## Projected Coordinate Systems
@@ -86,13 +107,13 @@ The graticule is the network of latitude and longitude lines covering the Earth.
 <div class="admonition definition" markdown>
 <p class="admonition-title">Definition</p>
 
-A **Projected Coordinate System (PCS)** transforms locations from a three-dimensional spherical coordinate system to a two-dimensional planar system - essentially, flattening the Earth onto a map.
+A **Projected Coordinate System** transforms locations from a three-dimensional spherical coordinate system to a two-dimensional planar system - essentially, flattening the Earth onto a map.
 
 </div>
 
-### Key Differences from GCS
+### Key Differences from
 
-| Aspect | Geographic (GCS) | Projected (PCS) |
+| Aspect | Geographic | Projected |
 |--------|------------------|-----------------|
 | **Surface** | 3D curved (sphere/ellipsoid) | 2D flat (plane) |
 | **Units** | Degrees | Linear units (meters, feet) |
@@ -107,12 +128,12 @@ A **Projected Coordinate System (PCS)** transforms locations from a three-dimens
 3. **Practical mapping**: We view maps on flat screens and paper
 
 !!! tip "When to Use What"
-    - **Use GCS** (lat/lon) for:
+    - **Use Geographic Coordinate Systems** (lat/lon) for:
         - Global datasets
         - Web mapping (Google Maps uses WGS84)
         - Data storage and exchange
     
-    - **Use PCS** (projected) for:
+    - **Use Projected Coordinate Systems** (projected) for:
         - Measuring distances and areas
         - Spatial analysis
         - Local/regional mapping
@@ -125,34 +146,22 @@ A **Projected Coordinate System (PCS)** transforms locations from a three-dimens
 
 Map projections use geometric surfaces that can be "unrolled" into flat maps:
 
-#### 1. Planar (Azimuthal)
-- Projects onto a flat plane
-- Plane touches Earth at one point
-- Good for polar regions
-- Examples: Lambert Azimuthal Equal Area
+![Projection Types](../images/topic-images/topic-03/projection-types.png)
 
-#### 2. Conical
-- Projects onto a cone touching Earth
-- Cone "unrolls" into a flat wedge
-- Good for mid-latitude regions
-- Examples: Albers Equal Area Conic, Lambert Conformal Conic
-
-#### 3. Cylindrical
-- Projects onto a cylinder wrapped around Earth
-- Cylinder "unrolls" into a rectangle
-- Good for equatorial regions or world maps
-- Examples: Mercator, Transverse Mercator
-
-![Projection Types](../images/projection-types.png)
-*Three main projection surfaces: planar, conical, and cylindrical*
+| 1. Planar (Azimuthal) | 2. Conical | 3. Cylindrical |
+|---|---|---|
+| Projects onto a flat plane | Projects onto a cone touching Earth | Projects onto a cylinder wrapped around Earth |
+| Plane touches Earth at one point | Cone "unrolls" into a flat wedge | Cylinder "unrolls" into a rectangle |
+| Good for polar regions | Good for mid-latitude regions | Good for equatorial regions or world maps |
+| **Examples:** Lambert Azimuthal Equal Area | **Examples:** Albers Equal Area Conic, Lambert Conformal Conic | **Examples:** Mercator, Transverse Mercator |
 
 ---
 
 ### Types of Distortion
 
-Every projection distorts **at least one** of these properties:
+Projections attempt to represent our irregular, 3D globe on a perfectly flat 2D plane, and therefore will always have distortions. Every map projection biased, and while it may preserve one property perfectly, it will be misrepresent **at least one** other property.
 
-| Property | What's Affected | Example Projections |
+| Property | What is preserved | Projections that preserve this property |
 |----------|----------------|---------------------|
 | **Shape (Conformal)** | Angles and local shapes | Mercator, Lambert Conformal Conic |
 | **Area (Equal-area)** | Relative sizes | Albers Equal Area, Mollweide |
@@ -160,25 +169,21 @@ Every projection distorts **at least one** of these properties:
 | **Direction (Azimuthal)** | Directions from specific points | Gnomonic |
 
 !!! warning "You Cannot Have It All!"
-    No projection can preserve shape AND area simultaneously. You must choose which property is most important for your analysis!
+    No projection can preserve shape AND area simultaneously. You must choose which property is most important for your visualization or analysis! 
+    
+    ![Mercator vs Conic Projections](../images/topic-images/topic-03/Mercator-vs-Conic.png)
 
-### Common Projection Trade-offs
-
-**Mercator Projection** ⚓
-- Preserves shape (conformal)
-- Great for navigation
-- **Severely** distorts area near poles (Greenland looks huge!)
-- Used for web maps
-
-**Albers Equal Area Conic** 📊
-- Preserves area (equal-area)
-- Good for thematic maps
-- Distorts shape
-- Used for statistical mapping
+    **Mercator projections** preserve shape, but distort areas, while **Conic projections** preserve area, but distort shapes. Mercator projections may be more suited to *map visualization*, while Conic projections are more suited to *statistical analysis*.
 
 ---
 
-## Common Coordinate Reference Systems
+## Coordinate Reference Systems in GIS
+
+Now that you understand the *concepts* of geographic and projected coordinate systems, let's connect them to the actual Coordinate Reference Systems or CRS's you'll encounter in GIS software. There are 3 major CRS categories you'll regularly encounter:
+
+- WGS84 - a Geographic Coordinate System
+- UTM (Universal Transverse Mercator) - a **Global Projected Coordinate System 
+- State Plane Coordinate Systems - a **Local** Projected Coordinate System 
 
 ### WGS84 (EPSG:4326)
 
@@ -227,7 +232,7 @@ UTM divides the world into 60 vertical zones, each 6° of longitude wide. Each z
 
 ### UTM Zone Map
 
-![UTM Zones](../images/utm-zones.png)
+![UTM Zones](../images/topic-images/topic-03/utm-zones.png.png)
 *UTM zones covering North America*
 
 ---
@@ -471,7 +476,7 @@ Find EPSG codes at: [epsg.io](https://epsg.io)
 <p class="admonition-title">✅ Remember These Points</p>
 
 1. **No perfect projection** - all projections distort something
-2. **GCS vs PCS** - Geographic uses degrees (lat/lon), Projected uses meters/feet (X/Y)
+2. **Geographic vs Projected Coordinate Systems** - Geographic uses degrees (lat/lon), Projected uses meters/feet (X/Y)
 3. **UTM for analysis** - Use UTM when measuring distances or areas regionally
 4. **Always reproject** - Match all data to same CRS before analysis
 5. **Check your datums** - Different datums = different positions!
