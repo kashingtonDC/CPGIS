@@ -69,6 +69,7 @@ A **Geographic Coordinate System** uses angles (latitude and longitude) to defin
 **Unit of Measure**: Degrees (°)
 
 **Coordinates**:
+
 - **Latitude**: Measured relative to the equator
   - 0° at the equator
   - +90° at North Pole
@@ -181,47 +182,48 @@ Projections attempt to represent our irregular, 3D globe on a perfectly flat 2D 
 
 Now that you understand the *concepts* of geographic and projected coordinate systems, let's connect them to the actual Coordinate Reference Systems or CRS's you'll encounter in GIS software. There are 3 major CRS categories you'll regularly encounter:
 
-- WGS84 - a Geographic Coordinate System
-- UTM (Universal Transverse Mercator) - a **Global Projected Coordinate System 
-- State Plane Coordinate Systems - a **Local** Projected Coordinate System 
+- **WGS84** - a Geographic Coordinate System
+- **UTM (Universal Transverse Mercator)** - a **Global** Projected Coordinate System 
+- **State Plane Coordinate Systems** - a **Local** Projected Coordinate System 
 
 ### WGS84 (EPSG:4326)
 
-**Full Name**: World Geodetic System 1984
+The [World Geodetic System 1984](https://en.wikipedia.org/wiki/World_Geodetic_System) is a global geographic coordinate system that is used by most modern GPS systems. WGS 84 uses latitude and longitude coordinates to locate each point on the earth on a standardized ellipsoid, and therefore codes points into angle measurement of degrees of distance from the Equator and Prime meridian.
 
-**Type**: Geographic Coordinate System
+**Key Features**:
 
-**When to Use**:
-- GPS data
-- Web mapping (Google Maps, OpenStreetMap)
-- Global datasets
-- Data exchange/storage
+- **Units:** Degrees (°)
+- **Coordinates:** Latitude and Longitude
+- **Coverage:** Global
 
-**Coordinates**: Latitude/Longitude in decimal degrees
+![Sketch of WGS 84 Coordinate System showing the earth as a perfect gray Ellipsoid with colored lines showing the Equator, Prim Meridian, and angle measurements](https://genesys-offenburg.de/wp-content/uploads/2022/05/WGS84_v1.4.jpg.webp)
+
+WGS84 simplifies the earth's surface to prioritize global coverage, while obscuring localized irregularities. This makes WGS 84 ideal for worldwide datasets, and for applications in navigation systems such as GPS. 
+
+!!! note "Remember"
+    Because WGS84 is geographic, distances and areas calculated directly in WGS84 will be inaccurate — degrees are not a consistent linear unit. Reproject to a projected CRS (like UTM) before measuring.
 
 ---
 
 ### UTM (Universal Transverse Mercator)
 
+**Category**: Projected Coordinate System — built on a Transverse Mercator projection, so coordinates are in linear units (meters), not degrees
+
 **What is UTM?**
 
-UTM divides the world into 60 vertical zones, each 6° of longitude wide. Each zone uses a Transverse Mercator projection optimized for that region.
+UTM divides the world into 60 vertical zones, each 6° of longitude wide. Each zone uses a Transverse Mercator projection optimized for that region — this is a practical example of the cylindrical projection surface discussed above, applied zone-by-zone to minimize distortion.
 
 **Key Features**:
+
 - **Units**: Meters
 - **Coordinates**: Easting (X) and Northing (Y)
-- **Zones**: Numbered 1-60 from 180°W eastward
-- **Hemispheres**: North and South variants
+- **Zones**: Numbered 1–60 from 180°W (the international date line) eastward
+- **Hemispheres**: Zones are split into North and South variants
 
-**California Coverage**:
-- **UTM Zone 10N** (EPSG:32610): Western California
-- **UTM Zone 11N** (EPSG:32611): Eastern California
+**UTM zones covering North America**
+![UTM Zones](../images/topic-images/topic-03/utm-zones.png)
 
-**When to Use UTM**:
-- Measuring distances and areas
-- Regional analysis
-- Field data collection
-- When accuracy matters!
+The contiguous United States is split into 10 UTM zones, from 10N to 19N. California is split between two zones, 10N and 11N, so you must ensure that your project is using the coorect zone, depending on whether you are in the Eastern or Western half of the state.
 
 !!! tip "UTM is Usually Your Best Choice"
     For most regional GIS analysis in the US, UTM is the appropriate choice. It provides:
@@ -230,27 +232,35 @@ UTM divides the world into 60 vertical zones, each 6° of longitude wide. Each z
     - Simple units (meters)
     - Minimal distortion within a zone
 
-### UTM Zone Map
-
-![UTM Zones](../images/topic-images/topic-03/utm-zones.png.png)
-*UTM zones covering North America*
+    Because it's a projected system, it does exactly what a projected CRS is supposed to do — trade a bit of global accuracy for reliable local measurements.
 
 ---
 
 ### State Plane Coordinate System
 
+**Category**: Projected Coordinate System — like UTM, uses linear units and a projection optimized for a specific area, but at the scale of individual states rather than global zones
+
 **What is State Plane?**
 
 A coordinate system designed specifically for US states, with each state having one or more zones optimized for its shape and extent.
 
-**When to Use**:
-- US-specific projects
-- Working with government data (often in State Plane)
-- Very high accuracy needed for surveying
-
 **Units**: Usually feet (US Survey Feet or International Feet)
 
-**Example**: California has 6 State Plane zones!
+![California State Plane System Map](https://www.conservation.ca.gov/cgs/publishingimages/maps-data/state_plane_index2.jpg)
+
+**Example**: The [California State Plane Coordinate System](https://www.conservation.ca.gov/cgs/rgm/state-plane-coordinate-system) splits the state into 7 zones!
+
+---
+
+### Quick Reference: Which Category Is It?
+
+| CRS | Category | Units | Typical Use |
+|-----|-----------|-------|--------------|
+| **WGS84** | Geographic | Degrees | GPS, web maps, global data |
+| **UTM** | Projected | Meters | Regional analysis, measuring distance/area |
+| **State Plane** | Projected | Feet (usually) | US state/local projects, surveying |
+
+If you ever forget which bucket a CRS belongs to, check its units — degrees mean geographic, meters or feet mean projected.
 
 ---
 
@@ -258,29 +268,24 @@ A coordinate system designed specifically for US states, with each state having 
 
 ### What is a Datum?
 
+All Coordinate Reference Systems (CRS's) are base their points on a standardized abstraction of the globe, know as a **datum**. You can think of a datum as the "starting point" for all measurements and operations that you make in GIS.
+
 <div class="admonition definition" markdown>
 <p class="admonition-title">Definition</p>
 
 A **datum** is a reference framework that defines:
+
 - The size and shape of the Earth (ellipsoid)
 - The origin and orientation of coordinate systems
 - How to measure positions on Earth's surface
 
 </div>
 
-Think of a datum as the "starting point" for all measurements.
-
 ### Why Datums Matter
 
-The same latitude/longitude can refer to different physical locations depending on the datum! This is because:
+The same latitude/longitude can refer to different physical locations depending on the datum that the data was coded in. This mismatch occurs because, each datums uses a different ellipsoid models to represent the irregular earth as a perfect ellipsoid. and are optimize for different regions.  This means that coordinates recorded in NAD83, but mapped in WGS 84 can differ by over 100 meters!
 
-- Earth isn't a perfect sphere
-- Different datums use different ellipsoid models
-- Datums are optimized for different regions
-
-**Example**: The same coordinates in NAD27 vs. NAD83 can differ by over 100 meters!
-
-### Common Datums
+**Common Datums**
 
 | Datum | Region | When Used |
 |-------|--------|-----------|
@@ -300,6 +305,9 @@ The same latitude/longitude can refer to different physical locations depending 
 
 **Reprojection** (also called transformation or warping) is the process of converting spatial data from one coordinate system to another.
 
+![Comparison between 4 major map projections](../images/topic-images/topic-03/comparing-map-projections.png)
+*Maps can look very distorted if they use the wrong projection*
+
 ### When to Reproject
 
 You **must** reproject when:
@@ -312,67 +320,7 @@ You **must** reproject when:
 !!! danger "Don't Skip Reprojection!"
     GIS software may display layers together even if they're in different coordinate systems, but any measurements or analysis will be WRONG!
 
-### Reprojection Workflow
-
-**For Vector Data**:
-1. Identify current CRS of your data
-2. Choose target CRS appropriate for your analysis
-3. Use reprojection tool (maintains feature shapes)
-4. Verify the output
-
-**For Raster Data**:
-1. Identify current CRS
-2. Choose target CRS
-3. Choose resampling method (Nearest Neighbor, Bilinear, Cubic)
-4. Use warp/reproject tool
-5. Verify output resolution and alignment
-
-### Raster Reprojection Considerations
-
-Raster reprojection is more complex because pixels must be:
-1. **Warped**: Pixel outlines reprojected (creates irregular grid)
-2. **Resampled**: Converted back to regular grid
-
-This can change pixel values! Choose your resampling method carefully:
-
-| Method | Best For | Preserves Values? |
-|--------|----------|-------------------|
-| **Nearest Neighbor** | Categorical data (land cover, classes) | Yes |
-| **Bilinear** | Continuous data (elevation, temperature) | No (averages) |
-| **Cubic** | Smooth continuous data (high-quality DEMs) | No (interpolates) |
-
----
-
-## Choosing the Right Coordinate System
-
-### Decision Framework
-
-```
-Is your analysis global or regional?
-│
-├─ Global → Use WGS84 (EPSG:4326)
-│
-└─ Regional
-   │
-   ├─ Do you need to measure distances/areas?
-   │  │
-   │  ├─ Yes → Use UTM for your zone
-   │  │         or State Plane if in US
-   │  │
-   │  └─ No → WGS84 is fine
-   │
-   └─ What's your existing data in?
-      → Consider matching existing CRS
-        to avoid reprojection errors
-```
-
-### Best Practices
-
-1. **Check your data**: Always verify the CRS of new data
-2. **Project early**: Reproject at the start of your workflow
-3. **Match your region**: Use UTM zone that covers your study area
-4. **Document everything**: Note which CRS you used and why
-5. **Never assume**: Even if data displays correctly, check the CRS!
+You will learn how to reproject vector and raster data into different coordinate systems in [:octicons-arrow-right-24: Lab 3](../labs/lab03.md)
 
 ---
 
@@ -382,16 +330,18 @@ Is your analysis global or regional?
 
 ### Common EPSG Codes
 
-| EPSG Code | Coordinate System | Description |
-|-----------|-------------------|-------------|
-| **4326** | WGS 84 | Geographic, lat/lon, global |
-| **3857** | Web Mercator | Google Maps, OpenStreetMap |
-| **32610** | UTM Zone 10N (WGS84) | Western California, Oregon, Washington |
-| **32611** | UTM Zone 11N (WGS84) | Eastern California, Nevada, Idaho |
-| **26910** | UTM Zone 10N (NAD83) | Same region, NAD83 datum |
-| **2227** | CA State Plane Zone 3 | San Francisco Bay Area |
+| Coordinate System | EPSG Code | Description |
+|-------------------|-----------|-------------|
+| WGS 84 | **4326** | Geographic, lat/lon, global |
+| Web Mercator | **3857** | Google Maps, OpenStreetMap |
+| UTM Zone 10N (WGS84) | **32610** | Western California, Oregon, Washington |
+| UTM Zone 10N (NAD83) | **26910** | Same region, NAD83 datum |
+| CA State Plane Zone 3 | **2227** | San Francisco Bay Area |
 
-Find EPSG codes at: [epsg.io](https://epsg.io)
+!!! tip "Finding EPSG codes"
+    Find information about EPSG codes and find a CRS for your project at [epsg.io](https://epsg.io){:target="_blank"}
+
+    <iframe src="https://epsg.io" width="100%" height="450px" name="EPSG" scrolling="no" style="border: none; border-radius: 10px" loading="lazy" allowfullscreen sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
 
 ---
 
@@ -402,6 +352,7 @@ Find EPSG codes at: [epsg.io](https://epsg.io)
 **Task**: Measure the area of a park in San Luis Obispo
 
 **Solution**:
+
 1. Data comes in WGS84 (EPSG:4326)
 2. Reproject to UTM Zone 10N (EPSG:32610)
 3. Calculate area (result in square meters)
@@ -416,6 +367,7 @@ Find EPSG codes at: [epsg.io](https://epsg.io)
 **Task**: Create an interactive web map
 
 **Solution**:
+
 - Keep data in WGS84 (EPSG:4326) or Web Mercator (EPSG:3857)
 - Most web mapping libraries expect these
 
@@ -428,52 +380,18 @@ Find EPSG codes at: [epsg.io](https://epsg.io)
 **Task**: Compare forests in California and Colorado
 
 **Solution**:
+
 - California: UTM Zone 10N or 11N
 - Colorado: UTM Zone 13N
 - For combined analysis: Reproject both to Albers Equal Area Conic (preserves area for comparison)
 
 **Why**: Equal-area projection preserves size relationships
 
----
-
-## Troubleshooting Common Issues
-
-### "My Layers Don't Align"
-
-**Cause**: Different coordinate systems or datums
-
-**Solution**:
-1. Check CRS of each layer (Layer Properties → Information)
-2. Reproject all to same CRS
-3. Verify they align properly
-
----
-
-### "My Distances are Wrong"
-
-**Cause**: Measuring in geographic coordinates (degrees)
-
-**Solution**:
-- Reproject to projected CRS (UTM, State Plane)
-- Re-measure in appropriate units
-
----
-
-### "Reprojection Failed"
-
-**Cause**: Missing projection files or corrupted data
-
-**Solution**:
-- Verify data isn't corrupted
-- Try different reprojection method
-- Check for required transformation grids
-
----
 
 ## Key Takeaways
 
 <div class="admonition success" markdown>
-<p class="admonition-title">✅ Remember These Points</p>
+<p class="admonition-title"> Remember These Points</p>
 
 1. **No perfect projection** - all projections distort something
 2. **Geographic vs Projected Coordinate Systems** - Geographic uses degrees (lat/lon), Projected uses meters/feet (X/Y)
