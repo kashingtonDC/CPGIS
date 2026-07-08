@@ -25,25 +25,35 @@ This course uses industry-standard GIS software. You'll need to install at least
 3. Run the installer and follow prompts
 4. Default settings are fine for most users
 
-#### Linux
+---
 
-```bash
-# Ubuntu/Debian
-sudo apt-get update
-sudo apt-get install qgis qgis-plugin-grass
+## Installing Plugins
+For this course we will make use of a variety of plugins to add features and tools that QGIS does not include by default. Please follow the following steps to install **QuickMapServices**
 
-# Fedora
-sudo dnf install qgis python3-qgis
+1. Open QGIS
+<div class="grid" markdown>
 
-# Arch
-sudo pacman -S qgis
-```
+<figure markdown>
+  ![Open QGIS 1](../images/getting-started-images/software-setup/open-qgis-1.png)
+</figure>
 
-### Recommended Plugins
+<figure markdown>
+  ![Open QGIS 2](../images/getting-started-images/software-setup/open-qgis-2.png)
+</figure>
+
+</div>
+
+2. In the menubar, navigate to *Plugins -> Manage and Install Plugins* to open the plugin manager ![Manage and Install Plugins](../images/getting-started-images/software-setup/manage-and-install-plugins.png)
+3. Search for "QuickMapServices" in the Plugin manager and select the "NextGIS QuickMapServices" Plugin ![Finding QMS](../images/getting-started-images/software-setup/install-qms.png)
+4. Press the **Install Plugin** button and close the Plugin Manager
+5. Installing the QuickMapServices adds the QMS **toolbar and panel** to your QGIS Workspace
+![QMS Panel and Toolbar](../images/getting-started-images/software-setup/qms-panel-and-toolbar.png)
+
+### Recommended Plugins (Optional)
 
 After installation, install these plugins via **Plugins → Manage and Install Plugins**:
 
-- **QuickMapServices**: Easy basemap access (OpenStreetMap, Google, etc.)
+- **QuickOSM**: Download Open Street Maps data through SQL Queries of feature attributes
 - **QGIS Resource Sharing**: Access to additional resources
 - **Profile Tool**: Elevation profile creation
 - **Point Sampling Tool**: Extract raster values at points
