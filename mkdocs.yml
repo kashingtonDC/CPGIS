@@ -39,6 +39,7 @@ theme:
 
 plugins:
   - search
+  - autorefs
   - awesome-pages
 
 markdown_extensions:
