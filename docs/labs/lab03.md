@@ -92,15 +92,18 @@ This activity will guide you through changing the CRS that your GIS software ren
     6. Repeat step 5 for another CRS of your choice and **take a screenshot**
 
 === "ArcGIS"
-    1. Switch to your prefered basemap by using the **Basemap** button in the Map Ribbon (Screenshots use Light Gray Canvas)
+    1. Switch to your prefered basemap by using the **Basemap** button in the **Map Tab** of the **Ribbon** (Screenshots use Light Gray Canvas) ![ArcGIS Pro task 2 step 1 image](../images/lab-images/lab-03/02-Arc-01.png)
 
-    2. After choosing a basemap, right click the basemap layer (EX: Light Gray Canvas) and click **zoom to layer**
+    2. After choosing a basemap, right click the basemap layer in the **Contents Pane** (EX: Light Gray Canvas) and click **zoom to layer** ![ArcGIS Pro task 2 step 2 image](../images/lab-images/lab-03/02-Arc-02.png)
 
-    3. Notice how your basemap appears, is it warped into the shape of a half-circle or is it rectangular? **take a screenshot**
+    3. Notice how your basemap appears, is it warped into the shape of a half-circle or is it rectangular? Why might it look like this? **take a screenshot** ![ArcGIS Pro task 2 step 3 image](../images/lab-images/lab-03/02-Arc-03.png)
 
-    4. In ArcGIS Pro, the map canvas is renderend based on the settings of the current map. **right click** the Map in the **Contents pane** and select Properties
+    4. In ArcGIS Pro, the map canvas is renderend based on the settings of the current map. **right click** the Map in the **Contents pane** and select **Properties** 
+        
+        - You'll notice that the map defaults to rendering in the CRS of the first layer added, in this case the Open_Space layer was projected to California State Plane System 5, so the map adopted that projection
+    ![ArcGIS Pro task 2 step 4 image](../images/lab-images/lab-03/02-Arc-04.png)
 
-    5. Change the CRS that the Map is rendered in to **UTM Zone 10N** by going to the Coordinate Systems tab and searching for UTM Zone 10N and clicking apply or OK, **take a screenshot**
+    5. Change the CRS that the Map is rendered in to **UTM Zone 10N** by going to the Coordinate Systems tab and searching for UTM Zone 10N and clicking apply or OK, **take a screenshot** ![ArcGIS Pro task 2 step 4 image](../images/lab-images/lab-03/02-Arc-05.png)
 
     6. Repeat step 5 for another CRS of your choice and **take a screenshot**
 
