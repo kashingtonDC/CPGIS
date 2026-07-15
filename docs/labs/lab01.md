@@ -63,17 +63,16 @@ By completing this lab, you will:
 #### Launch ArcGIS Pro
 
 1. Open **ArcGIS Pro** from your applications
-2. Click **Create a new project**
-3. Choose **Map** template
-4. Name your project: `Lab01_FirstMap`
-5. Choose a location (your GIS_Course folder)
+2. Click **Map** in the New Project Ribbon 
+3. Set the save location of your project to the GIS_Course/Labs/Lab 01 folder in your One Drive 
+4. Name your project: `Lab01-FirstMap`
 6. Click **OK**
 
 You should see:
 - **Ribbon** at the top (organized into tabs)
+- **Map view** (center) - where your map displays
 - **Contents pane** (left side) - shows layers
 - **Catalog pane** (right side) - browse data
-- **Map view** (center) - where your map displays
 
 ![ArcGIS Pro Interface](../images/arcgis-interface.png)
 
@@ -86,14 +85,13 @@ You should see:
 Download the lab data package: [Lab01_Data.zip](..lab_data/lab-1/Lab01_Data.zip){:download}
 
 Contents:
+
 - `california_counties.shp` - County boundaries (polygons)
 - `california_cities.shp` - Major cities (points)
 - `california_highways.shp` - Major highways (lines)
 
 !!! tip
     Extract the ZIP file to: `GIS_Course/Labs/Lab01/Data/`
-
----
 
 ### Loading Vector Data
 
