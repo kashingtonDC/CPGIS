@@ -60,7 +60,10 @@ As you work with spatial data, you will often need to ensure that all your layer
     ![ArcGIS Pro task 1 step 2 image](../images/lab-images/lab-03/01-Arc-02.png)
     3. Navigate to the **Source Tab**
     ![ArcGIS Pro task 1 step 3 image](../images/lab-images/lab-03/01-Arc-03.png)
-    4. 
+    4. Expand the Spatial Reference dropdown to see Coordinate Reference System information
+
+    ![ArcGIS Pro Instructions](https://images.squarespace-cdn.com/content/v1/6768a02e151fdc1b51e5903e/741cde06-584a-40ba-97cc-e588f0c9968e/CheckLayerCRS.gif)
+    Animation from [mapping 101 blog](https://www.mapping101.com/skills/arcgispro-identifycrs) by *Meisterlin Projects*
 
 !!! question "Question 1"
     - What is the EPSG code for the CRS of *Open_Spaces.shp* from the Lab 3 Data? 
@@ -77,27 +80,54 @@ This activity will guide you through changing the CRS that your GIS software ren
 === "QGIS"
     1. In your Lab 03 Map, add your preferred basemap using the QuickMapsServices plugin (screenshots use [Positron](https://openmaptiles.org/styles/#positron))
     ![QGIS task 2 step 1 image](../images/lab-images/lab-03/02-Q-01.png)
-    2. Note that QGIS defaults to rendering maps in the CRS of the first layer that was added, so depending on whether you added a basemap or the Open Spaces layer first your map will be rendered in WGS 84 or California Zone 5
-    ![QGIS task 2 step 2 image](../images/lab-images/lab-03/02-Q-02.png)
-    3. Zoom your map out to show the whole area of the basemap. 
-    ![QGIS task 2 step 3 image](../images/lab-images/lab-03/02-Q-03.png)
 
-    
+    2. After adding a basemap, right click the basemap in the **layers panel** and click **zoom to layer** ![QGIS task 2 step 2 image](../images/lab-images/lab-03/02-Q-02.png)
 
+    3. Notice how your basemap appears, is it warped into the shape of a half-circle or is it rectangular? **take a screenshot** ![QGIS task 2 step 3 image](../images/lab-images/lab-03/02-Q-03.png)
+
+    4. In QGIS, the map canvas is rendered using a set CRS that you can inspet and adjust by clicking the EPSG: XXXX indicaor in the **Status Bar** ![QGIS task 2 step 4 image](../images/lab-images/lab-03/02-Q-04.png)
+
+    5. Change the rendering CRS to **UTM Zone 10N** by searching for UTM Zone 10N, and clicking apply or OK, **take a screenshot** ![QGIS task 2 step 5 image](../images/lab-images/lab-03/02-Q-05.png)
+
+    6. Repeat step 5 for another CRS of your choice and **take a screenshot**
 
 === "ArcGIS"
+    1. Switch to your prefered basemap by using the **Basemap** button in the Map Ribbon (Screenshots use Light Gray Canvas)
 
-!!! tip "Map Rendering Differences"
-    Notice how the shape of the continents is distorted depending on which CRS the map is rendered in.
+    2. After choosing a basemap, right click the basemap layer (EX: Light Gray Canvas) and click **zoom to layer**
+
+    3. Notice how your basemap appears, is it warped into the shape of a half-circle or is it rectangular? **take a screenshot**
+
+    4. In ArcGIS Pro, the map canvas is renderend based on the settings of the current map. **right click** the Map in the **Contents pane** and select Properties
+
+    5. Change the CRS that the Map is rendered in to **UTM Zone 10N** by going to the Coordinate Systems tab and searching for UTM Zone 10N and clicking apply or OK, **take a screenshot**
+
+    6. Repeat step 5 for another CRS of your choice and **take a screenshot**
 
 !!! Question "Question 2"
 
     Include 3 screenshots showing what your chosen basemap looks like in the following CRS's
 
-    1. WGS 84
+    1. UTM Zone 10N
     2. California State Plane System Zone 5
     3. Another CRS of your choice
 
+!!! tip "Map Canvas Rendering Differences"
+    In both QGIS and ArcGIS the map canvas is rendered based on the Coordinate Reference System that is set in the **Status Bar** or **Map Properties**. 
+    
+    You may need to adjust how your map is rendered depending on the spatial extend of your data.
+
+
+---
+## Task 3: Reprojecting Vector Data
+
+=== "QGIS"
+    1. 
+
+=== "ArcGIS"
+
+---
+## Task 4: Measuring distances in different projections
 
 ---
 
