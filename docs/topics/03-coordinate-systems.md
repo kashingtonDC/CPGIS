@@ -32,6 +32,10 @@ By the end of this topic, you should be able to:
 
 Think about trying to flatten an orange peel - you'll either tear it, stretch it, or compress it. The same happens when we project Earth's surface onto a flat map.
 
+!
+
+*[Earth Peel by John Nelson](https://www.esri.com/arcgis-blog/products/arcgis-pro/education/earth-peel)*
+
 !!! example "Test Your Understanding"
     Visit [The True Size](https://www.thetruesize.com) to see how map projections distort the size of countries. Try dragging Greenland to the equator - you'll be surprised at how much smaller it actually is!
 

@@ -39,6 +39,7 @@ theme:
 
 plugins:
   - search
+  - autorefs
   - awesome-pages
 
 markdown_extensions:
@@ -77,6 +78,7 @@ nav:
   - Getting Started:
     - Course Overview: getting-started/overview.md
     - Software Setup: getting-started/software-setup.md
+    - Storage and File Management: getting-started/storage-and-file-management.md
     - Resources: getting-started/resources.md
   - Topics:
     - 1. What is GIS?: topics/01-what-is-gis.md
@@ -94,14 +96,6 @@ nav:
     - 13. Advanced Topics: topics/13-advanced-topics.md
     - 14. Modern Mapmaking: topics/14-modern-mapmaking.md
     - 15. Synthesis: topics/15-synthesis.md
-  - Projects:
-    - Overview: projects/overview.md
-    - Project 0 - Thinking Spatially: projects/project0.md
-    - Project 1 - Mapping: projects/project1.md
-    - Project 2 - Vector Analysis: projects/project2.md
-    - Project 3 - Raster Analysis: projects/project3.md
-    - Project 4 - Remote Sensing & Modeling: projects/project4.md
-    - Final Project: projects/final-project.md
   - Labs:
     - Lab Overview: labs/overview.md
     - Lab 1 - First Map: labs/lab01.md
@@ -116,3 +110,12 @@ nav:
     - Lab 10 - Remote Sensing: labs/lab10.md
     - Lab 11 - Interpolation: labs/lab11.md
     - Lab 12 - Workflows: labs/lab12.md
+  - Projects:
+    - Overview: projects/overview.md
+    - Project 0 - Thinking Spatially: projects/project0.md
+    - Project 1 - Mapping: projects/project1.md
+    - Project 2 - Vector Analysis: projects/project2.md
+    - Project 3 - Raster Analysis: projects/project3.md
+    - Project 4 - Remote Sensing & Modeling: projects/project4.md
+    - Final Project: projects/final-project.md
+
