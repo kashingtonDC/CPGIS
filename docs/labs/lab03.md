@@ -184,68 +184,48 @@ In this task you will prepare the SLO Open_Spaces layer to be compared to other 
 
 ## Choosing the Right Coordinate System
 
+It is best practice to reproject your layers into a **common CRS** to ensure that geoprocessing steps are able to run without errors.
+
+But sometimes it can be difficult to decide what CRS is best for your project, the decision framework below can help to answer the question of what CRS to use for your project.
+
 ### Decision Framework
 
+
+```mermaid
+flowchart TD
+    A[What is the extent of your analysis?] --> B{Global, Regional,or Local?}
+
+    B -->|Global| C[Use WGS84EPSG:4326]
+
+    B -->|Regional| F1{Do existing layers already share a CRS?}
+    B -->|Local| F2{Do existing layers already share a CRS?}
+
+    F1 -->|Yes| G1[Use that shared CRS]
+    F1 -->|No| D[Use the appropriate UTM Zone for your area]
+
+    F2 -->|Yes| G2[Use that shared CRS]
+    F2 -->|No| E[Use the local State Plane System zone]
+
+    style A fill:#e8e8e8,stroke:#333,color:#000
+    style B fill:#fff3cd,stroke:#333,color:#000
+    style C fill:#d4edda,stroke:#333,color:#000
+    style D fill:#d1ecf1,stroke:#333,color:#000
+    style E fill:#f8d7da,stroke:#333,color:#000
+    style F1 fill:#fff3cd,stroke:#333,color:#000
+    style F2 fill:#fff3cd,stroke:#333,color:#000
+    style G1 fill:#d4edda,stroke:#333,color:#000
+    style G2 fill:#d4edda,stroke:#333,color:#000
 ```
-Is your analysis global or regional?
-│
-├─ Global → Use WGS84 (EPSG:4326)
-│
-└─ Regional
-   │
-   ├─ Do you need to measure distances/areas?
-   │  │
-   │  ├─ Yes → Use UTM for your zone
-   │  │         or State Plane if in US
-   │  │
-   │  └─ No → WGS84 is fine
-   │
-   └─ What's your existing data in?
-      → Consider matching existing CRS
-        to avoid reprojection errors
-```
-
-### Best Practices
-
-1. **Check your data**: Always verify the CRS of new data
-2. **Project early**: Reproject at the start of your workflow
-3. **Match your region**: Use UTM zone that covers your study area
-4. **Document everything**: Note which CRS you used and why
-5. **Never assume**: Even if data displays correctly, check the CRS!
-
----
-## Troubleshooting Common Issues
-
-### "My Layers Don't Align"
-
-**Cause**: Different coordinate systems or datums
-
-**Solution**:
-1. Check CRS of each layer (Layer Properties → Information)
-2. Reproject all to same CRS
-3. Verify they align properly
 
 ---
 
-### "My Distances are Wrong"
+!!! Tip "Lab Summary"
+    In this lab you practiced:
 
-**Cause**: Measuring in geographic coordinates (degrees)
+    - Identifying the CRS of a layer 
+    - Visually comparing how the same data looks in different projections
+    - Reprojecting vector data into a new CRS 
+    - and 
 
-**Solution**:
-- Reproject to projected CRS (UTM, State Plane)
-- Re-measure in appropriate units
-
----
-
-### "Reprojection Failed"
-
-**Cause**: Missing projection files or corrupted data
-
-**Solution**:
-- Verify data isn't corrupted
-- Try different reprojection method
-- Check for required transformation grids
-
----
 
 [:octicons-arrow-right-24: Return to Lab Overview](overview.md)
