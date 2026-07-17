@@ -124,13 +124,61 @@ This activity will guide you through changing the CRS that your GIS software ren
 ---
 ## Task 3: Reprojecting Vector Data
 
+As you work on GIS projects, you may notice that each layer is in a different projection. For example, each City in California will likely project their Open space layer into their local State Plane System Zone. 
+
+ArcGIS and QGIS can display these layers together with "on-the-fly" reprojections, but you will often run into issues when processing and combining data with different projections.
+
+!!! Tip "Be consistent with Projections"
+    When combining data from multiple sources for analysis it is best to reproject all the data into a common CRS to fit your processing needs
+
+In this task you will prepare the SLO Open_Spaces layer to be compared to other open spaces in Northern California by reprojecting the layer into UTM Zone 10N.
+
 === "QGIS"
-    1. 
+
+    1. Before reprojecting, set your Map Canvas back to **California State Plane Zone 5** by clicking the CRS indicator in the **Status Bar**, searching for **California State Plane Zone 5**, and clicking **OK**
+
+        - This ensures your Map Canvas renders the Open_Spaces layer smoothly
+        ![QGIS task 3 step 1 image](../images/lab-images/lab-03/03-Q-01.png) ![QGIS task 3 step 1-2 image](../images/lab-images/lab-03/03-Q-01-2.png)
+
+    
+    2. In the **Menu Bar**, navigate to **Vector → Data Management Tools → Reproject Layer**
+    ![QGIS task 3 step 2 image](../images/lab-images/lab-03/03-Q-02.png)
+
+    3. In the **Reproject Layer** window, set the following parameters:
+
+        - **Input Layer**: Open_Spaces
+        - **Target CRS**: Click the browse button, search for **UTM Zone 10N**, and select **WGS 84 / UTM zone 10N (EPSG:32610)**
+        - **Reprojected**: Click the **...** button and choose **Save to File...**, then browse to your Lab-03 folder and name the file `Open_Spaces_UTM10N`
+        ![QGIS task 3 step 3 image](../images/lab-images/lab-03/03-Q-03.png) 
+    
+    4. Click **Run**
+
+    5. QGIS will add the new reprojected layer to your map. **Right click** the new `Open_Spaces_UTM10N` layer and select **Properties** ![QGIS task 3 step 5 image](../images/lab-images/lab-03/03-Q-05.png)
+
+    6. Navigate to the **Information Tab** and confirm that the CRS now reads **WGS 84 / UTM zone 10N (EPSG:32610)** **take a screenshot** ![QGIS task 3 step 6 image](../images/lab-images/lab-03/03-Q-06.png)
+
 
 === "ArcGIS"
+    1. Reveal the **Geoprocessing Pane** in your workspace by clicking to tools button in the **Anlaysis Tab ** of the **Ribbon**
+
+    2. Search for the **Project** Tool and input the following parameters:
+        - **Input Dataset**: Open_Spaces
+        - **Output Dataset**: Leave the save location as the **.gdb** and rename the layer to `Open_Spaces_UTM10N`
+        - **Output Coordinate System**: Click the browse button, search for **UTM Zone 10N**, and select **WGS 1984 UTM Zone 10N**
+    ![ArcGIS Pro task 3 step 2 image](../images/lab-images/lab-03/03-Arc-01.png)
+
+    3. Click **Run**
+
+    4. Once the tool finishes, the new layer will be added to your map. **Right click** the `Open_Spaces_UTM10N` layer in the **Contents Pane** and select **Properties**
+
+    5. Navigate to the **Source Tab** and expand the **Spatial Reference** dropdown to confirm the CRS now reads **WGS 1984 UTM Zone 10N** **take a screenshot**
+    ![ArcGIS Pro task 3 step 5 image](../images/lab-images/lab-03/03-Arc-02.png)
+
 
 ---
 ## Task 4: Measuring distances in different projections
+
+
 
 ---
 
