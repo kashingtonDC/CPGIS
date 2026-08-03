@@ -2,7 +2,7 @@
 
 ## Overview
 
-Now that you understand what GIS is, it's time to learn how spatial information is represented and stored in a GIS. This is fundamental to everything else you'll do with GIS!
+Now that you understand what GIS is, it's time to learn how spatial information is represented and stored in a GIS. Understanding spatial data formats is fundamental to everything else you'll do with GIS!
 
 ---
 
@@ -20,52 +20,66 @@ By the end of this topic, you should be able to:
 
 ## Two Fundamental Data Models
 
-GIS represents the real world using two primary data models:
+To represent the Real World in GIS, we must abstract our buildings, roads, environments, and topography into data formats that can be understood by a computer. 
 
-<div class="grid cards" markdown>
+![Representing the Real World](../images/topic-images/topic-02/representing-the-real-world.png)
 
--   **🔷 Vector Data**
+GIS uses two primary data models to represent data:
 
-    ---
-    
-    Discrete features with defined boundaries
-    
-    - Exact locations and shapes
-    - Good for distinct objects
-    - Examples: buildings, roads, boundaries
-    
--   **🟦 Raster Data**
+1. **Vector Data**
+Discrete features with defined boundaries
 
-    ---
+    - Distinct objects, or **features** are represented with exact locations and shapes
+    - Can add attributes to categorize each feature
+    - Examples: buildings, roads, or administrative boundaries
     
-    Continuous surfaces as a grid of cells
-    
-    - Each cell has a value
-    - Good for phenomena that vary continuously
-    - Examples: elevation, temperature, rainfall
+2. **Raster Data**
+Continuous surfaces as a grid of cells
 
-</div>
+    - Data is split into **cells** that each have a value
+    - Ideal for representing conditions across a large area
+    - Examples: elevation, temperature, or rainfall
 
 Think of it this way:
-- **Vector** = Drawing with pens (crisp lines and points)
-- **Raster** = Painting with pixels (grid of colors)
 
-![Vector vs Raster Comparison](../images/topics/vector-vs-raster-comparison.png)
-*Figure: Comparison of vector and raster data models representing the same landscape*
+- **Vector** = Drawing with pens to create precise lines and points
+- **Raster** = A tile mosaic with different shades and hues
+
+!!! tip "Test your Knowledge"
+    In the image below, **Which data format do each of the layers use?**
+
+    ![Representing the Real World with Customers, streets, parcels, elevation, and land usage](../images/topic-images/topic-02/representing-the-real-world.png){ width=250 align=left}
+
+    | Layer | Data Type|
+    |-------|----------|
+    | Customers | Vector (point) |
+    | Streets | Vector (line or polygon) |
+    | Parcels | Vector (polygon) |
+    | Elevation | Raster (continuous) |
+    | Land Usage | Raster (discrete) |
+
+    
 
 ---
 
 ## Vector Data Model
 
-Vector data represents geographic features using **geometric primitives**: points, lines, and polygons.
+Vector data represents geographic features using [**geometric primitives**](https://en.wikipedia.org/wiki/Geometric_primitive): points, lines, and polygons. Each feature in a vector dataset can be categorized using **attributes** to add information about the qualities of each shape.
 
-### The Three Geometry Types
+![Vector Geometry Types](../images/topic-images/topic-02/vector-geometry-types.png){width=300}
 
-#### 1. Points 📍
-Represent discrete locations with X, Y (and sometimes Z) coordinates.
+Vector Data is Represented with 3 main geometry types:
 
-**Use Cases:**
-- Cities and towns
+**1. Points:** Represent discrete locations with X, Y (and sometimes Z) coordinates.
+
+**2. Lines:** Sequences of connected points forming paths or linear features. 
+
+**3. Polygons:** Closed shapes representing areas, defined by connected lines.
+
+### Points
+
+**Used for:**
+
 - Sampling locations
 - GPS waypoints
 - Trees in an inventory
@@ -73,74 +87,55 @@ Represent discrete locations with X, Y (and sometimes Z) coordinates.
 - Weather stations
 
 !!! example "Real World Point Data"
-    A dataset of coffee shops where each point has:
+    A dataset of coffee shops on Yelp where each point has:
     
-    - **Geometry**: Latitude/Longitude coordinates
+    - **Geometry**: Latitude/Longitude coordinates for each shop location
     - **Attributes**: Shop name, hours, rating, price level
 
----
 
-#### 2. Lines (Polylines) 📏
+### Lines
+
 Sequences of connected points forming paths or linear features.
 
 **Use Cases:**
+
 - Roads and highways
 - Rivers and streams
 - Power lines
 - Trails
-- Flight paths
 - Political boundaries (when shown as lines)
 
 !!! example "Real World Line Data"
-    A roads dataset where each line has:
+    A roads dataset for google maps where each line has:
     
     - **Geometry**: Series of coordinate pairs forming the road centerline
     - **Attributes**: Road name, speed limit, number of lanes, surface type
 
----
-
-#### 3. Polygons 📐
+### Polygons
 Closed shapes representing areas, defined by connected lines.
 
 **Use Cases:**
+
 - Parcel boundaries
 - Lakes and water bodies
-- Forest stands
-- Zip codes
+- Census Tracts
 - Land use zones
 - Building footprints
-- Political boundaries (when shown as areas)
+- Administrative boundaries 
 
 !!! example "Real World Polygon Data"
     A land parcels dataset where each polygon has:
     
-    - **Geometry**: Coordinates defining the property boundary
+    - **Geometry**: Coordinates defining the property boundary of each parcel
     - **Attributes**: Parcel ID, owner, area, zoning, assessed value
 
----
 
-### Topology: Spatial Relationships
+### Vector Data Formats:
 
-Vector data can encode **topology** - the spatial relationships between features:
+**File formats:** .gpkg, .geojson, .dwg, .kml, .shp(.shx, .dbf, .prj, etc.)
 
-**Key Topological Concepts:**
-
-- **Connectivity**: Which features are connected?
-  <br>*Example: Which roads intersect at this junction?*
-
-- **Adjacency**: Which features are next to each other?
-  <br>*Example: Which parcels share a boundary?*
-
-- **Containment**: Which features are inside others?
-  <br>*Example: Which points fall within this polygon?*
-
-!!! warning "Topology Errors"
-    Common topology problems to avoid:
-    
-    - **Gaps**: Unwanted space between polygons
-    - **Overlaps**: Polygons covering the same area
-    - **Slivers**: Thin polygons from imperfect digitizing
-    - **Dangles**: Lines that don't connect properly
+!!! warning "Note for Shapfiles"
+    It is important to know that Shapefiles require 4 or more sepearate files to open in GIS. You will need to save the 
 
 ---
 
@@ -148,93 +143,65 @@ Vector data can encode **topology** - the spatial relationships between features
 
 Raster data divides space into a regular **grid of cells (pixels)**, where each cell contains a value.
 
+![Raster Data Representation](../images/topic-images/topic-2/raster-data-representation.png)
+
+**File Formats:** .tiff, .tif, .bmp, etc.
+
 ### Key Raster Concepts
 
 **Cell Size (Spatial Resolution)**
-<br>The ground area covered by one pixel
-<br>*Examples: 30m (Landsat), 10m (Sentinel), 1m (lidar)*
+
+The ground area covered by one pixel
+*Examples: 30m (Landsat), 10m (Sentinel), 1m (lidar)*
 
 **Extent**
-<br>The geographic area covered by the entire grid
+The geographic area covered by the entire grid
 
 **Value/DN (Digital Number)**
-<br>The data stored in each cell
-<br>*Could represent elevation, temperature, reflectance, land cover class, etc.*
+
+The data stored in each cell
+*Could represent elevation, temperature, reflectance, land cover class, etc.*
+
+![Key Raster Concepts](../images/topic-images/topic-02/key-raster-concepts.png)
 
 ### Raster Data Types
 
-| Type | Description | Example |
-|------|-------------|---------|
-| **Integer** | Whole numbers only | Land cover classes (1=forest, 2=water, etc.) |
-| **Float** | Decimal numbers | Elevation (1456.23 meters) |
-| **Binary** | 0 or 1 only | Burned area (0=unburned, 1=burned) |
+Raster data can either represent **continuous or discrete** phenomena.
 
-### Continuous vs. Discrete Rasters
+For example, the picture below shows a map of the NDVI or Normalized difference vegetation index of LA County. The more red an area is, the more living vegetation was detected there at the time the image was captured.
 
-**Continuous Rasters** 🌊
-<br>Values change gradually across space
+![NDVI Example](../images/topic-images/topic-02/NDVI-example.png)
 
-- Elevation
-- Temperature
-- Rainfall
-- Slope
-- Soil pH
+In this case, the rater represents a continuous data type, because each pixel is more or less red depending on how much vegetation is present.
 
-**Discrete (Categorical) Rasters** 📊
-<br>Values represent distinct classes
-
-- Land cover types
-- Soil types
-- Zones
-- Boolean (yes/no) masks
+| Type | Description | Discrete or Continuous |Example | 
+|------|-------------|-----------|---------|
+| **Integer** | Whole numbers only | Discrete |Soil Types, Land cover classes (1=forest, 2=water, etc.) |
+| **Float** | Decimal numbers | Continuous | Elevation, Temperature, Soil pH |
+| **Binary** | 0 or 1 only | Discrete | Burned area (0=unburned, 1=burned) |
 
 ---
 
 ## Vector vs. Raster: When to Use Each?
 
-<table>
-<tr>
-<th>Aspect</th>
-<th>Vector</th>
-<th>Raster</th>
-</tr>
-<tr>
-<td><strong>Best For</strong></td>
-<td>Discrete features with clear boundaries</td>
-<td>Continuous phenomena and surfaces</td>
-</tr>
-<tr>
-<td><strong>Precision</strong></td>
-<td>Exact locations and shapes</td>
-<td>Limited by cell size</td>
-</tr>
-<tr>
-<td><strong>File Size</strong></td>
-<td>Generally smaller (for simple features)</td>
-<td>Can be very large (high resolution)</td>
-</tr>
-<tr>
-<td><strong>Analysis</strong></td>
-<td>Better for topology and networks</td>
-<td>Better for surface analysis and modeling</td>
-</tr>
-<tr>
-<td><strong>Examples</strong></td>
-<td>Roads, parcels, administrative boundaries</td>
-<td>Elevation, satellite imagery, climate surfaces</td>
-</tr>
-<tr>
-<td><strong>Editing</strong></td>
-<td>Individual features easily edited</td>
-<td>Must edit cell by cell</td>
-</tr>
-</table>
+![When to Use Each](../images/topic-images/topic-02/when-to-use-each.png)
+
+| Aspect | Vector | Raster |
+|---|---|---|
+| **Best For** | Discrete features with clear boundaries | Continuous phenomena and surfaces |
+| **Precision** | Exact locations and shapes | Limited by cell size |
+| **File Size** | Generally smaller (for simple features) | Can be very large (high resolution) |
+| **Analysis** | Better for topology and networks | Better for surface analysis and modeling |
+| **Examples** | Roads, parcels, administrative boundaries | Elevation, satellite imagery, climate surfaces |
+| **Editing** | Individual features easily edited | Must edit cell by cell |
 
 !!! tip "You Can Convert Between Models"
     - **Vector → Raster**: "Rasterizing" - assigns cell values based on vector attributes
     - **Raster → Vector**: "Vectorizing" - creates features from cell patterns
     
-    Each conversion involves trade-offs!
+    ![Converting between Raster and Vector](../images/topic-images/topic-02/vector-to-raster-conversion.png)
+
+    Each time you convert between raster and vector, some data will be lost. You must use your judgement to weight the trade-offs!
 
 ---
 
@@ -245,7 +212,8 @@ Both vector and raster data can have associated **attribute data** - information
 ### Vector Attribute Tables
 
 Each row = one feature (point, line, or polygon)
-<br>Each column = one attribute
+
+Each column = one attribute
 
 **Example: City Points Attribute Table**
 
@@ -275,44 +243,6 @@ For **categorical rasters**, each unique value can have attributes:
 | 2 | Grassland | Open grassland | Light green |
 | 3 | Urban | Developed areas | Gray |
 | 4 | Water | Water bodies | Blue |
-
----
-
-## Common Spatial Data Formats
-
-### Vector Formats
-
-| Format | Extension | Description | When to Use |
-|--------|-----------|-------------|-------------|
-| **Shapefile** | .shp (+ .shx, .dbf, .prj) | ESRI's legacy format | Widely compatible, but limited |
-| **GeoJSON** | .geojson | JSON-based, human-readable | Web mapping, lightweight |
-| **GeoPackage** | .gpkg | Modern SQLite-based format | Replace shapefiles! Single file. |
-| **KML/KMZ** | .kml, .kmz | Google Earth format | Sharing on Google Earth/Maps |
-| **File Geodatabase** | .gdb | ESRI's modern format | Complex datasets, topologies |
-
-!!! danger "Shapefile Limitations"
-    Shapefiles are old (1990s) and have major limitations:
-    
-    - Field names limited to 10 characters
-    - No fields > 255 characters
-    - No date+time (just date)
-    - Multiple files (.shp, .shx, .dbf, .prj, etc.)
-    - File size limit: 2GB
-    
-    **Use GeoPackage (.gpkg) instead!**
-
-### Raster Formats
-
-| Format | Extension | Description | When to Use |
-|--------|-----------|-------------|-------------|
-| **GeoTIFF** | .tif, .tiff | TIFF with georeferencing | Industry standard, preserves all info |
-| **ERDAS Imagine** | .img | Common remote sensing format | Satellite/aerial imagery |
-| **NetCDF** | .nc | Multi-dimensional arrays | Climate data, ocean data |
-| **HDF** | .hdf | Hierarchical Data Format | NASA satellite products |
-| **JPEG2000** | .jp2 | Compressed imagery | When file size matters |
-
-!!! warning "Avoid Regular JPEG and PNG"
-    Standard .jpg and .png images lose georeferencing! Always use GeoTIFF for spatial rasters.
 
 ---
 
@@ -418,14 +348,9 @@ Map Document
 ```
 
 **Layer Order Matters!**
-<br>Top layers draw over bottom layers (like sheets of paper)
 
----
+Top layers draw over bottom layers (like sheets of paper)
 
-## Visual Example: Vector vs. Raster
-
-![Vector vs Raster Comparison](../images/vector-vs-raster.png)
-*Left: Vector representation with crisp boundaries. Right: Raster representation as a grid.*
 
 ---
 
