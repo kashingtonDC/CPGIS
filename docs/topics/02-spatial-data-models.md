@@ -68,6 +68,10 @@ Vector data represents geographic features using [**geometric primitives**](http
 
 ![Vector Geometry Types](../images/topic-images/topic-02/vector-geometry-types.png){width=300}
 
+**File formats:** .gpkg, .geojson, .dwg, .kml, .shp(.shx, .dbf, .prj, etc.)
+
+
+### Vector Geometry
 Vector Data is Represented with 3 main geometry types:
 
 **1. Points:** Represent discrete locations with X, Y (and sometimes Z) coordinates.
@@ -129,21 +133,13 @@ Closed shapes representing areas, defined by connected lines.
     - **Geometry**: Coordinates defining the property boundary of each parcel
     - **Attributes**: Parcel ID, owner, area, zoning, assessed value
 
-
-### Vector Data Formats:
-
-**File formats:** .gpkg, .geojson, .dwg, .kml, .shp(.shx, .dbf, .prj, etc.)
-
-!!! warning "Note for Shapfiles"
-    It is important to know that Shapefiles require 4 or more sepearate files to open in GIS. You will need to save the 
-
 ---
 
 ## Raster Data Model
 
 Raster data divides space into a regular **grid of cells (pixels)**, where each cell contains a value.
 
-![Raster Data Representation](../images/topic-images/topic-2/raster-data-representation.png)
+![Raster Data Representation](../images/topic-images/topic-02/raster-data-representations.png)
 
 **File Formats:** .tiff, .tif, .bmp, etc.
 
@@ -174,6 +170,8 @@ For example, the picture below shows a map of the NDVI or Normalized difference 
 
 In this case, the rater represents a continuous data type, because each pixel is more or less red depending on how much vegetation is present.
 
+
+**Raster Data Storage Formats**s
 | Type | Description | Discrete or Continuous |Example | 
 |------|-------------|-----------|---------|
 | **Integer** | Whole numbers only | Discrete |Soil Types, Land cover classes (1=forest, 2=water, etc.) |
@@ -250,18 +248,19 @@ For **categorical rasters**, each unique value can have attributes:
 
 ### Single File vs. Multiple Files
 
-**Single File Formats** ✅
-- GeoPackage (.gpkg)
-- GeoTIFF (.tif)
-- GeoJSON (.geojson)
-- File Geodatabase (.gdb folder)
+When saving data, many file formats save vector features layers and raster layers as one file. It is best to use these file formats, but you may runinto shapefiles that require 5 different files to work properly.
 
-**Multiple File Formats** ⚠️
-- Shapefile (requires .shp, .shx, .dbf, .prj minimum)
-- ERDAS Imagine (.img + .ige auxiliary)
+| File Structure | Format | Extension(s) | Layer Type |
+|---|---|---|---|
+| Single File | GeoPackage | `.gpkg` | Vector |
+| Single File | GeoTIFF | `.tif` | Raster |
+| Single File | GeoJSON | `.geojson` | Vector |
+| Single File | File Geodatabase | `.gdb` (folder) | Vector & Raster |
+| Multiple Files | Shapefile | `.shp`, `.shx`, `.dbf`, `.prj` (minimum) | Vector |
+| Multiple Files | ERDAS Imagine | `.img` + `.ige` (auxiliary) | Raster |
 
-!!! tip "Best Practice"
-    Always use formats that keep everything together! It's much easier to share, back up, and manage.
+!!! warning "Note for Shapfiles"
+    It is important to know that Shapefiles require 4 or more sepearate files to open in GIS. You will need to keep all 4 of those file together to avoid errors.
 
 ### Compression
 
@@ -286,6 +285,7 @@ For analysis, always use lossless compression!
 - **How**: Collection methods, accuracy
 
 Good metadata is essential for:
+
 - Understanding data limitations
 - Proper use of data
 - Reproducibility
@@ -301,6 +301,7 @@ Understanding whether your data represents **discrete** or **continuous** phenom
 **Definition**: Features with defined boundaries and distinct identities
 
 **Examples:**
+
 - Buildings
 - Roads
 - Political boundaries
@@ -312,6 +313,7 @@ Understanding whether your data represents **discrete** or **continuous** phenom
 **Definition**: Features that vary smoothly across space without clear boundaries
 
 **Examples:**
+
 - Elevation
 - Temperature
 - Air pollution
@@ -334,30 +336,10 @@ Some phenomena can be represented either way:
 
 ---
 
-## Layers: Organizing Spatial Data
-
-In GIS software, different datasets are managed as **layers** that can be turned on/off and reordered:
-
-```
-Map Document
-├── Roads (vector lines)
-├── Buildings (vector polygons)
-├── Tree points (vector points)
-├── Elevation (raster)
-└── Satellite imagery (raster)
-```
-
-**Layer Order Matters!**
-
-Top layers draw over bottom layers (like sheets of paper)
-
-
----
-
 ## Key Takeaways
 
 <div class="admonition success" markdown>
-<p class="admonition-title">✅ Remember These Points</p>
+<p class="admonition-title"> Remember These Points</p>
 
 1. **Two data models**: Vector (discrete features) and Raster (grid cells)
 2. **Three vector types**: Points, lines, polygons - each suited for different features
