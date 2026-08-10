@@ -21,7 +21,7 @@
 
 ## Introduction
 
-In this lab you will explore data from Cal Poly's [Swanton Pacific Ranch](https://spranch.calpoly.edu/) (SPR) to learn the basics of loading and using the attribute table for vector data in GIS. 
+In this lab you will explore data from Cal Poly's [Swanton Pacific Ranch](https://spranch.calpoly.edu/) (SPR) to learn the basics of loading vector data and using attribute tables to explore, visualize, and subset data in GIS. 
 
 !!! note "Placeholder Learning Objectives"
     This lab is under development. It will cover:
@@ -31,8 +31,9 @@ In this lab you will explore data from Cal Poly's [Swanton Pacific Ranch](https:
     - Basic layer Symbology
     - Selecting features by attribute
     - Selecting features by location
-    - Adding and calculating fields
     - Exporting selected features
+
+    - Adding and calculating fields
 
 ---
 
@@ -40,25 +41,25 @@ In this lab you will explore data from Cal Poly's [Swanton Pacific Ranch](https:
 
 === "QGIS"
 
-    1. In the **Browser Panel** of your Lab-02 QGIS Project, navigate to the GIS_Courses/Labs/Lab-02 folder in your one drive. 
-    ![Task 1 Step 1 Image](../images/lab-images/lab-02/01-Q-01)
+    1. In the **Browser Panel** of your Lab-02 QGIS Project, navigate to the GIS_Courses/Labs/Lab-02 folder in your One Drive. 
+    ![Task 1 Step 1 Image](../images/lab-images/lab-02/01-Q-01.png)
 
-    2. In the **Browser Panel**, expand the SPR_Data folder from the lab data folder you downloaded and unzipped. 
-    ![Task 1 Step 2 Image](../images/lab-images/lab-02/01-Q-02)
+    2. In the **Browser Panel**, expand the SPR_Data folder from the lab data folder you downloaded and unzipped. Select all the .geojson files by **clicking the top item** and then **holding shift and clicking the bottom item**.
+    ![Task 1 Step 2 Image](../images/lab-images/lab-02/01-Q-02.png)
 
-    3. Select all the files within the SPR_Data folder. 
-    ![Task 1 Step 3 Image](../images/lab-images/lab-02/01-Q-03)
+    3. Add all the layers by dragging them onto the map canvas, or by right clicking and choosing **Add Selected Layers to Project**.
+    ![Task 1 Step 3 Image](../images/lab-images/lab-02/01-Q-03.png)
 
-    4. Add all the layers to your map by dragging them to map canvas or layers panel, or simply by double clicking.
-    ![Task 1 Step 4 Image](../images/lab-images/lab-02/01-Q-04)
+    4. Press **Add Layers** if prompted
+    ![Task 1 Step 4 Image](../images/lab-images/lab-02/01-Q-04.png)
 
-    5. The layer should now appear in the **Layers Panel** and the data is on the map canvas.
-    ![Task 1 Step 5 Image](../images/lab-images/lab-02/01-Q-05)
+    5. The layer should now appear in the **Layers Panel** and the data is on the **map canvas**.
+    ![Task 1 Step 5 Image](../images/lab-images/lab-02/01-Q-05.png)
 
 
 === "ArcGIS"
 
-    1. 
+  
 
 !!! Question "Question 1"
     
@@ -79,54 +80,56 @@ In this lab you will explore data from Cal Poly's [Swanton Pacific Ranch](https:
 
 The data for this lab is all vector data, but their geometry types are not all the same. 
 
-Layers such *sprSprings* and *sprFlumes* are points, while the *waterlines* and *sprRailroads* layers are lines. The *sprLanduse* and *sprParcels* layers represent the polygon geometry.
+Layers such *sprSprings* and *sprFlumes* are **points**, while the *waterlines* and *sprRailroads* layers are **lines**. The *sprLanduse* and *sprParcels* layers represent the **polygon** geometry.
 
-In this Task, we will explore how vector data stores information about features and use symbology to show those attributes on a map.
+In this Task, we will explore how vector data stores information about features and use **symbology** to show those attributes on a map.
 
 ### Exploring Vector Data
 
 === "QGIS"
 
-    1. With all the SRP layers added, some are not visible because they are under other layers. 
-    ![Task 2 Step 1 Image](../images/lab-images/lab-02/02-Q-01)
+    1. With all the SRP layers added, some are not visible because they are under other layers. You can use the **checkboxes** in the **layers panel** to hide and show layers
+    ![Task 2 Step 1 Image](../images/lab-images/lab-02/02-Q-01.png)
 
-    2. In the layers panel, you can use the checkbox to hide and show layers, and click and drag layers to change the drawing order. 
-    ![Task 2 Step 2 Image](../images/lab-images/lab-02/02-Q-02)
+    2. **Click and drag** layers in the **layers panel** to change the drawing order. 
+    ![Task 2 Step 2 Image](../images/lab-images/lab-02/02-Q-02.png)
 
     3. For this activity, we wil use **sprFlumes**, **sprStreams**, and **sprLanduse**. Hide all other layers and reorder these three layers in this order so that all of the data is visible.
-    ![Task 2 Step 3 Image](../images/lab-images/lab-02/02-Q-03)
+    ![Task 2 Step 3 Image](../images/lab-images/lab-02/02-Q-03.png)
 
-    4. To explore the attributes of vector data, you can switch to the **identify features** tool by clicking the tool in the tool bar or by pressing **i** on your keyboard.
-    ![Task 2 Step 4 Image](../images/lab-images/lab-02/02-Q-04)
+    4. To explore the attributes of vector data, you can switch to the **identify features** tool by clicking the tool in the tool bar or by pressing **shift, command/ctl, i** on your keyboard.
+    ![Task 2 Step 4 Image](../images/lab-images/lab-02/02-Q-04.png)
 
     5. Select the **sprLanduse** layer in the **layers panel** and then click one of the polygons to see its attributes. Explore some of the polygons in the sprLanduse layer.
-    ![Task 2 Step 5 Image](../images/lab-images/lab-02/02-Q-05)
+    ![Task 2 Step 5 Image](../images/lab-images/lab-02/02-Q-05.png)
 
-    6. Press the **P** key on your keyboard or select the Hand icon in the toolbar to switch back to the default pan tool QGIS.
-    ![Task 2 Step 6 Image](../images/lab-images/lab-02/02-Q-06)
+    6. Select the **Hand icon** in the **toolbar** to switch back to the default pan tool QGIS.
+    ![Task 2 Step 6 Image](../images/lab-images/lab-02/02-Q-06.png)
 
 === "ArcGIS"
 
+    
+
 ### Symbolizing Vector Data
 
-Now that you have used the identify tool to see the Land Use classification of a few parcels at Swanton, you will now learn how to use **symbology** to change the colors of the polygons based on their landuse classification
+Now that you have used the **identify tool** to see the Land Use classification of a few parcels at Swanton, you will now learn how to use **symbology** to change the colors of the polygons based on their landuse classification
 
 === "QGIS"
 
     7. Open the properties window fro the sprLanduse layer by right clicking and selecting Properties. 
-    ![Task 2 Step 7 Image](../images/lab-images/lab-02/02-Q-07)
+    ![Task 2 Step 7 Image](../images/lab-images/lab-02/02-Q-07.png)
 
     8. Select the **symbology tab** in the properties pane.
-    ![Task 2 Step 8 Image](../images/lab-images/lab-02/02-Q-08)
+    ![Task 2 Step 8 Image](../images/lab-images/lab-02/02-Q-08.png)
 
     9. QGIS defaults to Single Symbol symbology, but to show land use categories switch to Categorized
-    ![Task 2 Step 9 Image](../images/lab-images/lab-02/02-Q-09)
+    ![Task 2 Step 9 Image](../images/lab-images/lab-02/02-Q-09.png)
 
     10. Then in the value section select the LUtype field and then press classify.
-    ![Task 2 Step 10 Image](../images/lab-images/lab-02/02-Q-10)
+    ![Task 2 Step 10 Image](../images/lab-images/lab-02/02-Q-10.png)
 
     11. Press Apply or OK and see how the symbology of the sprLanduse layer has changed to show the Land Use categories.
-    ![Task 2 Step 11 Image](../images/lab-images/lab-02/02-Q-11)
+    ![Task 2 Step 11 Image](../images/lab-images/lab-02/02-Q-11.png)
 
 === "ArcGIS"
 
