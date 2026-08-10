@@ -59,7 +59,20 @@ In this lab you will explore data from Cal Poly's [Swanton Pacific Ranch](https:
 
 === "ArcGIS"
 
-  
+    1. In the Catalog Pane, expand **Folders** and connect to your Lab-02 folder if it is not already listed. Right click **Folders** and choose **Add Folder Connection**, then browse to GIS_Courses/Labs/Lab-02 in your OneDrive.
+    ![Task 1 Step 1 Image](../images/lab-images/lab-02/01-Arc-01.png)
+
+    2. Expand the SPR_Data folder from the lab data you downloaded.
+    ![Task 1 Step 2 Image](../images/lab-images/lab-02/01-Arc-02.png)
+
+    3. Select all the files within the SPR_Data folder by clicking the first file, holding **Shift**, and clicking the last file.
+    ![Task 1 Step 3 Image](../images/lab-images/lab-02/01-Arc-03.png)
+
+    4. Add all the selected layers to your map by dragging them onto the map canvas, or by right clicking the selection and choosing **Add To Current Map**.
+    ![Task 1 Step 4 Image](../images/lab-images/lab-02/01-Arc-04.png)
+
+    5. The layers should now appear in the **Contents Pane** and the data will appear on the map canvas.
+    ![Task 1 Step 5 Image](../images/lab-images/lab-02/01-Arc-05.png)
 
 !!! Question "Question 1"
     
@@ -94,7 +107,7 @@ In this Task, we will explore how vector data stores information about features 
     2. **Click and drag** layers in the **layers panel** to change the drawing order. 
     ![Task 2 Step 2 Image](../images/lab-images/lab-02/02-Q-02.png)
 
-    3. For this activity, we wil use **sprFlumes**, **sprStreams**, and **sprLanduse**. Hide all other layers and reorder these three layers in this order so that all of the data is visible.
+    3. For this activity, we wil use **sprFlumes**, **sprStreams**, and **sprLanduse**. Hide all other layers and reorder these three layers in this order so that all of the data is visible (points on top, then lines, then polygons on the bottom).
     ![Task 2 Step 3 Image](../images/lab-images/lab-02/02-Q-03.png)
 
     4. To explore the attributes of vector data, you can switch to the **identify features** tool by clicking the tool in the tool bar or by pressing **shift, command/ctl, i** on your keyboard.
@@ -108,6 +121,23 @@ In this Task, we will explore how vector data stores information about features 
 
 === "ArcGIS"
 
+    1. With all the SPR layers added, some are not visible because they are underneath other layers. In the **Contents Pane**, use the checkbox next to each layer to hide and show layers.
+    ![Task 2 Step 1 Image](../images/lab-images/lab-02/02-A-01.png)
+
+    2. Click and drag layers up or down in the **Contents Pane** to change the drawing order.
+    ![Task 2 Step 2 Image](../images/lab-images/lab-02/02-A-02.png)
+
+    3. For this activity, we will use **sprFlumes**, **sprStreams**, and **sprLanduse**. Hide all other layers and reorder these three layers so that all of the data is visible (points on top, then lines, then polygons on the bottom).
+    ![Task 2 Step 3 Image](../images/lab-images/lab-02/02-A-03.png)
+
+    4. To explore the attributes of vector data, select the **Explore** tool (the cursor icon) on the **Map** tab of the ribbon.
+    ![Task 2 Step 4 Image](../images/lab-images/lab-02/02-A-04.png)
+
+    5. Click one of the features on the map, a pop-up will appear showing that feature's attributes. Explore the attributes of a few different polygons in the sprLanduse layer.
+    ![Task 2 Step 5 Image](../images/lab-images/lab-02/02-A-05.png)
+
+    6. Click the **Explore** tool again, or press **Esc**, to close the pop-up and return to normal navigation (panning/zooming is always active with the Explore tool selected).
+    ![Task 2 Step 6 Image](../images/lab-images/lab-02/02-A-06.png)
     
 
 ### Symbolizing Vector Data
