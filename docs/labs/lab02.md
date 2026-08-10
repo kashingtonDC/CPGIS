@@ -2,8 +2,8 @@
 
 !!! info "Lab Overview"
     **Topic**: Vector Data and Attributes
-    <br>**Time Required**: 2-3 hours
-    <br>**Software**: QGIS or ArcGIS Pro
+    **Time Required**: 2-3 hours
+    **Software**: QGIS or ArcGIS Pro
 
 ---
 
@@ -12,9 +12,9 @@
 
 1. Download the lab data from Google Drive using the link above
 2. Place the data in a new folder in your OneDrive for this lab ~/OneDrive/GIS_Courses/Labs/Lab-02. 
-3. Unzip the Data file. 
-    -On windows, right click the SPR_data.zip file and choose "Extract All". 
-    -On mac, double click the .zip file to extract.
+3. Unzip the Data file.
+    - On windows, right click the SPR_data.zip file and choose "Extract All". 
+    - On mac, double click the .zip file to extract.
 4. Create a new map project in QGIS or ArcGIS and save it to your Lab-02 folder
 
 ---
@@ -23,8 +23,8 @@
 
 In this lab you will explore data from Cal Poly's [Swanton Pacific Ranch](https://spranch.calpoly.edu/) (SPR) to learn the basics of loading vector data and using attribute tables to explore, visualize, and subset data in GIS. 
 
-!!! note "Placeholder Learning Objectives"
-    This lab is under development. It will cover:
+!!! note "Learning Objectives"
+    Doing this lab will help you learn how to:
     
     - Loading different vector geometry types
     - Exploring attribute tables
@@ -32,8 +32,6 @@ In this lab you will explore data from Cal Poly's [Swanton Pacific Ranch](https:
     - Selecting features by attribute
     - Selecting features by location
     - Exporting selected features
-
-    - Adding and calculating fields
 
 ---
 
@@ -196,16 +194,33 @@ In this activity you will select all the sprLanduse polygons that are classified
 === "QGIS"
 
     1. Open the attribute table for the **sprLanduse** layer by either right clicking the layer and selecting **Open attribute table** or by **selecting the layer** in the **layers panel** and clicking the **Attribute Table button** in the toolbar.
+    ![Task 3 Step 1 Image](../images/lab-images/lab-02/03-Q-01.png)
 
-    2. The Attribute table shows all data for for the included attribute fields for each feature. The **rows** in the attribute table **correspond to each feature** (point, line, or polygon) from the layer.
+    - The Attribute table shows all data for for the included attribute fields for each feature. The **rows** in the attribute table **correspond to each feature** (point, line, or polygon) from the layer.
 
-    3. You can select features manually by either selecting the row label number in the attribute table, or by using the **Select features by Area** tool in the toolbar and clicking features on the map canvas
+    2. Dock the Attribute Table by selecting the Dock Attribute Table Button in the Attribute Table Ribbon Toolbar
+    ![Task 3 Step 2 Image](../images/lab-images/lab-02/03-Q-02.png)
+
+    3. You can select features manually by either selecting the row label number in the attribute table, or by using the **Select features by Area** tool in the toolbar and clicking features on the map canvas.
+    ![Task 3 Step 3 Image](../images/lab-images/lab-02/03-Q-03.png)
 
     4. You can **select multiple features** by holding **command/control** or **shift** while clicking in the attribute table or with the electing the row label number in the attribute table, or by using the **Select features by Area** tool
+    ![Task 3 Step 4 Image](../images/lab-images/lab-02/03-Q-04.png)
 
     5. Selected features will appear with a yellow and you can use the tool in the map navigation toolbar to Pan or Zoom to the selected features
+    ![Task 3 Step 5 Image](../images/lab-images/lab-02/03-Q-05.png)
 
 === "ArcGIS"
+
+    1. Open the attribute table for the **sprLanduse** layer by either right clicking the layer in the Contents Pane and selecting **Attribute Table**, or by selecting the layer and clicking the **Attribute Table** button on the **Data** tab of the ribbon.
+
+    2. The Attribute Table shows all the data for the included attribute fields for each feature. The **rows** in the attribute table **correspond to each feature** (point, line, or polygon) in the layer.
+
+    3. You can select features manually by clicking the gray row selector on the left side of a row in the attribute table, or by using the **Select** tool on the **Map** tab and clicking features on the map canvas.
+
+    4. You can **select multiple features** by holding **Ctrl** while clicking additional rows in the attribute table, or by holding **Shift** while clicking features on the map canvas with the **Select** tool.
+
+    5. Selected features will highlight in **blue** on the map and in the attribute table. Use **Zoom To Selection** (right click the layer → Selection → Zoom To Selected) to view the selected features.
 
 !!! tip "Manual Selections are Time Consuming"
     You could manually select each of the polygons that are the Forests on the map canvas attribute table to complete the task. But, that would be time consuming and imprecise process and there is an easier way!
@@ -214,19 +229,30 @@ In this activity you will select all the sprLanduse polygons that are classified
 
 === "QGIS"
 
-    1. As with everything in GIS, there are muliple ways to access the **Select Features by Value** tool, but the easiest way is to select the tool in the toolbar while the **sprLanduse** layer is selcted in the Layers Panel.
+    6. As with everything in GIS, there are multiple ways to access the **Select Features by Value** tool, but the easiest way is to select the tool in the toolbar while the **sprLanduse** layer is selcted in the Layers Panel.
+    ![Task 3 Step 6 Image](../images/lab-images/lab-02/03-Q-06.png)
 
-    2. Selecting the tool will open a new window that allows you to create a selection based on one or multiple fields from your data.
+    7. Selecting the tool will open a new window that allows you to create a selection based on one or multiple fields from your data.
 
-    3. In this case, we want to select features where the LUtype is equal to Forests, so simply start typing Forests into the LUtype field and select the suggestion to autocomplete your filter.
+    8. In this case, we want to select features where the LUtype is equal to Forest, so simply start typing Forests into the LUtype field and select the suggestion to autocomplete your filter.
+    ![Task 3 Step 8 Image](../images/lab-images/lab-02/03-Q-08.png)
 
-    4. Click Select Features and close the window.
+    9. Click Select Features and close the window.
 
-    5. Now all of the forest features are selected, indicated by the features appearing in yellow on the map canvas and being highlighted in yellow on the Attribute Table.
+    10. Now all of the forest features are selected, indicated by the features appearing in yellow on the map canvas and being highlighted in yellow on the Attribute Table.
+    ![Task 3 Step 10 Image](../images/lab-images/lab-02/03-Q-10.png)
 
 === "ArcGIS"
 
+    1. With the **sprLanduse** layer selected in the Contents Pane, go to the **Map** tab and click **Select By Attributes** (found in the Selection group), or right click the layer and choose **Selection → Select By Attributes**.
 
+    2. In the Select By Attributes pane, set the **Input Rows** to `sprLanduse` and leave **Selection type** as **New selection**.
+
+    3. Build the expression by choosing the **LUtype** field, the **is Equal to** operator, and then either type `Forest` or click the value dropdown to choose it from the list of existing values.
+
+    4. Click **Run** (or **OK**) to apply the selection, then close the pane.
+
+    5. All of the forest features are now selected, indicated by the features highlighting in blue on the map canvas and in the attribute table.
 
 ---
 
@@ -241,18 +267,31 @@ For this task, imagine that you have been testing **water quality** in the Strea
     1. In the **selection toolbar**, choose the select by location tool
 
     2. For this task we need to find the parcels in the Land Use layer that have streams in them.
+    ![Task 4 Step 2 Image](../images/lab-images/lab-02/04-Q-02.png)
+    - For **Select Features from** input the *sprLanduse* layer
+    - For the **Geometric Predicate** select Where the features *intersect*
+    - Input the *sprStreams* in the **By comparing to the features from** field
 
-    3. For *Select Features from *input the sprLanduse layer
+    3. Then Click **Run**
 
-    4. For the Geometric Predicate select Where the features **intersect**
-
-    5. Input the sprStreams in the *By comparing to the features from* field
-
-    6. Then Click **Run**
-
-    7. All the Land use features with a stream in them should now be selected
+    4. All the Land use features with a stream in them should now be selected
+    ![Task 4 Step 4 Image](../images/lab-images/lab-02/04-Q-04.png)
 
 === "ArcGIS"
+
+    1. On the **Map** tab, click **Select By Location** (in the Selection group).
+
+    2. For this task we need to find the parcels in the Land Use layer that have streams in them.
+
+    3. For **Input Features**, choose the **sprLanduse** layer.
+
+    4. For **Relationship**, select **Intersect**.
+
+    5. For **Selecting Features**, choose the **sprStreams** layer.
+
+    6. Leave the other options at their defaults, then click **Run** (or **OK**).
+
+    7. All the Land Use features that intersect a stream should now be selected, highlighted in cyan on the map and in the attribute table.
 
 
 !!! Question "Question 4"
@@ -269,27 +308,36 @@ The power of making selections is highlighted with the export selected features 
     1. Create a selection on one of the spr vector layers using one of the methods described in tasks 3 and 4. For example, select the streams that have the "Perennial" streamType from the sprStreams layer.
 
     2. After you have made your selection, right click the layer you used and navigate to **Export** -> **Save Selected Features as...**
+    ![Task 5 Step 2 Image](../images/lab-images/lab-02/05-Q-02.png)
 
     3. The export window will popup and you will need to select a file format and filename to save the selected features. 
+    ![Task 5 Step 3 Image](../images/lab-images/lab-02/05-Q-03.png)
 
     4. Choose GeoPackage for the Format
+    ![Task 5 Step 4 Image](../images/lab-images/lab-02/05-Q-04.png)
 
     5. Click the three dots next to File Name and choose a save location in you GIS_Course/Lab-2 folder on your one drive to save the file. Add a filename in the **Save As:** field
+    ![Task 5 Step 5 Image](../images/lab-images/lab-02/05-Q-05.png)
 
     6. Click **save** on the system dialogue and select **OK** on the QGIS **Save Vector Layer as...** window
 
 === "ArcGIS"
 
-    1. 
+    1. Create a selection on one of the SPR vector layers using one of the methods described in Tasks 3 and 4. For example, select the streams that have the "Perennial" streamType from the sprStreams layer using **Select By Attributes**.
+
+    2. After you have made your selection, right click the layer you used in the Contents Pane and navigate to **Data → Export Features**.
+    ![Task 5 Step 2 Image](../images/lab-images/lab-02/05-A-02)
+
+    3. The Export Features window will open. By default, ArcGIS Pro will export only the selected features (you can confirm this under the **Input Features** section, which should reference your selection).
+
+    4. Set the **Output Location** to a file geodatabase in your GIS_Courses/Lab-02 folder on your OneDrive. If you don't already have one, click the folder icon and create a new File Geodatabase there.
+
+    5. Enter a descriptive name in the **Output Name** field (for example, `sprStreams_Perennial`).
+
+    6. Click **OK** (or **Run**) to export. The new feature class will be added to your map as a new layer in the Contents Pane, containing only the selected features.
 
 !!! Question "Question 5"
     Take a screenshot of your exported selection and describe what layer and attribute you selected to create that layer.
-
----
-
-## Task 6: Adding and Calculating Fields.
-
-
 
 
 [:octicons-arrow-right-24: Return to Lab Overview](overview.md)
