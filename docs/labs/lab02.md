@@ -165,6 +165,20 @@ Now that you have used the **identify tool** to see the Land Use classification 
     ![Task 2 Step 11 Image](../images/lab-images/lab-02/02-Q-11.png)
 
 === "ArcGIS"
+    7. Select the **sprLanduse** layer in the Contents Pane, then click the **Symbology** button on the **Appearance** tab (or right click the layer and choose **Symbology**) to open the Symbology pane.
+    ![Task 2 Step 7 Image](../images/lab-images/lab-02/02-Arc-07.png)
+
+    8. At the top of the Symbology pane, change the dropdown from **Single Symbol** to **Unique Values**.
+    ![Task 2 Step 8 Image](../images/lab-images/lab-02/02-Arc-08.png)
+
+    9. Under **Field 1**, select the **LUtype** field. ArcGIS Pro will automatically generate a random color for each unique value.
+    ![Task 2 Step 9 Image](../images/lab-images/lab-02/02-Arc-09.png)
+
+    10. Click the **color scheme** dropdown near the top of the pane and choose a scheme that is appropriate for Land Use classifications.
+    ![Task 2 Step 10 Image](../images/lab-images/lab-02/02-Arc-10.png)
+
+    11. Close the Symbology pane and see how the sprLanduse layer now shows a different color for each Land Use category.
+    ![Task 2 Step 11 Image](../images/lab-images/lab-02/02-Arc-11.png)
 
 
 !!! Question "Question 3"
