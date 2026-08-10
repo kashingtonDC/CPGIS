@@ -13,7 +13,7 @@
 1. Download the lab data from Google Drive using the link above
 2. Place the data in a new folder in your OneDrive for this lab ~/OneDrive/GIS_Courses/Labs/Lab-02. 
 3. Unzip the Data file.
-    - On windows, right click the SPR_data.zip file and choose "Extract All". 
+    - On windows, right click the SPR_Data.zip file and choose "Extract All". 
     - On mac, double click the .zip file to extract.
 4. Create a new map project in QGIS or ArcGIS and save it to your Lab-02 folder
 
@@ -58,19 +58,14 @@ In this lab you will explore data from Cal Poly's [Swanton Pacific Ranch](https:
 === "ArcGIS"
 
     1. In the Catalog Pane, expand **Folders** and connect to your Lab-02 folder if it is not already listed. Right click **Folders** and choose **Add Folder Connection**, then browse to GIS_Courses/Labs/Lab-02 in your OneDrive.
-    ![Task 1 Step 1 Image](../images/lab-images/lab-02/01-Arc-01.png)
 
     2. Expand the SPR_Data folder from the lab data you downloaded.
-    ![Task 1 Step 2 Image](../images/lab-images/lab-02/01-Arc-02.png)
 
     3. Select all the files within the SPR_Data folder by clicking the first file, holding **Shift**, and clicking the last file.
-    ![Task 1 Step 3 Image](../images/lab-images/lab-02/01-Arc-03.png)
 
     4. Add all the selected layers to your map by dragging them onto the map canvas, or by right clicking the selection and choosing **Add To Current Map**.
-    ![Task 1 Step 4 Image](../images/lab-images/lab-02/01-Arc-04.png)
 
     5. The layers should now appear in the **Contents Pane** and the data will appear on the map canvas.
-    ![Task 1 Step 5 Image](../images/lab-images/lab-02/01-Arc-05.png)
 
 !!! Question "Question 1"
     
@@ -91,7 +86,7 @@ In this lab you will explore data from Cal Poly's [Swanton Pacific Ranch](https:
 
 The data for this lab is all vector data, but their geometry types are not all the same. 
 
-Layers such *sprSprings* and *sprFlumes* are **points**, while the *waterlines* and *sprRailroads* layers are **lines**. The *sprLanduse* and *sprParcels* layers represent the **polygon** geometry.
+Layers such as *sprSprings* and *sprFlumes* are **points**, while the *waterlines* and *sprRailroads* layers are **lines**. The *sprLanduse* and *sprParcels* layers represent the **polygon** geometry.
 
 In this Task, we will explore how vector data stores information about features and use **symbology** to show those attributes on a map.
 
@@ -105,7 +100,7 @@ In this Task, we will explore how vector data stores information about features 
     2. **Click and drag** layers in the **layers panel** to change the drawing order. 
     ![Task 2 Step 2 Image](../images/lab-images/lab-02/02-Q-02.png)
 
-    3. For this activity, we wil use **sprFlumes**, **sprStreams**, and **sprLanduse**. Hide all other layers and reorder these three layers in this order so that all of the data is visible (points on top, then lines, then polygons on the bottom).
+    3. For this activity, we will use **sprFlumes**, **sprStreams**, and **sprLanduse**. Hide all other layers and reorder these three layers in this order so that all of the data is visible (points on top, then lines, then polygons on the bottom).
     ![Task 2 Step 3 Image](../images/lab-images/lab-02/02-Q-03.png)
 
     4. To explore the attributes of vector data, you can switch to the **identify features** tool by clicking the tool in the tool bar or by pressing **shift, command/ctl, i** on your keyboard.
@@ -114,28 +109,22 @@ In this Task, we will explore how vector data stores information about features 
     5. Select the **sprLanduse** layer in the **layers panel** and then click one of the polygons to see its attributes. Explore some of the polygons in the sprLanduse layer.
     ![Task 2 Step 5 Image](../images/lab-images/lab-02/02-Q-05.png)
 
-    6. Select the **Hand icon** in the **toolbar** to switch back to the default pan tool QGIS.
+    6. Select the **Hand icon** in the **toolbar** to switch back to the default pan tool in QGIS.
     ![Task 2 Step 6 Image](../images/lab-images/lab-02/02-Q-06.png)
 
 === "ArcGIS"
 
     1. With all the SPR layers added, some are not visible because they are underneath other layers. In the **Contents Pane**, use the checkbox next to each layer to hide and show layers.
-    ![Task 2 Step 1 Image](../images/lab-images/lab-02/02-A-01.png)
 
     2. Click and drag layers up or down in the **Contents Pane** to change the drawing order.
-    ![Task 2 Step 2 Image](../images/lab-images/lab-02/02-A-02.png)
 
     3. For this activity, we will use **sprFlumes**, **sprStreams**, and **sprLanduse**. Hide all other layers and reorder these three layers so that all of the data is visible (points on top, then lines, then polygons on the bottom).
-    ![Task 2 Step 3 Image](../images/lab-images/lab-02/02-A-03.png)
 
     4. To explore the attributes of vector data, select the **Explore** tool (the cursor icon) on the **Map** tab of the ribbon.
-    ![Task 2 Step 4 Image](../images/lab-images/lab-02/02-A-04.png)
 
     5. Click one of the features on the map, a pop-up will appear showing that feature's attributes. Explore the attributes of a few different polygons in the sprLanduse layer.
-    ![Task 2 Step 5 Image](../images/lab-images/lab-02/02-A-05.png)
 
     6. Click the **Explore** tool again, or press **Esc**, to close the pop-up and return to normal navigation (panning/zooming is always active with the Explore tool selected).
-    ![Task 2 Step 6 Image](../images/lab-images/lab-02/02-A-06.png)
     
 !!! Question "Question 2"
     When you explore the land use layer, what information about each polygon is revealed in the identify features panel or popup? In other words, what attributes does the sprLanduse layer contain?
@@ -147,7 +136,7 @@ Now that you have used the **identify tool** to see the Land Use classification 
 
 === "QGIS"
 
-    7. Open the properties window fro the **sprLanduse** layer by right clicking and selecting **Properties**. 
+    7. Open the properties window for the **sprLanduse** layer by right clicking and selecting **Properties**. 
     ![Task 2 Step 7 Image](../images/lab-images/lab-02/02-Q-07.png)
 
     8. Select the **symbology tab** in the properties pane.
@@ -164,19 +153,14 @@ Now that you have used the **identify tool** to see the Land Use classification 
 
 === "ArcGIS"
     7. Select the **sprLanduse** layer in the Contents Pane, then click the **Symbology** button on the **Appearance** tab (or right click the layer and choose **Symbology**) to open the Symbology pane.
-    ![Task 2 Step 7 Image](../images/lab-images/lab-02/02-Arc-07.png)
 
     8. At the top of the Symbology pane, change the dropdown from **Single Symbol** to **Unique Values**.
-    ![Task 2 Step 8 Image](../images/lab-images/lab-02/02-Arc-08.png)
 
     9. Under **Field 1**, select the **LUtype** field. ArcGIS Pro will automatically generate a random color for each unique value.
-    ![Task 2 Step 9 Image](../images/lab-images/lab-02/02-Arc-09.png)
 
     10. Click the **color scheme** dropdown near the top of the pane and choose a scheme that is appropriate for Land Use classifications.
-    ![Task 2 Step 10 Image](../images/lab-images/lab-02/02-Arc-10.png)
 
     11. Close the Symbology pane and see how the sprLanduse layer now shows a different color for each Land Use category.
-    ![Task 2 Step 11 Image](../images/lab-images/lab-02/02-Arc-11.png)
 
 
 !!! Question "Question 3"
@@ -207,7 +191,7 @@ In this activity you will select all the sprLanduse polygons that are classified
     4. You can **select multiple features** by holding **command/control** or **shift** while clicking in the attribute table or with the electing the row label number in the attribute table, or by using the **Select features by Area** tool
     ![Task 3 Step 4 Image](../images/lab-images/lab-02/03-Q-04.png)
 
-    5. Selected features will appear with a yellow and you can use the tool in the map navigation toolbar to Pan or Zoom to the selected features
+    5. Selected features will appear in yellow and you can use the tool in the map navigation toolbar to Pan or Zoom to the selected features
     ![Task 3 Step 5 Image](../images/lab-images/lab-02/03-Q-05.png)
 
 === "ArcGIS"
@@ -234,7 +218,7 @@ In this activity you will select all the sprLanduse polygons that are classified
 
     7. Selecting the tool will open a new window that allows you to create a selection based on one or multiple fields from your data.
 
-    8. In this case, we want to select features where the LUtype is equal to Forest, so simply start typing Forests into the LUtype field and select the suggestion to autocomplete your filter.
+    8. In this case, we want to select features where the LUtype is equal to Forest, so simply start typing Forest into the LUtype field and select the suggestion to autocomplete your filter.
     ![Task 3 Step 8 Image](../images/lab-images/lab-02/03-Q-08.png)
 
     9. Click Select Features and close the window.
@@ -316,7 +300,7 @@ The power of making selections is highlighted with the export selected features 
     4. Choose GeoPackage for the Format
     ![Task 5 Step 4 Image](../images/lab-images/lab-02/05-Q-04.png)
 
-    5. Click the three dots next to File Name and choose a save location in you GIS_Course/Lab-2 folder on your one drive to save the file. Add a filename in the **Save As:** field
+    5. Click the three dots next to File Name and choose a save location in your GIS_Course/Labs/Lab-2 folder on your one drive to save the file. Add a filename in the **Save As:** field
     ![Task 5 Step 5 Image](../images/lab-images/lab-02/05-Q-05.png)
 
     6. Click **save** on the system dialogue and select **OK** on the QGIS **Save Vector Layer as...** window
@@ -326,7 +310,6 @@ The power of making selections is highlighted with the export selected features 
     1. Create a selection on one of the SPR vector layers using one of the methods described in Tasks 3 and 4. For example, select the streams that have the "Perennial" streamType from the sprStreams layer using **Select By Attributes**.
 
     2. After you have made your selection, right click the layer you used in the Contents Pane and navigate to **Data → Export Features**.
-    ![Task 5 Step 2 Image](../images/lab-images/lab-02/05-A-02)
 
     3. The Export Features window will open. By default, ArcGIS Pro will export only the selected features (you can confirm this under the **Input Features** section, which should reference your selection).
 
