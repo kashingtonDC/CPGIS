@@ -101,7 +101,7 @@ In this Task, we will explore how vector data stores information about features 
 
 === "QGIS"
 
-    1. With all the SRP layers added, some are not visible because they are under other layers. You can use the **checkboxes** in the **layers panel** to hide and show layers
+    1. With all the SPR layers added, some are not visible because they are under other layers. You can use the **checkboxes** in the **layers panel** to hide and show layers
     ![Task 2 Step 1 Image](../images/lab-images/lab-02/02-Q-01.png)
 
     2. **Click and drag** layers in the **layers panel** to change the drawing order. 
@@ -139,6 +139,9 @@ In this Task, we will explore how vector data stores information about features 
     6. Click the **Explore** tool again, or press **Esc**, to close the pop-up and return to normal navigation (panning/zooming is always active with the Explore tool selected).
     ![Task 2 Step 6 Image](../images/lab-images/lab-02/02-A-06.png)
     
+!!! Question "Question 2"
+    When you explore the land use layer, what information about each polygon is revealed in the identify features panel or popup? In other words, what attributes does the sprLanduse layer contain?
+
 
 ### Symbolizing Vector Data
 
@@ -146,22 +149,27 @@ Now that you have used the **identify tool** to see the Land Use classification 
 
 === "QGIS"
 
-    7. Open the properties window fro the sprLanduse layer by right clicking and selecting Properties. 
+    7. Open the properties window fro the **sprLanduse** layer by right clicking and selecting **Properties**. 
     ![Task 2 Step 7 Image](../images/lab-images/lab-02/02-Q-07.png)
 
     8. Select the **symbology tab** in the properties pane.
     ![Task 2 Step 8 Image](../images/lab-images/lab-02/02-Q-08.png)
 
-    9. QGIS defaults to Single Symbol symbology, but to show land use categories switch to Categorized
+    9. QGIS defaults to Single Symbol symbology, to show land use categories switch to **Categorized**.
     ![Task 2 Step 9 Image](../images/lab-images/lab-02/02-Q-09.png)
 
-    10. Then in the value section select the LUtype field and then press classify.
+    10. As noted when using the identify features tool, the Land Use layer has various attributes that are assigned to each feature, including the land use. To display the features based on land use change the symbology **value** to **LUtype field**.
     ![Task 2 Step 10 Image](../images/lab-images/lab-02/02-Q-10.png)
 
-    11. Press Apply or OK and see how the symbology of the sprLanduse layer has changed to show the Land Use categories.
+    11. Click **classify** and then **Apply** or **OK** and see how the symbology of the sprLanduse layer has changed to show the Land Use categories.
     ![Task 2 Step 11 Image](../images/lab-images/lab-02/02-Q-11.png)
 
 === "ArcGIS"
+
+
+!!! Question "Question 3"
+    Take a screenshot of your symbolized sprLanduse layer and add it to your submission document.
+
 
 --- 
 
