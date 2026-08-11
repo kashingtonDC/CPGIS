@@ -171,9 +171,10 @@ For example, the picture below shows a map of the NDVI or Normalized difference 
 In this case, the rater represents a continuous data type, because each pixel is more or less red depending on how much vegetation is present.
 
 
-**Raster Data Storage Formats**s
-| Type | Description | Discrete or Continuous |Example | 
-|------|-------------|-----------|---------|
+**Raster Data Storage Formats**
+
+| Type | Description | Discrete or Continuous | Example | 
+|------|-------------|------------------------|---------|
 | **Integer** | Whole numbers only | Discrete |Soil Types, Land cover classes (1=forest, 2=water, etc.) |
 | **Float** | Decimal numbers | Continuous | Elevation, Temperature, Soil pH |
 | **Binary** | 0 or 1 only | Discrete | Burned area (0=unburned, 1=burned) |
