@@ -43,7 +43,7 @@ For this course, instructions are provided for both QGIS and ArcGIS Pro, and you
       2. Navigate to the **Privacy tab**
       3. Find the prompt that says QGIS cannot be installed and press the **Allow** button
 
-### Installing QGIS Plugins (recommended)
+### Installing QGIS Plugins
 For this course we will make use of a variety of plugins to add features and tools that QGIS does not include by default. Please follow the following steps to install **QuickMapServices**
 
 1. Open QGIS
