@@ -1,324 +1,119 @@
 # Software Setup
 
-This course uses industry-standard GIS software. You'll need to install at least one (preferably both) of the following:
+This course contains lab materials and step-by-step instructions for both QGIS and ArcGIS Pro. The fundamental processing skills you will practice in this course are not exclusive to any particular software and are transferrable to any GIS program or geospatial code library you may encounter in your career. 
+
+
+
+## Choosing Software
+
+For this course, instructions are provided for both QGIS and ArcGIS Pro, and you are welcome to use use any GIS software of your choice to complete lab activities. To help you understand the implications of using each program, the table below explains some of the key differences:
+
+|  | QGIS | ArcGIS |
+| ------------- | ---- | ----- |
+|  | ![QGIS Logo](../images/getting-started-images/software-setup/QGIS-logo.png){width=300} | ![ArcGIS Logo](../images/getting-started-images/software-setup/ArcGIS-Pro-logo.jpg){width=300} |
+| Licensing | No license required, QGIS is **Free Forever** thanks to its Open Source license | :fontawesome-solid-sack-dollar: **Expensive license** dependent on University or Employer |
+| Compatibility | **:fontawesome-brands-apple: MacOS, :fontawesome-brands-linux: Linux, and :fontawesome-brands-windows: Windows** | **:fontawesome-brands-windows: Windows Only** |
+| Community and development | [Open Source](https://opensource.com/resources/what-open-source) with regular updates and community-based Documentation | [ESRI](https://en.wikipedia.org/wiki/Esri) releases new versions annually and maintains documentation and forums |
+| Use | Used by GIS analysts World-Wide |  Standard in US Government Agencies |
+
+!!! Tip "Which GIS program should I use??"
+      To get the most out of this course, it is recommended that you try using **both** QGIS and ArcGIS Pro. 
+      
+      If you choose to focus on **one** program, it is recommended that you use **QGIS** because:
+
+      - QGIS is **free forever** and available on both Windows and MacOS
+      - It is **easier to pick up ArcGIS after learning QGIS**, but can be harder to learn QGIS if you start with ArcGIS
 
 ---
+## QGIS
+ 
+### Installing QGIS (recommended)
 
-## Option 1: QGIS (Recommended for Beginners)
+**Compatible with :fontawesome-brands-apple: MacOS, :fontawesome-brands-linux: Linux, and :fontawesome-brands-windows: Windows**
 
-**QGIS** is free, open-source GIS software with powerful capabilities. It's cross-platform and regularly updated.
-
-### Why QGIS?
-
-✅ **Free and open-source**
-<br>✅ **Cross-platform** (Windows, Mac, Linux)
-<br>✅ **Large community** and extensive documentation
-<br>✅ **No licensing hassles**
-<br>✅ **Extensible** with plugins
-
-### Installation
-
-#### Windows & Mac
-
-1. Visit [https://qgis.org/download/](https://qgis.org/download/)
-2. Download the **Long Term Release (LTR)** version for stability
+1. Visit [https://qgis.org/download/](https://qgis.org/download/){:target="_blank"}
+2. Download the **Long Term Release (LTR)** version for stability and best plugin compatibility
 3. Run the installer and follow prompts
 4. Default settings are fine for most users
 
-#### Linux
+!!! warning "Mac Error"
+      If you encounter an error on mac saying *"QGISX.XX.app" can't be open because Apple cannot check it for malicious software* you will need to manually approve the installation
 
-```bash
-# Ubuntu/Debian
-sudo apt-get update
-sudo apt-get install qgis qgis-plugin-grass
+      1. Open **System Preferences**
+      2. Navigate to the **Privacy tab**
+      3. Find the prompt that says QGIS cannot be installed and press the **Allow** button
 
-# Fedora
-sudo dnf install qgis python3-qgis
+### Installing QGIS Plugins (recommended)
+For this course we will make use of a variety of plugins to add features and tools that QGIS does not include by default. Please follow the following steps to install **QuickMapServices**
 
-# Arch
-sudo pacman -S qgis
-```
+1. Open QGIS
+<div class="grid" markdown>
 
-### Recommended Plugins
+<figure markdown>
+  ![Open QGIS 1](../images/getting-started-images/software-setup/open-qgis-1.png)
+</figure>
 
-After installation, install these plugins via **Plugins → Manage and Install Plugins**:
+<figure markdown>
+  ![Open QGIS 2](../images/getting-started-images/software-setup/open-qgis-2.png)
+</figure>
 
-- **QuickMapServices**: Easy basemap access (OpenStreetMap, Google, etc.)
-- **QGIS Resource Sharing**: Access to additional resources
-- **Profile Tool**: Elevation profile creation
-- **Point Sampling Tool**: Extract raster values at points
+</div>
 
----
+2. In the menubar, navigate to *Plugins -> Manage and Install Plugins* to open the plugin manager ![Manage and Install Plugins](../images/getting-started-images/software-setup/manage-and-install-plugins.png)
+3. Search for "QuickMapServices" in the Plugin manager and select the "NextGIS QuickMapServices" Plugin ![Finding QMS](../images/getting-started-images/software-setup/install-qms.png)
+4. Press the **Install Plugin** button and close the Plugin Manager
+5. Installing the QuickMapServices adds the QMS **toolbar and panel** to your QGIS Workspace
+![QMS Panel and Toolbar](../images/getting-started-images/software-setup/qms-panel-and-toolbar.png)
+6. You can now add basemaps to your QGIS projects by searching for tiles such as "Open Street Maps", "Google Satellite", or "ESRI Gray" ![Adding a basemap](../images/getting-started-images/software-setup/QMS-Add-OSM.png)
 
-## Option 2: ArcGIS Pro (Industry Standard)
-
-**ArcGIS Pro** by ESRI is the industry-standard GIS software used by many organizations. It's powerful but requires a license.
-
-### Why ArcGIS Pro?
-
-✅ **Industry standard** - most widely used in professional settings
-<br>✅ **Powerful analysis tools**
-<br>✅ **Excellent 3D capabilities**
-<br>✅ **ArcGIS Online integration**
-<br>⚠️ **Requires license** (paid)
-<br>⚠️ **Windows only**
-
-### Installation
-
-#### For Students
-
-Many universities provide free ArcGIS Pro licenses:
-
-1. **Check with your institution**
-   - Cal Poly students: Visit [GIF Lab Resources](https://gif.calpoly.edu/)
-   - Contact your IT department or GIS lab
-
-2. **Student License**
-   - ESRI offers 1-year student licenses
-   - Visit [esri.com/training/student](https://www.esri.com/training/catalog/5d76dcf7e9ccda09bef61253/get-started-with-arcgis-pro/)
-
-3. **Download & Install**
-   - Sign in to your ArcGIS account
-   - Download installer from My ESRI
-   - Run installer (requires administrator rights)
-   - Authorize using your license
-
-#### System Requirements
-
-- **OS**: Windows 10/11 (64-bit)
-- **CPU**: 4+ cores recommended
-- **RAM**: 8GB minimum, 16GB+ recommended
-- **Graphics**: 4GB+ GPU memory for 3D
-- **Disk**: 10GB+ free space
-
-!!! warning "Mac Users"
-    ArcGIS Pro only runs on Windows. Options:
-    
-    - Use lab computers
-    - Install Windows via Boot Camp or Parallels
-    - Use QGIS instead
-
----
-
-## Cloud Storage Setup
-
-### OneDrive (Recommended for Cal Poly Students)
-
-Cal Poly provides 1TB of OneDrive storage to all students:
-
-**Benefits:**
-- Access files from any computer (lab or personal)
-- Automatic backups
-- Easy file sharing
-- Works with both QGIS and ArcGIS Pro
-
-**Setup:**
-
-1. Download [OneDrive](https://www.microsoft.com/en-us/microsoft-365/onedrive/download)
-2. Sign in with your Cal Poly credentials
-3. Create a folder structure:
-   ```
-   OneDrive/
-   └── GIS_Course/
-       ├── Labs/
-       ├── Projects/
-       ├── Data/
-       └── Maps/
-   ```
-4. Set this folder to sync locally
-
-!!! tip "Pro Tip"
-    Store all your GIS project files in your synced OneDrive folder. This way:
-    
-    - Projects are automatically backed up
-    - You can work from any computer
-    - No lost work if your computer crashes!
-
-### Alternative: Google Drive
-
-If not using OneDrive:
-
-1. Install [Google Drive Desktop](https://www.google.com/drive/download/)
-2. Create similar folder structure
-3. Note: Some GIS file formats may sync slowly
-
----
-
-## Additional Software (Optional but Useful)
-
-### Text Editor
-
-For working with code or data files:
-
-- **VS Code**: [code.visualstudio.com](https://code.visualstudio.com/) (recommended)
-- **Notepad++**: Windows only
-- **Sublime Text**: Cross-platform
-
-### Python Setup (For Advanced Users)
-
-Some labs may include optional Python exercises:
-
-```bash
-# Install Anaconda (includes Python + data science libraries)
-# Download from: https://www.anaconda.com/download
-
-# Create GIS environment
-conda create -n gis python=3.11
-conda activate gis
-conda install -c conda-forge geopandas rasterio folium
-```
-
-Useful Python GIS libraries:
-- **GeoPandas**: Vector data manipulation
-- **Rasterio**: Raster data I/O
-- **Folium**: Interactive web maps
-- **Shapely**: Geometric operations
-
-### GDAL/OGR
-
-Command-line tools for geospatial data:
-
-- Included with QGIS
-- Separate install: [gdal.org](https://gdal.org/)
-- Useful for batch processing
-
----
-
-## Verifying Your Installation
-
-### QGIS Check
+### Verify Your QGIS Installation
 
 1. Launch QGIS Desktop
 2. Go to **Layer → Add Layer → Add Vector Layer**
 3. Can you see the file browser?
 4. Close QGIS
 
-✅ If yes, you're ready!
+✅ If yes, you're ready! [:octicons-arrow-right-24: Set up your file system](../getting-started/storage-and-file-management.md)
 
-### ArcGIS Pro Check
+---
+
+## ArcGIS Pro
+
+**ArcGIS Pro** by ESRI is the industry-standard GIS software used by many organizations. It's powerful but requires a license.
+
+### Installing ArcGIS Pro 
+**Compatible with :fontawesome-brands-windows: Windows Only**
+
+1. Visit [https://calpoly.maps.arcgis.com/home/index.html](https://calpoly.maps.arcgis.com/home/index.html) and click **Sign In** in the top right ![Sign In](../images/getting-started-images/software-setup/ArcGIS-sign-in.png)
+2. Click **Cal Poly SSO** and sign in with your Cal Poly Credentials ![Cal Poly SSO](../images/getting-started-images/software-setup/ArcGIS-SSO.png)
+3. Navigate to **My settings** by clicking your profile in the top right ![My settings](../images/getting-started-images/software-setup/ArcGIS-My-settings.png)
+4. Switch to the **Licenses tab** and click the download button next to ArcGIS Pro ![Licences Tab](../images/getting-started-images/software-setup/ArcGIS-licences-page.png)
+5. Select and Download the latest version 
+6. Run the installer (*ArcGISPro_37_199633.exe*)and follow the prompts
+      - Note that the install wizard may prompt you to install the [.NET runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+7. Once installed, launch the **ArcGIS Pro** and sign in with your Cal Poly Credentials. 
+      - The install screen will show this login screen, select **Your organization's url** and type **calpoly** 
+      - Sign in with **Cal Poly SSO** 
+<div class="grid" markdown>
+
+<figure markdown>
+   ![Your organization's url](../images/getting-started-images/software-setup/ArcGIS-your-organization1.png)
+</figure>
+
+<figure markdown>
+   ![Your organization's url](../images/getting-started-images/software-setup/ArcGIS-your-organization2.png)
+</figure>
+
+</div>
+8. Your license should now be active, if you have any issues, contact the Cal Poly GIS administrator at [lib-gis@calpoly.edu](mailto:lib-gis@calpoly.edu)
+
+### Verify your ArcGIS Pro Installation
 
 1. Launch ArcGIS Pro
 2. Create a new project
 3. Can you see the ribbon and catalog pane?
 4. Close ArcGIS Pro
 
-✅ If yes, you're ready!
+✅ If yes, you're ready! [:octicons-arrow-right-24: Set up your file system](../getting-started/storage-and-file-management.md)
 
----
 
-## File Organization Best Practices
-
-### Folder Structure
-
-Create a clear hierarchy:
-
-```
-GIS_Course/
-│
-├── Labs/
-│   ├── Lab01/
-│   │   ├── Data/
-│   │   ├── Lab01_Project.qgz (or .aprx)
-│   │   └── Lab01_Map.pdf
-│   ├── Lab02/
-│   └── ...
-│
-├── Projects/
-│   ├── Project01/
-│   └── ...
-│
-├── Data/
-│   ├── Downloaded/
-│   ├── Created/
-│   └── Reference/
-│
-└── Documentation/
-    └── notes.md
-```
-
-### File Naming Conventions
-
-!!! success "Good Practices"
-    - Use descriptive names: `watershed_boundary.shp` not `data1.shp`
-    - No spaces: Use underscores or hyphens
-    - Include dates: `fire_perimeter_2024-08-15.gpkg`
-    - Lowercase is easier: `my_project` not `My_Project`
-
-!!! danger "Avoid"
-    - Special characters: `&, *, ?, <, >`
-    - Spaces in folder names
-    - Very long names (> 50 characters)
-
----
-
-## Getting Help
-
-### QGIS Resources
-
-- **Official Documentation**: [docs.qgis.org](https://docs.qgis.org/)
-- **Tutorials**: [qgistutorials.com](https://www.qgistutorials.com/)
-- **YouTube**: QGIS Official Channel
-- **Community**: GIS StackExchange
-
-### ArcGIS Pro Resources
-
-- **Official Documentation**: [pro.arcgis.com](https://pro.arcgis.com/en/pro-app/latest/help/main/welcome-to-the-arcgis-pro-app-help.htm)
-- **Learn ArcGIS**: [learn.arcgis.com](https://learn.arcgis.com/)
-- **ESRI Community**: [community.esri.com](https://community.esri.com/)
-- **YouTube**: ESRI Training Videos
-
-### General GIS Help
-
-- **GIS Stack Exchange**: [gis.stackexchange.com](https://gis.stackexchange.com/)
-- **Reddit r/gis**: [reddit.com/r/gis](https://www.reddit.com/r/gis/)
-- **Discord/Slack**: Many GIS communities
-
----
-
-## Troubleshooting Common Issues
-
-### "Can't see my files"
-
-- Check file extensions are not hidden (Windows: View → File name extensions)
-- Ensure you're looking in the right folder
-- Files may be in Downloads instead of your project folder
-
-### "Software crashes when opening large files"
-
-- Your computer may not have enough RAM
-- Try using lab computers with better specs
-- Simplify/subset your data
-
-### "Projection errors or features not visible"
-
-- Check that all layers use compatible coordinate systems
-- Use "Zoom to Layer" to find your data
-- Verify the data actually has coordinate information
-
-### "Can't install plugins (QGIS)"
-
-- Check internet connection
-- Go to Settings → Options → Network: Ensure proxy settings are correct
-- Try from a different network
-
----
-
-## Ready to Start?
-
-Once your software is installed:
-
-1. ✅ Verify installation works
-2. ✅ Set up cloud storage
-3. ✅ Create folder structure
-4. ✅ Bookmark help resources
-
-[:octicons-arrow-right-24: Start with Topic 1: What is GIS?](../topics/01-what-is-gis.md)
-
----
-
-**Need More Help?**
-
-If you encounter installation issues, check with:
-- Your university's IT help desk
-- GIS lab staff
-- Course instructor during office hours
