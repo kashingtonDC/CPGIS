@@ -38,12 +38,16 @@ QGIS and ArcGIS each have slighlty different methods for adding and removing too
 === "QGIS"
 
     1. In QGIS, only the Browser and Layers Panel are shown by default. 
+    ![Task 0 Step 1 Image](../images/lab-images/lab-04/00-Q-01)
 
     2. Add the **Layer Styling Panel and Processing Toolbox Panel** by navigating to View -> Panels in the menubar and clicking the name of those two panels.
+    ![Task 0 Step 2 Image](../images/lab-images/lab-04/00-Q-02)
 
     3. Similarly, you can add **Toolbars** by navigating to View -> Toolbars in the menu bar
+    ![Task 0 Step 3 Image](../images/lab-images/lab-04/00-Q-03)
 
     4. You can move panels around by clicking and dragging their label to undock them and redock them in a different location
+    ![Task 0 Step 4 Image](../images/lab-images/lab-04/00-Q-04)
 
 === "ArcGIS"
 
@@ -66,18 +70,25 @@ You won't always be able to find spatial data for your GIS projects, either beca
 === "QGIS"
 
     1. Add the **Google Hybrid** basemap to your project using the NextGIS QuickMapServices plugin [Installing QuickMapServices](../getting-started/software-setup.md#installing-qgis-plugins)
+    ![Task 1 Step 1 Image](../images/lab-images/lab-04/01-Q-01)
 
     2. Zoom to Cal Poly by either finding Cal Poly visually in the basemap or by typing "> Cal Poly" into the Search Bar in the bottom left
+    ![Task 1 Step 2 Image](../images/lab-images/lab-04/01-Q-02)
 
     3. Click New Geopackage Layer in the toolbar to create the points layer to store our tree points.
+    ![Task 1 Step 3 Image](../images/lab-images/lab-04/01-Q-03)
 
     4. Click the three dots to Set the save location to your lab 4 folder and name the file **CalPolyTrees**.
+    ![Task 1 Step 4 Image](../images/lab-images/lab-04/01-Q-04)
 
     5. Set the Geometry Type to Point and keep the CRS as the Default (EPSG:4326 - WGS 84)
+    ![Task 1 Step 5 Image](../images/lab-images/lab-04/01-Q-05)
 
-    4. Create a Text(string) field called Species and leave the maximum length blank.
+    6. Create a Text(string) field called Species and leave the maximum length blank.
+    ![Task 1 Step 6 Image](../images/lab-images/lab-04/01-Q-06)
 
-    5. Click **OK** to create the new layer.
+    7. Click **OK** to create the new layer.
+    ![Task 1 Step 7 Image](../images/lab-images/lab-04/01-Q-07)
 
 === "ArcGIS"
 
@@ -87,35 +98,47 @@ After making the geopackage or Feature Layer for your GIS software, we will use 
 
 === "QGIS" 
 
-    1. We will use the Digitizing Toolbar to create point features, if you don't have the Digitizing Toolbar add it to your workspace by navigating to View -> Toolbars -> Digitizing Toolbar in the menubar
+    8. We will use the Digitizing Toolbar to create point features, if you don't have the Digitizing Toolbar add it to your workspace by navigating to View -> Toolbars -> Digitizing Toolbar in the menubar
+    ![Task 1 Step 8 Image](../images/lab-images/lab-04/01-Q-8)
 
-    2. With the CalPolyTrees Layer active in the layer panel, toggle editing with the pencil icon in the toolbar.
+    9. With the CalPolyTrees Layer active in the layer panel, toggle editing with the pencil icon in the toolbar.
+    ![Task 1 Step 9 Image](../images/lab-images/lab-04/01-Q-9)
 
-    3. With editing enabled, you can add features with the Add Point Feature tool.
+    10. With editing enabled, you can add features with the Add Point Feature tool.
+    ![Task 1 Step 10 Image](../images/lab-images/lab-04/01-Q-10)
 
-    4. With the tool active, scroll on your mousewheel or trackpad to zoom in to **Dexter Lawn** on your map Canvas.
+    11. With the tool active, scroll on your mousewheel or trackpad to zoom in to **Dexter Lawn** on your map Canvas.
+    ![Task 1 Step 11 Image](../images/lab-images/lab-04/01-Q-11)
 
-    5. Click the location of a tree to create a tree point. 
+    12. Click the location of a tree to create a tree point. 
+    ![Task 1 Step 12 Image](../images/lab-images/lab-04/01-Q-12)
 
-    6. A popup will appear prompting you to fill in the fields, add a species category to the Species field such as Palm, Pine, or Deciduous, and leave **fid** as *Autogenerate*. (make a best guess of what species they are)
+    13. A popup will appear prompting you to fill in the fields, add a species category to the Species field such as Palm, Pine, or Deciduous, and leave **fid** as *Autogenerate*. (make a best guess of what species they are)
+    ![Task 1 Step 13 Image](../images/lab-images/lab-04/01-Q-13)
 
-    7. Repeat step 6 until you have 10 trees. If you need to pan around your canvas, **hold the spacebar** or **click in on the mouse wheel** and **move your mouse** to temporarily activate the Pan tool.
+    14. Repeat step 6 until you have 10 trees. If you need to pan around your canvas, **hold the spacebar** or **click in on the mouse wheel** and **move your mouse** to temporarily activate the Pan tool.
+    ![Task 1 Step 14 Image](../images/lab-images/lab-04/01-Q-14)
 
-    8. Click the pencil icon to toggle editing and save the new points you added
+    15. Click the pencil icon to toggle editing and save the new points you added
+    ![Task 1 Step 15 Image](../images/lab-images/lab-04/01-Q-15)
 
 Now that you have created points for trees, let's add symbology to make a map that can show the species of the trees you mapped
 
-### Symbolyzing by Species
+### Symbolizing by Species
 
 === "QGIS"
 
-    1. With the CalPolyTrees layer active use the **Layer Styling Panel** to switch the symbology to Categorized based on the Species Value.
+    16. With the CalPolyTrees layer active use the **Layer Styling Panel** to switch the symbology to Categorized based on the Species Value.
+    ![Task 1 Step 16 Image](../images/lab-images/lab-04/01-Q-16)
 
-    2. Click Classify
+    17. Click Classify
+    ![Task 1 Step 17 Image](../images/lab-images/lab-04/01-Q-17)
 
-    3. Change the Color of the points by double clicking the symbol preview 
+    18. Change the Color of the points by double clicking the symbol preview 
+    ![Task 1 Step 18 Image](../images/lab-images/lab-04/01-Q-18)
 
-    4. Take a screenshot of your QGIS window to show the trees you mapped
+    19. Take a screenshot of your QGIS window to show the trees you mapped
+    ![Task 1 Step 19 Image](../images/lab-images/lab-04/01-Q-19)
 
 !!! Question "Task 1 Question"
 
@@ -133,23 +156,31 @@ Now that you have learned to create a point layer, this task will guide you thro
 === "QGIS"
 
     1. Just like you did with the points layer, to create a polygon layer, use the New GeoPackage Layer Tool in the Toolbar
+    ![Task 2 Step 1 Image](../images/lab-images/lab-04/02-Q-01)
 
     2. Click the three dots to set the save location to your lab-04 folder and name the GeoPackage **CalPolyGreenSpaces**
+    ![Task 2 Step 2 Image](../images/lab-images/lab-04/02-Q-02)
 
     3. Set the **Geometry Type** to *Polygon*, Change the **Coordinate Refrence System** to *Californa Zone 5 (EPSG: 2874)* and add a **Text(string)** field called *Name*
+    ![Task 2 Step 3 Image](../images/lab-images/lab-04/02-Q-03)
     
     4. Toggle Editing on the **CalPolyGreenSpaces** layer and switch to the **Add Polygon Feature** tool
+    ![Task 2 Step 4 Image](../images/lab-images/lab-04/02-Q-04)
 
     5. Create a polygon for Dexter Lawn by **clicking the corners** and **right clicking** to complete the shape.
+    ![Task 2 Step 5 Image](../images/lab-images/lab-04/02-Q-05)
 
     6. Input Dexter Lawn into the Name field and repeat with 4 more lawns or plazas for a total of 5 polygons. 
+    ![Task 2 Step 6 Image](../images/lab-images/lab-04/02-Q-06)
 
     7. If you make a mistake while drawing a polygon, you can use the Vertex Tool to move or add points to refine the shape.
+    ![Task 2 Step 7 Image](../images/lab-images/lab-04/02-Q-07)
 
     8. You can also use command/ctl Z to undo or shift-comman/ctl Z to redo changes
+    ![Task 2 Step 8 Image](../images/lab-images/lab-04/02-Q-08)
 
-    8. Toggle Editing and save your changes
-
+    9. Toggle Editing and save your changes
+    ![Task 2 Step 9 Image](../images/lab-images/lab-04/02-Q-09)
 
 Now that we have made some polygons, let's make our map better by adjusting the symbology of the Green Spaces layer by making it green and adding labels
 
@@ -157,17 +188,17 @@ Now that we have made some polygons, let's make our map better by adjusting the 
 
 === "QGIS"
 
-    1. With the CalPolyGreenSpaces layer active change the symbology to a green fill.
+    10. With the CalPolyGreenSpaces layer active change the symbology to a green fill.
 
-    2. Now switch to the Labels Tab in the layer Styling Panel.
+    11. Now switch to the Labels Tab in the layer Styling Panel.
 
-    3. Change the label rule to Single Labels based on the Name Value that we added while creating the polygons.
+    12. Change the label rule to Single Labels based on the Name Value that we added while creating the polygons.
 
-    4. Change the font ans size to your liking and add a Buffer to the text to make it more readable.
+    13. Change the font ans size to your liking and add a Buffer to the text to make it more readable.
 
-    5. There are a multitude of other settings in the Label Properties, that you can explore in the [QGIS Documentation](https://docs.qgis.org/3.44/en/docs/user_manual/style_library/label_settings.html) or in other online tutuorials
+    14. There are a multitude of other settings in the Label Properties, that you can explore in the [QGIS Documentation](https://docs.qgis.org/3.44/en/docs/user_manual/style_library/label_settings.html) or in other online tutuorials
 
-    6. For this activity, let's reduce the duplicate labels for Dexter Lawn by Navigating to the Placement Tab in the Label Properties and checking the **Avoid Duplicate Labels** Setting
+    15. For this activity, let's reduce the duplicate labels for Dexter Lawn by Navigating to the Placement Tab in the Label Properties and checking the **Avoid Duplicate Labels** Setting
 
 !!! Question "Task 1 Question"
 
@@ -209,17 +240,17 @@ It is possible to show numerical data in GIS by apply a field to the size variab
 
 === "QGIS"
 
-    1. Select the CalPolyTrees layer and Open the Layer Styling Panel.
+    12. Select the CalPolyTrees layer and Open the Layer Styling Panel.
 
-    2. Select the Symbol icon to change the symbol size for all the points
+    13. Select the Symbol icon to change the symbol size for all the points
 
-    3. You can set the size manually by adjusting the size category. All of the tree markers should change size together
+    14. You can set the size manually by adjusting the size category. All of the tree markers should change size together
 
-    4. If only one species of tree changed size, go back and ensure that none of the species are selected on the main page.
+    15. If only one species of tree changed size, go back and ensure that none of the species are selected on the main page.
 
-    5. To apply the Shade rating to the tree marker size, click the **Data Define Override** button, navigate the **Field type: int, double, string** and slecet the *Shade Rating* Field.
+    16. To apply the Shade rating to the tree marker size, click the **Data Define Override** button, navigate the **Field type: int, double, string** and slecet the *Shade Rating* Field.
 
-    6. The size of the tree marker is now determined by the shade rating of the tree.
+    17. The size of the tree marker is now determined by the shade rating of the tree.
 
 
 !!! Question "Question 3"
