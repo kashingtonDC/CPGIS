@@ -33,7 +33,7 @@ In this lab you will learn how to create your own vector data in GIS. You will u
 
 Both QGIS and ArcGIS have toolbars, panels, panes and ribbons in their interfaces. As you work with GIS, you may occasionally want add, remove, or rearrange panels or toolbars to fit your needs.
 
-QGIS and ArcGIS each have slighlty different methods for adding and removing tools. The relevant information to each program is described below.
+QGIS and ArcGIS each have slightly different methods for adding and removing tools. The relevant information to each program is described below.
 
 === "QGIS"
 
@@ -44,7 +44,6 @@ QGIS and ArcGIS each have slighlty different methods for adding and removing too
     ![Task 0 Step 2 Image](../images/lab-images/lab-04/00-Q-02)
 
     3. Similarly, you can add **Toolbars** by navigating to View -> Toolbars in the menu bar
-    ![Task 0 Step 3 Image](../images/lab-images/lab-04/00-Q-03)
 
     4. You can move panels around by clicking and dragging their label to undock them and redock them in a different location
     ![Task 0 Step 4 Image](../images/lab-images/lab-04/00-Q-04)
@@ -55,7 +54,7 @@ QGIS and ArcGIS each have slighlty different methods for adding and removing too
     
     2. ArcGIS will add panels automatically as you take actions like modifying symbology or using processing tools from the toolbox.
 
-    3. If you accidentally close a pane it can be confusing to get it back, simply seach for the name of the pane in the command search to add back a missing pane. 
+    3. If you accidentally close a pane it can be confusing to get it back, simply search for the name of the pane in the command search to add back a missing pane. 
 
     4. You can snap panes by clicking and dragging the label to cock them in different places on your workspace.
 
@@ -88,7 +87,6 @@ You won't always be able to find spatial data for your GIS projects, either beca
     ![Task 1 Step 6 Image](../images/lab-images/lab-04/01-Q-06)
 
     7. Click **OK** to create the new layer.
-    ![Task 1 Step 7 Image](../images/lab-images/lab-04/01-Q-07)
 
 === "ArcGIS"
 
@@ -98,7 +96,7 @@ After making the geopackage or Feature Layer for your GIS software, we will use 
 
 === "QGIS" 
 
-    8. We will use the Digitizing Toolbar to create point features, if you don't have the Digitizing Toolbar add it to your workspace by navigating to View -> Toolbars -> Digitizing Toolbar in the menubar
+    8. We will use the **Digitizing Toolbar** to create point features, if you don't have the Digitizing Toolbar add it to your workspace by navigating to View -> Toolbars -> Digitizing Toolbar in the menubar
     ![Task 1 Step 8 Image](../images/lab-images/lab-04/01-Q-8)
 
     9. With the CalPolyTrees Layer active in the layer panel, toggle editing with the pencil icon in the toolbar.
@@ -117,7 +115,6 @@ After making the geopackage or Feature Layer for your GIS software, we will use 
     ![Task 1 Step 13 Image](../images/lab-images/lab-04/01-Q-13)
 
     14. Repeat step 6 until you have 10 trees. If you need to pan around your canvas, **hold the spacebar** or **click in on the mouse wheel** and **move your mouse** to temporarily activate the Pan tool.
-    ![Task 1 Step 14 Image](../images/lab-images/lab-04/01-Q-14)
 
     15. Click the pencil icon to toggle editing and save the new points you added
     ![Task 1 Step 15 Image](../images/lab-images/lab-04/01-Q-15)
@@ -132,7 +129,6 @@ Now that you have created points for trees, let's add symbology to make a map th
     ![Task 1 Step 16 Image](../images/lab-images/lab-04/01-Q-16)
 
     17. Click Classify
-    ![Task 1 Step 17 Image](../images/lab-images/lab-04/01-Q-17)
 
     18. Change the Color of the points by double clicking the symbol preview 
     ![Task 1 Step 18 Image](../images/lab-images/lab-04/01-Q-18)
@@ -161,7 +157,7 @@ Now that you have learned to create a point layer, this task will guide you thro
     2. Click the three dots to set the save location to your lab-04 folder and name the GeoPackage **CalPolyGreenSpaces**
     ![Task 2 Step 2 Image](../images/lab-images/lab-04/02-Q-02)
 
-    3. Set the **Geometry Type** to *Polygon*, Change the **Coordinate Refrence System** to *Californa Zone 5 (EPSG: 2874)* and add a **Text(string)** field called *Name*
+    3. Set the **Geometry Type** to *Polygon*, Change the **Coordinate Reference System** to *California Zone 5 (EPSG: 2874)* and add a **Text(string)** field called *Name*
     ![Task 2 Step 3 Image](../images/lab-images/lab-04/02-Q-03)
     
     4. Toggle Editing on the **CalPolyGreenSpaces** layer and switch to the **Add Polygon Feature** tool
@@ -176,7 +172,7 @@ Now that you have learned to create a point layer, this task will guide you thro
     7. If you make a mistake while drawing a polygon, you can use the Vertex Tool to move or add points to refine the shape.
     ![Task 2 Step 7 Image](../images/lab-images/lab-04/02-Q-07)
 
-    8. You can also use command/ctl Z to undo or shift-comman/ctl Z to redo changes
+    8. You can also use command/ctl Z to undo or shift-command/ctl Z to redo changes
     ![Task 2 Step 8 Image](../images/lab-images/lab-04/02-Q-08)
 
     9. Toggle Editing and save your changes
@@ -189,16 +185,20 @@ Now that we have made some polygons, let's make our map better by adjusting the 
 === "QGIS"
 
     10. With the CalPolyGreenSpaces layer active change the symbology to a green fill.
+    ![Task 2 Step 10 Image](../images/lab-images/lab-04/02-Q-10)
 
     11. Now switch to the Labels Tab in the layer Styling Panel.
 
     12. Change the label rule to Single Labels based on the Name Value that we added while creating the polygons.
+    ![Task 2 Step 12 Image](../images/lab-images/lab-04/02-Q-12)
 
-    13. Change the font ans size to your liking and add a Buffer to the text to make it more readable.
+    13. Change the font and size to your liking and add a Buffer to the text to make it more readable.
+    ![Task 2 Step 13 Image](../images/lab-images/lab-04/02-Q-13)
 
-    14. There are a multitude of other settings in the Label Properties, that you can explore in the [QGIS Documentation](https://docs.qgis.org/3.44/en/docs/user_manual/style_library/label_settings.html) or in other online tutuorials
+    14. There are a multitude of other settings in the Label Properties, that you can explore in the [QGIS Documentation](https://docs.qgis.org/3.44/en/docs/user_manual/style_library/label_settings.html) or in other online tutorials.
 
-    15. For this activity, let's reduce the duplicate labels for Dexter Lawn by Navigating to the Placement Tab in the Label Properties and checking the **Avoid Duplicate Labels** Setting
+    15. For this activity, let's reduce the duplicate labels for Dexter Lawn by Navigating to the Placement Tab in the Label Properties and checking the **Avoid Duplicate Labels** Setting.
+    ![Task 2 Step 15 Image](../images/lab-images/lab-04/02-Q-15)
 
 !!! Question "Task 1 Question"
 
@@ -208,29 +208,38 @@ Now that we have made some polygons, let's make our map better by adjusting the 
 
 ## Task 3: Editing Attributes
 
-When working with vector data you may need to edit attributes or add fileds to your data. In this activity you will learn how to edit attributes and add another field to your trees layer to rate the shade of each of the trees you mapped.
+When working with vector data you may need to edit attributes or add fields to your data. In this activity you will learn how to edit attributes and add another field to your trees layer to rate the shade of each of the trees you mapped.
 
 ### Adding a Shade Rating to Trees
 
 === "QGIS"
 
     1. Open the Attribute Table for the Cal Poly Trees Layer by right clicking and selecting Open Attribute Table.
+    ![Task 3 Step 15 Image](../images/lab-images/lab-04/03-Q-01)
 
     2. Dock the Attribute Table with the Dock Attribute Table Button
+    ![Task 3 Step 2 Image](../images/lab-images/lab-04/03-Q-02)
 
     3. To add a new field, you must enable editing for the layer by using one of the toggle editing buttons or by right clicking and choosing toggle editing
+    ![Task 3 Step 3 Image](../images/lab-images/lab-04/03-Q-03)
     
     5. Click the New Field button to add a new field for the Shade Rating. 
+    ![Task 3 Step 5 Image](../images/lab-images/lab-04/03-Q-05)
 
     6. The shade rating will be on a 1-5 scale, so it is probably best to use the integer data type, but the decimal number data type is also a good choice since it would allow partial star ratings.
+    ![Task 3 Step 6 Image](../images/lab-images/lab-04/03-Q-06)
 
     7. Create the Shade Rating Field with your chosen data type
+    ![Task 3 Step 7 Image](../images/lab-images/lab-04/03-Q-06)
 
     8. Now use the Select Features by area tool to select each tree and then input a shade rating into the attribute table by double clicking and typing a number
+    ![Task 3 Step 8 Image](../images/lab-images/lab-04/03-Q-08)
 
     9. You can highlight your selected features in the attribute table by toggling the Move selection to top setting in the Attribute Table.
+    ![Task 3 Step 9 Image](../images/lab-images/lab-04/03-Q-09)
 
     10. Add a shade rating to all 10 of the trees you created earlier, either from your personal knowledge or based on the species category or imagery
+    ![Task 3 Step 10 Image](../images/lab-images/lab-04/03-Q-10)
 
     11. Toggle editing to save your edits.
 
@@ -241,16 +250,22 @@ It is possible to show numerical data in GIS by apply a field to the size variab
 === "QGIS"
 
     12. Select the CalPolyTrees layer and Open the Layer Styling Panel.
+    ![Task 3 Step 12 Image](../images/lab-images/lab-04/03-Q-12)
 
     13. Select the Symbol icon to change the symbol size for all the points
+    ![Task 3 Step 13 Image](../images/lab-images/lab-04/03-Q-13)
 
     14. You can set the size manually by adjusting the size category. All of the tree markers should change size together
+    ![Task 3 Step 14 Image](../images/lab-images/lab-04/03-Q-14)
 
     15. If only one species of tree changed size, go back and ensure that none of the species are selected on the main page.
+    ![Task 3 Step 15 Image](../images/lab-images/lab-04/03-Q-15)
 
-    16. To apply the Shade rating to the tree marker size, click the **Data Define Override** button, navigate the **Field type: int, double, string** and slecet the *Shade Rating* Field.
+    16. To apply the Shade rating to the tree marker size, click the **Data Define Override** button, navigate the **Field type: int, double, string** and select the *Shade Rating* Field.
+    ![Task 3 Step 16 Image](../images/lab-images/lab-04/03-Q-16)
 
     17. The size of the tree marker is now determined by the shade rating of the tree.
+    ![Task 3 Step 17 Image](../images/lab-images/lab-04/03-Q-17)
 
 
 !!! Question "Question 3"
@@ -263,7 +278,7 @@ It is possible to show numerical data in GIS by apply a field to the size variab
 
 ## Task 4: Field Calculator Basics
 
-Manipulating the Attribute table and symbolgy vector layers, allows a GIS technician to show data in uniques ways. Up until now, you have modified the attribute table of your layers manually, but what if your project has a layer with 100's or 1000's of features?
+Manipulating the Attribute table and symbology vector layers, allows a GIS technician to show data in uniques ways. Up until now, you have modified the attribute table of your layers manually, but what if your project has a layer with 100's or 1000's of features?
 
 The field calculator tool allows you to modify attribute tables and creating data fields using expressions and code. In this activity, you will learn how to add an area field to your CalPolyGreenSpaces layer.
 
@@ -272,20 +287,28 @@ The field calculator tool allows you to modify attribute tables and creating dat
 === "QGIS"
 
     1. Prepare for using the field calculator by making the CalPolyGreenSpaces layer visible and opening and docking the Attribute Table
+    ![Task 4 Step 1 Image](../images/lab-images/lab-04/03-Q-01)
 
     2. Open the Field Calculator for the CalPolyGreenSpaces layer by clicking the Open Field Calculator Button.
+    ![Task 4 Step 2 Image](../images/lab-images/lab-04/03-Q-02)
 
     4. Leave Create virtual Field setting off, set the **Output field name** to *Area (sqm)* and set the data type to Decimal (double) to retain decimal area calculations.
+    ![Task 4 Step 4 Image](../images/lab-images/lab-04/03-Q-04)
 
     5. We will use the "**$Area**" function, either type this function into the Expression area or search it in the expression dictionary.
+    ![Task 4 Step 5 Image](../images/lab-images/lab-04/03-Q-05)
 
     6. You will see a preview of the calculation result in the bottom left, and if everything looks good, press ok to apply the calculation.
+    ![Task 4 Step 6 Image](../images/lab-images/lab-04/03-Q-06)
 
     7. Now that the areas have been calculated, it is not immediately obvious what units the areas are in, with value that range from ~400 to ~6,000.
+    ![Task 4 Step 7 Image](../images/lab-images/lab-04/03-Q-07)
 
     8. QGIS default areas are measured in square meters, but you can check what your QGIS is set to by navigating to Project -> Properties in the menubar and looking at the measurements section. 
+    ![Task 4 Step 8 Image](../images/lab-images/lab-04/03-Q-08)
 
     9. Change the area measurement to Acres and repeat steps 4 and 5 to create a new Area (Acres) field.
+    ![Task 4 Step 9 Image](../images/lab-images/lab-04/03-Q-09)
 
 === "ArcGIS"
 
