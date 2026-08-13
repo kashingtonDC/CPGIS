@@ -39,7 +39,7 @@ QGIS and ArcGIS each have slighlty different methods for adding and removing too
 
     1. In QGIS, only the Browser and Layers Panel are shown by default. 
 
-    2. Add the Layer Styling Panel and Processing Toolbox Panel by navigating to View -> Panels in the menubar and clicking the name of those two panels.
+    2. Add the **Layer Styling Panel and Processing Toolbox Panel** by navigating to View -> Panels in the menubar and clicking the name of those two panels.
 
     3. Similarly, you can add **Toolbars** by navigating to View -> Toolbars in the menu bar
 
@@ -57,28 +57,31 @@ QGIS and ArcGIS each have slighlty different methods for adding and removing too
 
 --- 
 
-## Task 1: Creating Tree Points
+## Task 1: Creating Tree Points and adding symbology
 
 You won't always be able to find spatial data for your GIS projects, either because it hasn't been published publicly or because it has never been made. In this activity, you will learn to create your trees layer for an area of Cal Poly's Campus. 
 
+### Creating a new Geopackage
+
 === "QGIS"
 
-    1. Add the **ESRI Satellite** basemap to your project using the NextGIS QuickMapServices plugin [Installing QuickMapServices](../getting-started/software-setup.md#installing-qgis-plugins)
+    1. Add the **Google Hybrid** basemap to your project using the NextGIS QuickMapServices plugin [Installing QuickMapServices](../getting-started/software-setup.md#installing-qgis-plugins)
 
     2. Zoom to Cal Poly by either finding Cal Poly visually in the basemap or by typing "> Cal Poly" into the Search Bar in the bottom left
 
-    3. Click New Geopackage Layer in the toolbar to create the points layer to store our tree points
+    3. Click New Geopackage Layer in the toolbar to create the points layer to store our tree points.
 
-    4. Click the three dots to Set the save location to your lab 4 folder and name the file **CalPolyTrees**
+    4. Click the three dots to Set the save location to your lab 4 folder and name the file **CalPolyTrees**.
 
     5. Set the Geometry Type to Point and keep the CRS as the Default (EPSG:4326 - WGS 84)
 
-    4. Create a Text(string) field to input the tree species 
+    4. Create a Text(string) field called Species and leave the maximum length blank.
 
-    5. Click **OK** to create the new layer
+    5. Click **OK** to create the new layer.
 
 === "ArcGIS"
 
+### Creating Tree Points
 
 After making the geopackage or Feature Layer for your GIS software, we will use the digitizing tools in GIS to create points for the trees that are in the Satellite imagery. As you create trees, use the prompt to add a species classification to each tree.
 
@@ -90,19 +93,23 @@ After making the geopackage or Feature Layer for your GIS software, we will use 
 
     3. With editing enabled, you can add features with the Add Point Feature tool.
 
-    4. With the tool active, scroll on your mousewheel or trackpad to zoom in or out on your map canvas.
+    4. With the tool active, scroll on your mousewheel or trackpad to zoom in to **Dexter Lawn** on your map Canvas.
 
     5. Click the location of a tree to create a tree point. 
 
     6. A popup will appear prompting you to fill in the fields, add a species category to the Species field such as Palm, Pine, or Deciduous, and leave **fid** as *Autogenerate*. (make a best guess of what species they are)
 
-    7. Repeat step 6 until you have 10 trees. If you need to pan around your canvas, **hold the spacebar** or c**lick in on the mouse wheel** and **move your mouse** to temporarily activate the Pan tool.
+    7. Repeat step 6 until you have 10 trees. If you need to pan around your canvas, **hold the spacebar** or **click in on the mouse wheel** and **move your mouse** to temporarily activate the Pan tool.
+
+    8. Click the pencil icon to toggle editing and save the new points you added
 
 Now that you have created points for trees, let's add symbology to make a map that can show the species of the trees you mapped
 
+### Symbolyzing by Species
+
 === "QGIS"
 
-    1. With the CalPolyTrees layer active use the layer styling Panel to switch the symbology to Categorized based on the Species Value.
+    1. With the CalPolyTrees layer active use the **Layer Styling Panel** to switch the symbology to Categorized based on the Species Value.
 
     2. Click Classify
 
@@ -117,10 +124,62 @@ Now that you have created points for trees, let's add symbology to make a map th
 
 ---
 
-## Task 2: Creating GreenSpace Polygons
+## Task 2: Creating GreenSpace Polygons and adding labels
 
 Now that you have learned to create a point layer, this task will guide you through creating a polygon layer
+
+### Creating a Polygon Layer
 
 === "QGIS"
 
     1. Just like you did with the points layer, to create a polygon layer, use the New GeoPackage Layer Tool in the Toolbar
+
+    2. Click the three dots to set the save location to your lab-04 folder and name the GeoPackage **CalPolyGreenSpaces**
+
+    3. Set the **Geometry Type** to *Polygon*, Change the **Coordinate Refrence System** to *Californa Zone 5 (EPSG: 2874)* and add a **Text(string)** field called *Name*
+    
+    4. Toggle Editing on the **CalPolyGreenSpaces** layer and switch to the **Add Polygon Feature** tool
+
+    5. Create a polygon for Dexter Lawn by **clicking the corners** and **right clicking** to complete the shape.
+
+    6. Input Dexter Lawn into the Name field and repeat with 4 more lawns or plazas for a total of 5 polygons. 
+
+    7. If you make a mistake while drawing a polygon, you can use the Vertex Tool to move or add points to refine the shape.
+
+    8. You can also use command/ctl Z to undo or shift-comman/ctl Z to redo changes
+
+    8. Toggle Editing and save your changes
+
+
+Now that we have made some polygons, let's make our map better by adjusting the symbology of the Green Spaces layer by making it green and adding labels
+
+### Adding Labels
+
+=== "QGIS"
+
+    1. With the CalPolyGreenSpaces layer active change the symbology to a green fill.
+
+    2. Now switch to the Labels Tab in the layer Styling Panel.
+
+    3. Change the label rule to Single Labels based on the Name Value that we added while creating the polygons.
+
+    4. Change the font ans size to your liking and add a Buffer to the text to make it more readable.
+
+    5. There are a multitude of other settings in the Label Properties, that you can explore in the [QGIS Documentation](https://docs.qgis.org/3.44/en/docs/user_manual/style_library/label_settings.html) or in other online tutuorials
+
+    6. For this activity, let's reduce the duplicate labels for Dexter Lawn by Navigating to the Placement Tab in the Label Properties and checking the **Avoid Duplicate Labels** Setting
+
+!!! Question "Task 1 Question"
+
+    Add a screenshot of the Green Spaces that you mapped and added name labels to.
+
+---
+
+## Task 3: Editing Attributes
+
+Sometimes you wil make mistakes when 
+
+
+---
+
+## Task 4: Field Calculator Basics
