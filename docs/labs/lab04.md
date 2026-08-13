@@ -177,9 +177,84 @@ Now that we have made some polygons, let's make our map better by adjusting the 
 
 ## Task 3: Editing Attributes
 
-Sometimes you wil make mistakes when 
+When working with vector data you may need to edit attributes or add fileds to your data. In this activity you will learn how to edit attributes and add another field to your trees layer to rate the shade of each of the trees you mapped.
 
+### Adding a Shade Rating to Trees
+
+=== "QGIS"
+
+    1. Open the Attribute Table for the Cal Poly Trees Layer by right clicking and selecting Open Attribute Table.
+
+    2. Dock the Attribute Table with the Dock Attribute Table Button
+
+    3. To add a new field, you must enable editing for the layer by using one of the toggle editing buttons or by right clicking and choosing toggle editing
+    
+    5. Click the New Field button to add a new field for the Shade Rating. 
+
+    6. The shade rating will be on a 1-5 scale, so it is probably best to use the integer data type, but the decimal number data type is also a good choice since it would allow partial star ratings.
+
+    7. Create the Shade Rating Field with your chosen data type
+
+    8. Now use the Select Features by area tool to select each tree and then input a shade rating into the attribute table by double clicking and typing a number
+
+    9. You can highlight your selected features in the attribute table by toggling the Move selection to top setting in the Attribute Table.
+
+    10. Add a shade rating to all 10 of the trees you created earlier, either from your personal knowledge or based on the species category or imagery
+
+    11. Toggle editing to save your edits.
+
+### Sizing tree Points by Shade Rating
+
+It is possible to show numerical data in GIS by apply a field to the size variable of a layer's symbology. We will set the Shade Rating to the size of the tree markers to show which trees have a higher or lower shade cast.
+
+=== "QGIS"
+
+    1. Select the CalPolyTrees layer and Open the Layer Styling Panel.
+
+    2. Select the Symbol icon to change the symbol size for all the points
+
+    3. You can set the size manually by adjusting the size category. All of the tree markers should change size together
+
+    4. If only one species of tree changed size, go back and ensure that none of the species are selected on the main page.
+
+    5. To apply the Shade rating to the tree marker size, click the **Data Define Override** button, navigate the **Field type: int, double, string** and slecet the *Shade Rating* Field.
+
+    6. The size of the tree marker is now determined by the shade rating of the tree.
+
+
+!!! Question "Question 3"
+
+    Take a screenshot of your map canvas with the CalPolyTrees layer displaying the species and shade rating of the trees you mapped. 
+
+    What method did you choose to make your shade and species determinations. If you had more time to work on a tree layer like this, what would you need to improve the data or make it easier to map the species and shade more accurately? 
 
 ---
 
 ## Task 4: Field Calculator Basics
+
+Manipulating the Attribute table and symbolgy vector layers, allows a GIS technician to show data in uniques ways. Up until now, you have modified the attribute table of your layers manually, but what if your project has a layer with 100's or 1000's of features?
+
+The field calculator tool allows you to modify attribute tables and creating data fields using expressions and code. In this activity, you will learn how to add an area field to your CalPolyGreenSpaces layer.
+
+### Calculating Area
+
+=== "QGIS"
+
+    1. Prepare for using the field calculator by making the CalPolyGreenSpaces layer visible and opening and docking the Attribute Table
+
+    2. Open the Field Calculator for the CalPolyGreenSpaces layer by clicking the Open Field Calculator Button.
+
+    4. Leave Create virtual Field setting off, set the **Output field name** to *Area (sqm)* and set the data type to Decimal (double) to retain decimal area calculations.
+
+    5. We will use the "**$Area**" function, either type this function into the Expression area or search it in the expression dictionary.
+
+    6. You will see a preview of the calculation result in the bottom left, and if everything looks good, press ok to apply the calculation.
+
+    7. Now that the areas have been calculated, it is not immediately obvious what units the areas are in, with value that range from ~400 to ~6,000.
+
+    8. QGIS default areas are measured in square meters, but you can check what your QGIS is set to by navigating to Project -> Properties in the menubar and looking at the measurements section. 
+
+    9. Change the area measurement to Acres and repeat steps 4 and 5 to create a new Area (Acres) field.
+
+=== "ArcGIS"
+
