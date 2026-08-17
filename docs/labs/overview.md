@@ -1,6 +1,6 @@
 # Lab Exercises Overview
 
-Hands-on labs to practice GIS skills and concepts.
+The Lab activities for this course are designed to compliment the topic lessons by providing hands-on activities to practice GIS skills and concepts.
 
 ## Lab Structure
 
@@ -8,10 +8,21 @@ Each lab includes:
 
 - **Objectives**: What you'll learn
 - **Data**: Download links and descriptions
-- **Step-by-step instructions**: For both QGIS and ArcGIS Pro
-- **Questions**: To test understanding
-- **Deliverables**: What to submit
-- **Grading rubric**: How work is evaluated
+- **Step-by-step task instructions**: For both QGIS and ArcGIS Pro
+- **Questions**: To test understanding 
+
+### Lab Deliverables
+
+Labs are designed to have 3-5 tasks to practice GIS skills related to that topic's concepts. Each task has a question or prompt to take a screenshot. 
+
+Submit your responses to these questions and screenshots, in the form of a .pdf by creating a document in your preferred word processor. Create a heading with your name, the course number, and a title with the lab number. Write your answer to the question or embed your screenshot into the document for each task.
+
+![Submission Document Example](../images/lab-images/overview/exampledocument.png)
+
+After finishing the lab, **export the document to a .pdf file** and submit to your Canvas Course.
+
+![Submit to Canvas](https://us.v-cdn.net/cdn-cgi/image/quality=80,format=auto,fit=scale-down,height=1600,width=1600/6038536/uploads/migrated/DQ55DRHT47GM/8faef9c9-81c0-414b-8e18-4ff6470ad009.png)
+*Instructure Article: [How do I submit an online assignment?](https://community.instructure.com/en/kb/articles/661210-how-do-i-submit-an-online-assignment)*
 
 ## Available Labs
 
@@ -26,7 +37,7 @@ Each lab includes:
 3. **[Lab 3: Coordinate Systems](lab03.md)** 🚧 PLACEHOLDER
    <br>*Understand and work with projections*
 
-4. **Lab 4: Data Creation & Editing** 🚧 PLACEHOLDER
+4. **[Lab 4: Data Creation & Editing](lab04.md)** 🚧 PLACEHOLDER
    <br>*Digitize features, edit geometry and attributes*
 
 ### Intermediate Labs (Weeks 5-10)
