@@ -212,16 +212,14 @@ When working with vector data you may need to edit attributes or add fields to y
 === "QGIS"
 
     1. Open the Attribute Table for the Cal Poly Trees Layer by right clicking and selecting Open Attribute Table.
-    ![Task 3 Step 15 Image](../images/lab-images/lab-04/03-Q-01.png)
+    ![Task 3 Step 1 Image](../images/lab-images/lab-04/03-Q-01.png)
 
     2. Dock the Attribute Table with the Dock Attribute Table Button
-    ![Task 3 Step 2 Image](../images/lab-images/lab-04/03-Q-02.png)
 
     3. To add a new field, you must enable editing for the layer by using one of the toggle editing buttons or by right clicking and choosing toggle editing
     ![Task 3 Step 3 Image](../images/lab-images/lab-04/03-Q-03.png)
     
     5. Click the New Field button to add a new field for the Shade Rating. 
-    ![Task 3 Step 5 Image](../images/lab-images/lab-04/03-Q-05.png)
 
     6. The shade rating will be on a 1-5 scale, so it is probably best to use the integer data type, but the decimal number data type is also a good choice since it would allow partial star ratings.
     ![Task 3 Step 6 Image](../images/lab-images/lab-04/03-Q-06.png)
@@ -236,9 +234,9 @@ When working with vector data you may need to edit attributes or add fields to y
     ![Task 3 Step 9 Image](../images/lab-images/lab-04/03-Q-09.png)
 
     10. Add a shade rating to all 10 of the trees you created earlier, either from your personal knowledge or based on the species category or imagery
-    ![Task 3 Step 10 Image](../images/lab-images/lab-04/03-Q-10.png)
 
     11. Toggle editing to save your edits.
+    ![Task 3 Step 10 Image](../images/lab-images/lab-04/03-Q-10.png)
 
 ### Sizing tree Points by Shade Rating
 
@@ -262,7 +260,6 @@ It is possible to show numerical data in GIS by apply a field to the size variab
     ![Task 3 Step 16 Image](../images/lab-images/lab-04/03-Q-16.png)
 
     17. The size of the tree marker is now determined by the shade rating of the tree.
-    ![Task 3 Step 17 Image](../images/lab-images/lab-04/03-Q-17.png)
 
 
 !!! Question "Question 3"
@@ -284,28 +281,29 @@ The field calculator tool allows you to modify attribute tables and creating dat
 === "QGIS"
 
     1. Prepare for using the field calculator by making the CalPolyGreenSpaces layer visible and opening and docking the Attribute Table
-    ![Task 4 Step 1 Image](../images/lab-images/lab-04/03-Q-01.png)
+    ![Task 4 Step 1 Image](../images/lab-images/lab-04/04-Q-01.png)
 
     2. Open the Field Calculator for the CalPolyGreenSpaces layer by clicking the Open Field Calculator Button.
-    ![Task 4 Step 2 Image](../images/lab-images/lab-04/03-Q-02.png)
+    ![Task 4 Step 2 Image](../images/lab-images/lab-04/04-Q-02.png)
 
     4. Leave Create virtual Field setting off, set the **Output field name** to *Area (sqm)* and set the data type to Decimal (double) to retain decimal area calculations.
-    ![Task 4 Step 4 Image](../images/lab-images/lab-04/03-Q-04.png)
 
     5. We will use the "**$Area**" function, either type this function into the Expression area or search it in the expression dictionary.
-    ![Task 4 Step 5 Image](../images/lab-images/lab-04/03-Q-05.png)
+    ![Task 4 Step 5 Image](../images/lab-images/lab-04/04-Q-05.png)
 
     6. You will see a preview of the calculation result in the bottom left, and if everything looks good, press ok to apply the calculation.
-    ![Task 4 Step 6 Image](../images/lab-images/lab-04/03-Q-06.png)
+    ![Task 4 Step 6 Image](../images/lab-images/lab-04/04-Q-06.png)
 
     7. Now that the areas have been calculated, it is not immediately obvious what units the areas are in, with value that range from ~400 to ~6,000.
-    ![Task 4 Step 7 Image](../images/lab-images/lab-04/03-Q-07.png)
 
     8. QGIS default areas are measured in square meters, but you can check what your QGIS is set to by navigating to Project -> Properties in the menubar and looking at the measurements section. 
-    ![Task 4 Step 8 Image](../images/lab-images/lab-04/03-Q-08.png)
+    ![Task 4 Step 8 Image](../images/lab-images/lab-04/04-Q-08.png)
 
-    9. Change the area measurement to Acres and repeat steps 4 and 5 to create a new Area (Acres) field.
-    ![Task 4 Step 9 Image](../images/lab-images/lab-04/03-Q-09.png)
+    9. Change the area measurement to Acres.
+    ![Task 4 Step 9 Image](../images/lab-images/lab-04/04-Q-09.png)
+
+    10. Repeat steps 4 and 5 to create a new Area (Acres) field.
+    ![Task 4 Step 9 Image](../images/lab-images/lab-04/04-Q-10.png)
 
 === "ArcGIS"
 
