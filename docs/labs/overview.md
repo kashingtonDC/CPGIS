@@ -4,12 +4,38 @@ The Lab activities for this course are designed to compliment the topic lessons 
 
 ## Lab Structure
 
-Each lab includes:
+Below is an example of what lab pages will look like:
 
-- **Objectives**: What you'll learn
-- **Data**: Download links and descriptions
-- **Step-by-step task instructions**: For both QGIS and ArcGIS Pro
-- **Questions**: To test understanding 
+---
+## Lab XX: Example Lab
+
+### Lab Preparation
+
+[:fontawesome-solid-download: Example Lab Download Link](link){ .md-button }
+
+Labs Include a data download link and instructions for lab setup.
+
+### Introduction
+
+!!! note "Learning Objectives"
+   Each lab will include a list of learning objectives that look like this:
+
+   - Objective 1
+   - Objective 2
+
+### Task XX: How to use Instructions
+Labs include instructions and screenshots for how to do various skills in both QGIS and ArcGIS Pro
+
+=== "QGIS"
+   1. Steps will look like this and will provide exact instructions for how to do things and the **tools** will be bolded. 
+
+=== "ArcGIS"
+   1. Steps will look like this and will provide exact instructions for how to do things and the **tools** will be bolded. 
+
+!!! Question "Question XX"
+   Questions are formatted like this and will often ask for screenshots
+
+---
 
 ### Lab Deliverables
 
