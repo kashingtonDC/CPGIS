@@ -8,28 +8,30 @@ Creating and editing spatial data is a fundamental GIS skill. Whether digitizing
 
 ## Learning Objectives
 
-By the end of this topic, you should be able to:
+By the end of this topic, you should understand:
 
+- When to use digitization, Field Mapping, and Geocoding to create GIS Data.
 - Create new point, line, and polygon features
 - Edit existing feature geometry and attributes
-- Use snapping and topology tools for accuracy
-- Understand topology rules and relationships
-- Digitize features from imagery and maps
+- How snapping and topology tools improve accuracy
+- The general process for digitizing features from imagery and maps
 - Calculate geometry attributes (area, length)
-- Fix common data quality issues
+- Common data quality issues
 
 ---
 
 ## Why Create Your Own Data?
 
-Sometimes the data you need simply doesn't exist! You may need to:
+While there is a wealth of GIS data available on government websites and on repositories like ArcGIS Online, sometimes the data you need is simply not available for the area or timeframe you need. After you have exhausted all your search options, you map need to create the data yourself!
 
-- **Digitize historical maps** not available digitally
+Some of the most common data creation methods include:
+
+- **Manually Digitize historical maps** not available digitally
 - **Create custom study areas** specific to your research
-- **Collect field observations** (tree locations, sample sites)
-- **Update outdated datasets** with current information
+- **Collect GPS field observations** (tree locations, sample sites)
+- **Update outdated datasets** with current information from a database
 - **Combine data** from multiple sources into new layers
-- **Fix errors** in existing datasets
+- **Fix topological errors** in existing datasets
 
 ---
 
@@ -40,15 +42,20 @@ Sometimes the data you need simply doesn't exist! You may need to:
 **What it is**: Manually tracing features on screen using aerial imagery, satellite data, or scanned maps as a reference.
 
 **When to use**:
-- Historical map digitization
+
+- Historical and physical map digitization
 - Custom area of interest
 - Features not in existing datasets
 - High accuracy needed
 
 **Tools Required**:
+
 - Base layer for reference (imagery, scanned map)
 - Digitizing toolbar
 - Snapping settings
+
+![Map Digitizing Example of Forests polygons](https://docs.qgis.org/3.44/en/_images/forest_stands_to_digitize.png)
+*[QGIS Documentation](https://docs.qgis.org/3.44/en/docs/training_manual/forestry/stands_digitizing.html#follow-along-digitize-the-forest-stands) for map digitization of a map of forest stands*
 
 ---
 
@@ -57,15 +64,20 @@ Sometimes the data you need simply doesn't exist! You may need to:
 **What it is**: Collecting point, line, or track data using GPS devices in the field.
 
 **When to use**:
+
 - Field surveys
 - Ground truthing
 - Real-time location tracking
 - Asset inventory
 
 **Typical Accuracy**:
+
 - Consumer GPS: 3-10 meters
 - Differential GPS: <1 meter
 - Survey-grade GPS: Centimeter-level
+
+![ESRI Field Mapper](https://www.esri.com/content/dam/esrisites/en-us/arcgis/products/arcgis-field-maps/assets/arcgis-fieldmaps-banner-fg.png)
+*Using tools like [ArcGIS Field Maps](https://www.esri.com/en-us/arcgis/products/arcgis-field-maps/overview) or [Avenza Maps](https://store.avenza.com/) make GPS data collection accessible to anyone with a smartphone*
 
 ---
 
@@ -74,13 +86,18 @@ Sometimes the data you need simply doesn't exist! You may need to:
 **What it is**: Converting spreadsheets or databases containing latitude/longitude into spatial features.
 
 **When to use**:
+
 - CSV/Excel files with coordinates
 - Database records with locations
 - Survey data with GPS coordinates
 
 **Requirements**:
+
 - Coordinate columns (lat/lon or X/Y)
 - Known coordinate system
+
+![Importing Excel Sheet into GIS](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FXgi-UdyDi1k%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=7297f0c5908c861c97c99aa0150f8bd3011a6364ee36e6173f6dae9c676a4291)
+With an excel sheet that has coordinates you can [import almost any non-spatial data into GIS](https://youtu.be/Xgi-UdyDi1k?si=dZkhYK2nefwFG1Jw).
 
 ---
 
@@ -89,73 +106,60 @@ Sometimes the data you need simply doesn't exist! You may need to:
 **What it is**: Converting addresses to geographic coordinates.
 
 **When to use**:
+
 - Address lists need to be mapped
 - Customer locations from database
 - Historical address records
+
+**Requirements**:
+
+- A Geocoding service to match addresses to points
+
+![GeoCoding Addresses](https://www.geographyrealm.com/wp-content/uploads/2015/07/geocoded-file-qgis.png)
+
+*It is possible to add a spatial component to a spreadsheet by [Geocoding Addresses or Locations](https://www.geographyrealm.com/how-to-geocode-addresses-using-qgis/) to make the data usable in GIS.*
+
+
+### 5. Joining Updated Data
+
+**What it is**: Appending data from a spreadsheet to an existing GIS Layer
+
+**When to use**:
+
+- Making spatial data for demographics data from the Census
+- Making global economic or health data into a map by country
+
+
+**Requirements**:
+
+- A tabular dataset with a unique identifier coded in
+- A spatial dataset with a matching identifer.
+
+![Map of Flood risk in the world](https://learn.arcgis.com/en/projects/join-tabular-data-to-a-spatial-layer/GUID-D9F7809F-1D7C-4B23-905D-1AB21CD43543-web.png)
+*Creating Map of Global trends such as ****Flood Risk**** is often easier with the use of a [Tabular Join](https://learn.arcgis.com/en/projects/join-tabular-data-to-a-spatial-layer/)*
 
 ---
 
 ## Creating Features in GIS
 
-### Creating Point Features
+| Geometry Type | Use Cases |
+|---------------|-----------|
+| **Point** | - Tree inventory locations<br> - Sample sites<br> - Building centroids<br> - Observation points |
+| **Line** | - Trails<br> - Custom roads<br> - Stream centerlines <br> - travel routes|
+| **Polygon** | - Study area boundaries<br> - Land parcels<br> - Vegetation patches<br> - Building footprints<br> - Custom zones |
 
 **Use Cases**:
+
 - Tree inventory locations
 - Sample sites
 - Building centroids
 - Observation points
-
-**Workflow**:
-
-1. **Create new layer**
-   - Choose point geometry
-   - Define attribute fields
-   - Set coordinate system
-
-2. **Start editing**
-   - Toggle editing mode ON
-   - Select "Add Point Feature" tool
-
-3. **Add points**
-   - Click map to place point
-   - Fill out attribute form
-   - Repeat for each feature
-
-4. **Save edits**
-   - Save layer edits
-   - Toggle editing mode OFF
-
----
-
-### Creating Line Features
 
 **Use Cases**:
 - Trails
 - Custom roads
 - Stream centerlines
 - Flight paths
-
-**Workflow**:
-
-1. **Create new layer**
-   - Choose line geometry
-   - Define fields
-   - Set coordinate system
-
-2. **Enable snapping** (important!)
-   - Enable snapping toolbar
-   - Set snap tolerance
-   - Choose snap to vertices/segments
-
-3. **Add lines**
-   - Click to add first vertex
-   - Click to add intermediate vertices
-   - Right-click (or press ESC) to finish line
-   - Fill attributes
-
----
-
-### Creating Polygon Features
 
 **Use Cases**:
 - Study area boundaries
@@ -164,23 +168,25 @@ Sometimes the data you need simply doesn't exist! You may need to:
 - Building footprints
 - Custom zones
 
-**Workflow**:
 
-1. **Create new layer**
-   - Choose polygon geometry
-   - Define fields (consider including area!)
-   - Set coordinate system
+#### General Workflow
 
-2. **Configure snapping & topology**
-   - Enable topological editing
-   - Enable "Avoid Overlap on Active Layer"
-   - Set snap tolerance
+1. **Create New Layer** for your *points, lines, or polygons*
 
-3. **Digitize polygons**
-   - Click to add vertices
-   - Right-click to close polygon
-   - Fill attributes
-   - Use advanced tools as needed
+2. **Define Attribute Fields** you'll need to decide what attributes to include in your dataset
+
+3. **Enable Editing**
+
+4. **Create Features tool** Use the Editing tools to add features
+   
+5. **Add Feature** Click to create or trace your feature, and right click to end
+
+6. **Add Attributes** fill out the attributes using the popup
+   
+6. **Repeat steps 5 and 6 for all Features**
+
+7. **Save edits** Finally make sure to save your edits and toggle editing mode OFF
+
 
 ---
 
