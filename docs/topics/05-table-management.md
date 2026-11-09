@@ -594,7 +594,7 @@ After joins, you often want to **summarize** data:
 
 ---
 
-## Next Topic
+**Next Topic**
 
 You've mastered vector operations! Now let's dive into vector geoprocessing tools:
 
