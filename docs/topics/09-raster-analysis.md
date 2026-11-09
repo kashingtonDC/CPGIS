@@ -224,11 +224,11 @@ Adding 1 prevents division by zero!
 
 ## Raster Reclassification
 
-### What is Reclassification?
+**What is Reclassification?**
 
 **Reclassification** assigns new values to cells based on their current values, grouping continuous data into categories or changing category codes.
 
-### When to Reclassify
+**When to Reclassify**
 
 **Simplify continuous data**:
 - Elevation → Low/Medium/High
@@ -245,7 +245,7 @@ Adding 1 prevents division by zero!
 
 ---
 
-### Reclassification Methods
+**Reclassification Methods**
 
 **Method 1: Manual Reclassification Table**
 
@@ -268,7 +268,7 @@ Using raster calculator:
 
 ---
 
-### Reclassification Tools
+**Reclassification Tools**
 
 === "QGIS"
 
@@ -290,7 +290,7 @@ Using raster calculator:
 
 ---
 
-### Reclassification Example
+**Reclassification Example**
 
 **Task**: Create fire risk zones from slope
 
@@ -311,7 +311,7 @@ Using raster calculator:
 
 ## Extracting Raster Values
 
-### Point Sampling
+** Point Sampling
 
 **Task**: Extract raster values at point locations
 
@@ -338,7 +338,7 @@ Using raster calculator:
 
 ---
 
-### Line Sampling
+**Line Sampling
 
 **Task**: Extract raster values along lines
 
