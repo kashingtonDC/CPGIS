@@ -1,6 +1,5 @@
 # Topic 5: Table Management and Joins
 
-## Overview
 
 Attribute data is just as important as spatial data! Understanding how to manage attribute tables and join external data to spatial features is essential for GIS analysis and visualization.
 
@@ -20,9 +19,9 @@ By the end of this topic, you should be able to:
 
 ---
 
-## Understanding Attribute Tables
+**Understanding Attribute Tables**
 
-### What is an Attribute Table?
+**What is an Attribute Table?***
 
 <div class="admonition definition" markdown>
 <p class="admonition-title">Definition</p>
@@ -31,7 +30,7 @@ An **attribute table** stores descriptive information about spatial features. Ea
 
 </div>
 
-### Table Structure
+***Table Structure***
 
 ```
 | FID | NAME        | POPULATION | AREA_SQ_MI | STATE |
@@ -48,7 +47,7 @@ An **attribute table** stores descriptive information about spatial features. Ea
 
 ---
 
-## Field Types
+**Field Types**
 
 Understanding data types is crucial for proper storage and analysis.
 
@@ -71,11 +70,11 @@ Understanding data types is crucial for proper storage and analysis.
 
 ## Attribute Queries
 
-### What is an Attribute Query?
+**What is an Attribute Query?**
 
 Selecting features based on their attribute values, not their location.
 
-### Query Operators
+**Query Operators**
 
 | Operator | Meaning | Example |
 |----------|---------|---------|
@@ -90,7 +89,7 @@ Selecting features based on their attribute values, not their location.
 | `BETWEEN` | Range | `YEAR BETWEEN 2015 AND 2020` |
 | `IS NULL` | No value | `OWNER IS NULL` |
 
-### Logical Operators
+**Logical Operators**
 
 Combine multiple conditions:
 
@@ -100,7 +99,7 @@ Combine multiple conditions:
 | **OR** | Either can be true | `STATE = 'CA' OR STATE = 'NV'` |
 | **NOT** | Inverse | `NOT STATE = 'CA'` |
 
-### Query Examples
+**Query Examples**
 
 **Find large cities in California**:
 ```sql
@@ -126,7 +125,7 @@ Combine multiple conditions:
 
 ## Field Calculator
 
-### Creating New Fields
+**Creating New Fields**
 
 Add calculated or derived attributes to your table.
 
@@ -137,7 +136,7 @@ Add calculated or derived attributes to your table.
 - Extract parts of dates
 - Create categories based on values
 
-### Expression Syntax
+**Expression Syntax**
 
 **Basic arithmetic**:
 ```
@@ -164,7 +163,7 @@ $area / 4046.86  // Convert sq meters to acres
 $length / 1609.34  // Convert meters to miles
 ```
 
-### Example: Create Density Field
+**Example: Create Density Field**
 
 **Problem**: Calculate population density (people per square mile)
 
@@ -179,7 +178,7 @@ $length / 1609.34  // Convert meters to miles
 
 ## Tabular Joins
 
-### What is a Tabular Join?
+**What is a Tabular Join?**
 
 <div class="admonition definition" markdown>
 <p class="admonition-title">Definition</p>
@@ -188,7 +187,7 @@ A **tabular join** links non-spatial data (like a CSV or Excel file) to spatial 
 
 </div>
 
-### Why Use Tabular Joins?
+**Why Use Tabular Joins?**
 
 **Scenario**: You have:
 1. A shapefile of counties (with geometry)
@@ -200,7 +199,7 @@ A **tabular join** links non-spatial data (like a CSV or Excel file) to spatial 
 
 ---
 
-### Join Requirements
+**Join Requirements**
 
 For a successful join, you need:
 
@@ -231,7 +230,7 @@ For a successful join, you need:
 
 ---
 
-### Performing a Tabular Join
+**Performing a Tabular Join**
 
 === "QGIS"
 
@@ -262,7 +261,7 @@ For a successful join, you need:
 
 ---
 
-### One-to-One vs One-to-Many Joins
+**One-to-One vs One-to-Many Joins**
 
 **One-to-One Join** (Most Common)
 - Each feature gets **one** matching record
@@ -277,7 +276,7 @@ For a successful join, you need:
 
 ---
 
-### Troubleshooting Tabular Joins
+**Troubleshooting Tabular Joins**
 
 **Problem: No Records Match**
 
@@ -325,7 +324,7 @@ For a successful join, you need:
 
 ## Spatial Joins
 
-### What is a Spatial Join?
+**What is a Spatial Join?**
 
 <div class="admonition definition" markdown>
 <p class="admonition-title">Definition</p>
@@ -334,7 +333,7 @@ A **spatial join** transfers attributes between layers based on their **spatial 
 
 </div>
 
-### How Spatial Joins Work
+**How Spatial Joins Work**
 
 **Example**:
 - Layer 1: Coffee shops (points)
@@ -346,7 +345,7 @@ A **spatial join** transfers attributes between layers based on their **spatial 
 
 ---
 
-### Spatial Relationship Types
+**Spatial Relationship Types**
 
 | Relationship | Description | Example |
 |-------------|-------------|---------|
@@ -358,7 +357,7 @@ A **spatial join** transfers attributes between layers based on their **spatial 
 
 ---
 
-### Performing a Spatial Join
+**Performing a Spatial Join**
 
 === "QGIS"
 
@@ -388,7 +387,7 @@ A **spatial join** transfers attributes between layers based on their **spatial 
 
 ---
 
-### One-to-One Spatial Joins
+**One-to-One Spatial Joins**
 
 **Output**: Each target feature gets **one** matching record from join layer
 
@@ -403,7 +402,7 @@ A **spatial join** transfers attributes between layers based on their **spatial 
 
 ---
 
-### One-to-Many Spatial Joins
+**One-to-Many Spatial Joins*
 
 **Output**: Target features **duplicated** for each matching join feature
 
@@ -421,7 +420,7 @@ A **spatial join** transfers attributes between layers based on their **spatial 
 
 ---
 
-### Spatial Join vs Tabular Join
+**Spatial Join vs Tabular Join**
 
 | Aspect | Tabular Join | Spatial Join |
 |--------|-------------|--------------|
@@ -433,7 +432,7 @@ A **spatial join** transfers attributes between layers based on their **spatial 
 
 ---
 
-### Spatial Join vs Merge vs Union
+**Spatial Join vs Merge vs Union**
 
 **Spatial Join**:
 - Combines **attributes** based on location
@@ -457,53 +456,7 @@ A **spatial join** transfers attributes between layers based on their **spatial 
 
 ---
 
-## Practical Examples
-
-### Example 1: Add Population to Counties
-
-**Scenario**: Counties shapefile + population CSV
-
-**Steps**:
-1. Load counties shapefile
-2. Import population.csv as table
-3. **Join attributes by field value**
-4. Match field: `GEOID` (or county FIPS code)
-5. Result: Population columns added to counties
-
-**Visualize**: Create choropleth map showing population by county
-
----
-
-### Example 2: Count Points in Polygons
-
-**Scenario**: Count how many crimes occurred in each neighborhood
-
-**Steps**:
-1. Load neighborhoods (polygons)
-2. Load crime incidents (points)
-3. **Spatial join** (one-to-many) - join neighborhoods to crimes
-4. **Dissolve** by neighborhood ID, count crimes
-5. Result: Neighborhood polygons with crime count attribute
-
-**Alternative**: Use "Count Points in Polygon" tool directly
-
----
-
-### Example 3: Find Nearest Feature
-
-**Scenario**: Assign each house to nearest fire station
-
-**Steps**:
-1. Load houses (points)
-2. Load fire stations (points)
-3. **Spatial join** with "Nearest" relationship
-4. Result: Each house gets attributes of nearest station
-
-**Use**: Calculate drive time to nearest service
-
----
-
-## Summary Statistics
+**Summary Statistics**
 
 After joins, you often want to **summarize** data:
 
@@ -524,9 +477,55 @@ After joins, you often want to **summarize** data:
 
 ---
 
+## Practical Examples
+
+### Example 1: Add Population to Counties**
+
+**Scenario**: Counties shapefile + population CSV
+
+**Steps**:
+1. Load counties shapefile
+2. Import population.csv as table
+3. **Join attributes by field value**
+4. Match field: `GEOID` (or county FIPS code)
+5. Result: Population columns added to counties
+
+**Visualize**: Create choropleth map showing population by county
+
+---
+
+### Example 2: Count Points in Polygons**
+
+**Scenario**: Count how many crimes occurred in each neighborhood
+
+**Steps**:
+1. Load neighborhoods (polygons)
+2. Load crime incidents (points)
+3. **Spatial join** (one-to-many) - join neighborhoods to crimes
+4. **Dissolve** by neighborhood ID, count crimes
+5. Result: Neighborhood polygons with crime count attribute
+
+**Alternative**: Use "Count Points in Polygon" tool directly
+
+---
+
+### Example 3: Find Nearest Feature**
+
+**Scenario**: Assign each house to nearest fire station
+
+**Steps**:
+1. Load houses (points)
+2. Load fire stations (points)
+3. **Spatial join** with "Nearest" relationship
+4. Result: Each house gets attributes of nearest station
+
+**Use**: Calculate drive time to nearest service
+
+---
+
 ## Best Practices
 
-### Before Joining
+**Before Joining**
 
 1. **✅ Inspect both tables** - Look at join fields
 2. **✅ Check data types** - Ensure they match
@@ -534,14 +533,14 @@ After joins, you often want to **summarize** data:
 4. **✅ Verify unique values** - For one-to-one joins
 5. **✅ Test on small subset** - Don't process huge dataset first
 
-### During Joining
+**During Joining**
 
 1. **✅ Choose correct join type** - One-to-one vs one-to-many
 2. **✅ Select join fields carefully** - Must match exactly
 3. **✅ Check projection** - For spatial joins, verify CRS matches
 4. **✅ Document workflow** - Record what you joined and why
 
-### After Joining
+**After Joining**
 
 1. **✅ Verify results** - Check attribute table for new fields
 2. **✅ Count features** - Did number change (expected for 1:many)?
@@ -568,7 +567,7 @@ After joins, you often want to **summarize** data:
 
 ---
 
-## Further Reading
+**Further Reading**
 
 - [QGIS: Joins](https://docs.qgis.org/3.28/en/docs/user_manual/working_with_vector/vector_properties.html#joins-properties)
 - [ArcGIS Pro: Joins and Relates](https://pro.arcgis.com/en/pro-app/latest/help/data/tables/joins-and-relates.htm)
