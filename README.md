@@ -1,6 +1,6 @@
 # Introduction to Geographic Information Systems
 
-![GIS Course Banner](docs/images/gis-banner.jpg)
+![GIS Course Banner](docs/images/banners/gis-banner.jpg)
 
 An open-source, comprehensive online course for learning GIS fundamentals. Built with MkDocs Material.
 
