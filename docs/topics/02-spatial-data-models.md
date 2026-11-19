@@ -71,7 +71,7 @@ Vector data represents geographic features using [**geometric primitives**](http
 **File formats:** .gpkg, .geojson, .dwg, .kml, .shp(.shx, .dbf, .prj, etc.)
 
 
-### Vector Geometry
+#### Vector Geometry { .look-h3 }
 Vector Data is Represented with 3 main geometry types:
 
 **1. Points:** Represent discrete locations with X, Y (and sometimes Z) coordinates.
@@ -80,7 +80,7 @@ Vector Data is Represented with 3 main geometry types:
 
 **3. Polygons:** Closed shapes representing areas, defined by connected lines.
 
-### Points
+#### Points { .look-h3 }
 
 **Used for:**
 
@@ -97,7 +97,7 @@ Vector Data is Represented with 3 main geometry types:
     - **Attributes**: Shop name, hours, rating, price level
 
 
-### Lines
+#### Lines { .look-h3 }
 
 Sequences of connected points forming paths or linear features.
 
@@ -115,7 +115,7 @@ Sequences of connected points forming paths or linear features.
     - **Geometry**: Series of coordinate pairs forming the road centerline
     - **Attributes**: Road name, speed limit, number of lanes, surface type
 
-### Polygons
+#### Polygons { .look-h3 }
 Closed shapes representing areas, defined by connected lines.
 
 **Use Cases:**
@@ -143,7 +143,7 @@ Raster data divides space into a regular **grid of cells (pixels)**, where each 
 
 **File Formats:** .tiff, .tif, .bmp, etc.
 
-### Key Raster Concepts
+#### Key Raster Concepts { .look-h3 }
 
 **Cell Size (Spatial Resolution)**
 
@@ -160,7 +160,7 @@ The data stored in each cell
 
 ![Key Raster Concepts](../images/topic-images/topic-02/key-raster-concepts.png)
 
-### Raster Data Types
+#### Raster Data Types { .look-h3 }
 
 Raster data can either represent **continuous or discrete** phenomena.
 
@@ -171,7 +171,7 @@ For example, the picture below shows a map of the NDVI or Normalized difference 
 In this case, the rater represents a continuous data type, because each pixel is more or less red depending on how much vegetation is present.
 
 
-**Raster Data Storage Formats**s
+**Raster Data Storage Formats**
 | Type | Description | Discrete or Continuous |Example | 
 |------|-------------|-----------|---------|
 | **Integer** | Whole numbers only | Discrete |Soil Types, Land cover classes (1=forest, 2=water, etc.) |
@@ -207,7 +207,7 @@ In this case, the rater represents a continuous data type, because each pixel is
 
 Both vector and raster data can have associated **attribute data** - information about each feature beyond just location.
 
-### Vector Attribute Tables
+#### Vector Attribute Tables { .look-h3 }
 
 Each row = one feature (point, line, or polygon)
 
@@ -221,7 +221,7 @@ Each column = one attribute
 | 2 | Santa Barbara | CA | 91,364 | $76,917 |
 | 3 | Monterey | CA | 28,575 | $68,456 |
 
-### Common Field (Column) Types
+#### Common Field (Column) Types { .look-h3 }
 
 | Data Type | Description | Example Values |
 |-----------|-------------|----------------|
@@ -231,7 +231,7 @@ Each column = one attribute
 | **Date** | Date/time values | 2025-03-15, 14:30:00 |
 | **Boolean** | True/False | True, False, 1, 0 |
 
-### Raster Attribute Tables (RATs)
+#### Raster Attribute Tables (RATs) { .look-h3 }
 
 For **categorical rasters**, each unique value can have attributes:
 
@@ -246,7 +246,7 @@ For **categorical rasters**, each unique value can have attributes:
 
 ## Data Storage Concepts
 
-### Single File vs. Multiple Files
+#### Single File vs. Multiple Files { .look-h3 }
 
 When saving data, many file formats save vector features layers and raster layers as one file. It is best to use these file formats, but you may runinto shapefiles that require 5 different files to work properly.
 
@@ -262,7 +262,7 @@ When saving data, many file formats save vector features layers and raster layer
 !!! warning "Note for Shapfiles"
     It is important to know that Shapefiles require 4 or more sepearate files to open in GIS. You will need to keep all 4 of those file together to avoid errors.
 
-### Compression
+#### Compression { .look-h3 }
 
 Raster data can be **compressed** to reduce file size:
 
@@ -297,7 +297,7 @@ Good metadata is essential for:
 
 Understanding whether your data represents **discrete** or **continuous** phenomena helps you choose the right model:
 
-### Discrete Phenomena
+#### Discrete Phenomena { .look-h3 }
 **Definition**: Features with defined boundaries and distinct identities
 
 **Examples:**
@@ -309,7 +309,7 @@ Understanding whether your data represents **discrete** or **continuous** phenom
 
 **Best Model**: Usually **vector**
 
-### Continuous Phenomena
+#### Continuous Phenomena { .look-h3 }
 **Definition**: Features that vary smoothly across space without clear boundaries
 
 **Examples:**
@@ -321,7 +321,7 @@ Understanding whether your data represents **discrete** or **continuous** phenom
 
 **Best Model**: Usually **raster**
 
-### The Gray Area
+#### The Gray Area { .look-h3 }
 Some phenomena can be represented either way:
 
 - **Population density**: Raster surface OR census polygons with density values
@@ -352,7 +352,7 @@ Some phenomena can be represented either way:
 
 ---
 
-## Further Reading
+#### Further Reading { .look-h3 }
 
 - [QGIS Documentation: Vector Data](https://docs.qgis.org/3.28/en/docs/gentle_gis_introduction/vector_data.html)
 - [QGIS Documentation: Raster Data](https://docs.qgis.org/3.28/en/docs/gentle_gis_introduction/raster_data.html)
@@ -377,7 +377,7 @@ Some phenomena can be represented either way:
 
 ---
 
-## Next Topic
+#### Next Topic { .look-h3 }
 
 Now that you understand spatial data models, let's explore how we reference locations on Earth:
 
