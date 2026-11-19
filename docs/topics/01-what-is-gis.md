@@ -137,6 +137,8 @@ You interact with GIS more than you might think:
 
 #### GIS Across Disciplines { .look-h3 }
 
+GIS tools can be incorporated into nearly every discipline in some way. While the four fields below are some of the most common users of GIS, the technology also has the potential to streamline data sharing across agencies, scales, and sectors.
+
 #### Environmental Science
 - Habitat modeling and species distribution
 - Water quality monitoring
@@ -160,6 +162,9 @@ You interact with GIS more than you might think:
 - Wildlife corridor identification
 - Watershed management
 - Agricultural yield optimization
+
+!!! question "Think About It"
+    What field are you studying or interested in? Think of one question in that field that depends on *where* something happens. How could GIS help answer it?
 
 ---
 
