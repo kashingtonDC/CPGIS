@@ -137,7 +137,7 @@ You interact with GIS more than you might think:
 
 #### GIS Across Disciplines { .look-h3 }
 
-GIS tools can be incorporated into nearly every discipline in some way. While the four fields below are some of the most common users of GIS, the technology also has the potential to streamline data sharing across agencies, scales, and sectors.
+GIS tools can be incorporated into nearly every discipline in some way. While the four fields below are some of the most common users of GIS, these technologies also have the potential to streamline data sharing across agencies, scales, and sectors.
 
 #### Environmental Science
 - Habitat modeling and species distribution
