@@ -1,6 +1,5 @@
 # Topic 1: What is GIS? Why is GIS Important?
 
-## Overview
 
 Geographic Information Systems (GIS) are powerful tools that allow us to capture, store, analyze, and visualize spatial data. But what exactly *is* GIS, and why has it become so essential in our modern world?
 
@@ -34,7 +33,7 @@ At its core, GIS answers one fundamental question: **"Where?"**
 - Where is the disease spreading?
 - Where are the resources we need?
 
-### The Power of "Where"
+#### The Power of "Where" { .look-h3 }
 
 Many of the world's most pressing challenges have a geographic component:
 
@@ -53,14 +52,14 @@ Many of the world's most pressing challenges have a geographic component:
 
 A complete GIS consists of five key components working together:
 
-### 1. 🗄️ Data
+#### 1. 🗄️ Data { .look-h3 }
 
 The foundation of GIS - spatial and attribute information about features on Earth:
 
 - **Spatial data**: Locations, shapes, and relationships (where things are)
 - **Attribute data**: Characteristics and properties (what things are)
 
-### 2. 👥 People
+#### 2. 👥 People { .look-h3 }
 
 GIS specialists, analysts, developers, and users who:
 
@@ -69,7 +68,7 @@ GIS specialists, analysts, developers, and users who:
 - Perform spatial analysis
 - Make decisions based on GIS outputs
 
-### 3. ⚙️ Methods
+#### 3. ⚙️ Methods { .look-h3 }
 
 Procedures and workflows for:
 
@@ -78,7 +77,7 @@ Procedures and workflows for:
 - Cartographic design principles
 - Quality control and validation
 
-### 4. 💻 Hardware
+#### 4. 💻 Hardware { .look-h3 }
 
 Physical computing equipment:
 
@@ -88,7 +87,7 @@ Physical computing equipment:
 - Drones and satellite platforms
 - Mobile devices
 
-### 5. 📦 Software
+#### 5. 📦 Software { .look-h3 }
 
 Applications that provide GIS functionality:
 
@@ -104,7 +103,7 @@ Applications that provide GIS functionality:
 
 ## Why is GIS Important?
 
-### GIS in Everyday Life
+#### GIS in Everyday Life { .look-h3 }
 
 You interact with GIS more than you might think:
 
@@ -136,7 +135,9 @@ You interact with GIS more than you might think:
 
 </div>
 
-### GIS Across Disciplines
+#### GIS Across Disciplines { .look-h3 }
+
+GIS tools can be incorporated into nearly every discipline in some way. While the four fields below are some of the most common users of GIS, these technologies also have the potential to streamline data sharing across agencies, scales, and sectors.
 
 #### Environmental Science
 - Habitat modeling and species distribution
@@ -162,11 +163,14 @@ You interact with GIS more than you might think:
 - Watershed management
 - Agricultural yield optimization
 
+!!! question "Think About It"
+    What field are you studying or interested in? Think of one question in that field that depends on *where* something happens. How could GIS help answer it?
+
 ---
 
 ## Fundamental Spatial Concepts
 
-### Location, Direction, and Space
+#### Location, Direction, and Space { .look-h3 }
 
 Three fundamental ways we describe geography:
 
@@ -184,7 +188,7 @@ Three fundamental ways we describe geography:
    - Area of regions
    - Spatial extent and scale
 
-### The Geographic Perspective
+#### The Geographic Perspective { .look-h3 }
 
 Thinking geographically means:
 
@@ -206,11 +210,11 @@ Thinking geographically means:
 
 ## Brief History of GIS
 
-### Pre-Computer Era
+#### Pre-Computer Era { .look-h3 }
 - **1854**: John Snow's cholera map (London) - early disease mapping
 - **1960s**: Computer mapping begins at Harvard Lab
 
-### The Digital Revolution
+#### The Digital Revolution { .look-h3 }
 - **1960s**: Canada develops first operational GIS (CGIS)
 - **1980s**: Desktop GIS emerges (ArcInfo, GRASS)
 - **1990s**: GPS becomes publicly available
@@ -224,23 +228,23 @@ Thinking geographically means:
 
 GIS helps answer five fundamental types of questions:
 
-### 1. **Location Questions** 
+#### 1. **Location Questions** { .look-h3 }
 "What is at this location?"
 <br>*Example: What land cover type exists at these coordinates?*
 
-### 2. **Condition Questions**
+#### 2. **Condition Questions** { .look-h3 }
 "Where does X exist?"
 <br>*Example: Where are all the wetlands in this county?*
 
-### 3. **Trend Questions**
+#### 3. **Trend Questions** { .look-h3 }
 "What has changed over time?"
 <br>*Example: How has urban sprawl changed over 20 years?*
 
-### 4. **Pattern Questions**
+#### 4. **Pattern Questions** { .look-h3 }
 "What spatial patterns exist?"
 <br>*Example: Are crimes clustered near certain features?*
 
-### 5. **Modeling Questions**
+#### 5. **Modeling Questions** { .look-h3 }
 "What if?"
 <br>*Example: What would flood if sea level rose 2 meters?*
 
@@ -328,7 +332,7 @@ GIS skills are in high demand across many sectors:
 
 ---
 
-## Further Reading
+#### Further Reading { .look-h3 }
 
 - [ESRI: What is GIS?](https://www.esri.com/en-us/what-is-gis/overview)
 - [USGS: What is a Geographic Information System?](https://www.usgs.gov/faqs/what-geographic-information-system-gis)
@@ -352,7 +356,7 @@ GIS skills are in high demand across many sectors:
 
 ---
 
-## Next Topic
+#### Next Topic { .look-h3 }
 
 Now that you understand what GIS is, let's explore how spatial data is represented:
 
