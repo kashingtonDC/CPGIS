@@ -45,3 +45,21 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   margin: 1rem 0;
 }
+
+/* Headings hidden from the page menu but styled like a normal h2/h3.
+   Usage in markdown:  #### Heading text { .look-h3 }  */
+.md-typeset h4.look-h2 {
+  font-size: 1.5625em;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  margin: 1.6em 0 0.64em;
+}
+
+.md-typeset h4.look-h3 {
+  font-size: 1.25em;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+  margin: 1.6em 0 0.8em;
+}
